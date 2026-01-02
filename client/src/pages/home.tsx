@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Main_Logo_(1)_(6)_1767385602023.png";
+import logoAlt from "@assets/South_Shore_AI_Main_Logo_(1)_(6)_1767385602023.png"; // Placeholder for other logo if found later
 import headshot from "@assets/Scott_AI_Polo_Shirt_Professional_1767385616187.png";
 import heroVideo from "@assets/generated_videos/abstract_blue_and_teal_data_flows_for_ai_business_background.mp4";
 
