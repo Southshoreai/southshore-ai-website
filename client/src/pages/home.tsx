@@ -20,7 +20,7 @@ import {
   X
 } from "lucide-react";
 
-import logo from "@assets/Gemini_Generated_Image_ner8sfner8sfner8_1767386425061.png";
+import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
 import headshot from "@assets/Scott_AI_Polo_Shirt_Professional_1767385616187.png";
 import heroVideo from "@assets/generated_videos/abstract_blue_and_teal_data_flows_for_ai_business_background.mp4";
 
