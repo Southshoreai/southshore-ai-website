@@ -1,0 +1,53 @@
+SSAI Website Instructions
+
+
+
+I need you to create a modern, sophisticated website for South Shore AI, an AI consulting and growth marketing company.
+Company Information:
+* Name: South Shore AI
+* Tagline: "Navigating Tomorrow with AI Today"
+* Phone: (617) 545-0717 (AI voice agent line - prominently featured)
+* Calendly: https://calendly.com/scottpralinsky/30-minute-meeting
+* Location: Whitman, Massachusetts
+* Owner: Scott Pralinsky (MIT-trained AI consultant, Instructor of Military Science & Technology, Wall Street Software Engineer, 20+ years CEO experience in nonprofits)
+Brand Colors:
+* Primary: Deep blue/teal (#2c5282, #4fd1c5)
+* Accent: Orange/coral (#ed8936, #dd6b20)
+* Base: Dark navy backgrounds with white text for premium feel
+Core Positioning: "We Help Businesses Grow - whether that means fixing your foundation, building growth systems, or deploying intelligent automation"
+Services to Feature:
+1. Growth Engine Package (flagship offer) - Complete done-for-you system: website overhaul, SEO, lead capture, automated follow-up, ongoing support
+2. AI Integration & Automation
+3. SEO & Online Visibility
+4. Workflow Optimization
+5. AI Training & Speaking
+6. Strategic Consulting
+Key Sections Needed:
+1. Hero Section - Full-screen background video (create an AI video that is soft-focus business/collaboration footage), clear value prop, CTAs for "Get Free Growth Audit" and "Call AI Agent"
+2. Problem Identification - "Which Sounds Like You?" with 4 pain points: poor visibility, not enough leads, drowning in manual work, leads not converting
+3. Video Introduction Section - Placeholder for avatar video from founder
+4. How We Work - 3-step process: Audit & Analyze → Strategy & Plan → Implement & Optimize
+5. Services Grid - 6 service cards with Growth Engine featured prominently
+6. Interactive Self-Assessment Quiz - Helps visitors identify which service they need based on their biggest challenge
+7. About Section - Photo placeholder for founder, credentials (MIT-trained, 20+ years CEO, conference speaker)
+8. Final CTA - Book free audit (valued at $497), with Calendly link and phone number
+9. Footer - Standard footer with contact info, service links, resources
+10. Chatbot - Fixed bottom-right chat bubble (placeholder for future integration)
+Design Requirements:
+* Modern, clean aesthetic with WOW factor
+* Full-screen video background in hero
+* Smooth animations and hover effects
+* Mobile responsive
+* Balance sophistication with approachability (audience: nonprofits AND local businesses)
+* Inspired by sites like bizdominance.ai (simple, clean, prominent phone CTA, chatbot)
+* Use gradients, glassmorphism effects, and contemporary web design trends
+Special Features:
+* AI voice agent phone number prominently displayed throughout
+* Direct Calendly booking integration
+* Interactive quiz with personalized recommendations
+* Scroll-triggered animations
+* Placeholder chatbot button
+Tone: Industry-agnostic, problem-focused messaging. Professional but warm. Expert but not intimidating. We meet clients where they are - whether they need basic digital presence fixes or advanced AI solutions.
+Create a complete website with all HTML, CSS, and JavaScript in one file. Make it visually impressive, conversion-focused, and ready to deploy.
+
+
