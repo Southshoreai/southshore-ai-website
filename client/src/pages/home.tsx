@@ -50,11 +50,12 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
-          <a href="#strategy" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Strategy & Consulting</a>
-          <a href="#growth-engine" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">The Growth Engine</a>
-          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement Services</a>
+          <a href="#strategy" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Strategy</a>
+          <a href="#growth-engine" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Growth Engine</a>
+          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement</a>
           <a href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</a>
           <a href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
+          <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
           <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
