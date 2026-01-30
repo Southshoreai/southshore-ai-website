@@ -1,0 +1,54 @@
+HOME PAGE (INTEGRATED STRATEGY & PRODUCT)
+SEO Title: South Shore AI | Strategic Consulting & AI-Driven Growth SEO Description: From high-level AI strategy for complex organizations to our flagship AI-Driven Growth Engine for SMBs. Navigate tomorrow with AI today.
+(Header/Navigation)
+Logo: South Shore AI | Navigating Tomorrow with AI Today Nav Bar: Home | Strategy & Consulting | The Growth Engine | About | Case Studies | Contact CTA Button: Book a Strategy Call
+
+(Hero Section)
+Headline (H1): AI Strategy for What’s Next. Subheadline: Whether you are a complex organization seeking high-level AI advisory or a business looking to scale through automation, we provide the clarity and systems you need to lead your industry. CTA Buttons: [Explore Strategic Advisory] [Discover the Growth Engine]
+
+(The Two Pillars Section) - New Section to address client feedback
+Headline (H2): Two Ways We Help You Lead Left Column: Strategic Consulting & Advisory For Nonprofits, Complex Organizations, and Boards. We provide high-level AI roadmaps, digital transformation strategy, and executive advisory to help established organizations navigate the AI shift without the noise. [Learn More About Consulting]
+Right Column: The Growth Engine For Growth-Minded Businesses & SMBs. Our flagship productized solution. A complete analysis and optimization system designed to answer one question: "How do I get more customers?" [Explore the Growth Engine]
+
+(Strategic Advisory Section) - New Section to restore their core business
+Headline (H2): High-Level Strategy for Complex Missions Body Copy: AI isn’t just about marketing—it’s about operations, governance, and long-term viability. We work with CEOs, Boards, and Nonprofit leaders to integrate AI into the fabric of their organizations.
+Institutional AI Roadmaps: Navigating the "why" and "how" of AI adoption.
+Complex Org Solutions: Streamlining workflows in multi-stakeholder environments.
+Advisory & Governance: Ensuring your AI implementation is ethical, secure, and strategic. Secondary Link: See our work with Nonprofits and Complex Organizations →
+
+(The Growth Engine - Featured Solution)
+Headline (H2): Featured Solution: The AI-Driven Growth Engine Subheadline: Stop guessing. Start growing. Body Copy: For businesses ready to scale, we’ve productized our expertise into the Growth Engine. It’s a comprehensive approach that analyzes your entire digital presence and fixes the foundation first.
+(Keep your 7 Area Icons here, but condensed for brevity)
+Searchability | 2. Social Presence | 3. SEO | 4. Website Quality | 5. Audience Building | 6. Revenue Strategy | 7. Marketing Strategy
+
+(Why Foundation First) - Refined to sound more "Consultant-led"
+Headline (H2): Tactics Without Strategy is the Noise Before Defeat Body Copy: Most agencies sell you "the latest thing." We believe in the Foundation First philosophy. Whether we are consulting for a global nonprofit or implementing the Growth Engine for a local business, we ensure your infrastructure is solid before you spend a dollar on traffic.
+
+(Who We Help) - Expanded to include the "Secondary" clients
+Headline (H2): Specialized Expertise
+Nonprofits & Complex Orgs: Modernizing mission-driven work through AI.
+Professional Services: Establishing authority and streamlining acquisition.
+E-commerce & Local Business: Dominating search and automating the sales floor.
+Coaches, Authors, & Speakers: Building platforms that scale your influence.
+
+(Results / Social Proof)
+(Keep your table/testimonials here, but add one high-level quote if available regarding "Strategy" or "Advisory")
+
+(Why South Shore AI?)
+Headline (H2): Deep Experience. Local Accountability.
+MIT-Trained Expertise: Scott’s background in AI & Digital Transformation from MIT ensures world-class strategy.
+20+ Years of Leadership: Former CEO experience means we understand your P&L, not just your "likes."
+Strategy-First: We don't just sell tools; we solve business problems.
+
+(Final CTA)
+Headline (H2): Let’s Navigate the Future Together. Body Copy: Ready to audit your growth or discuss a high-level AI roadmap for your organization? Choose your path below. Buttons: [Get a Free Growth Audit] [Schedule a Strategy Consultation]
+
+(Footer)
+(Keep your footer as is, but ensure the "Services" list includes "Strategic Advisory" and "Nonprofit AI Strategy" alongside the Growth Engine components.)
+
+What changed and why?
+Shared Billing: SSAI is no longer just "The Growth Engine Company." It is an AI Strategy firm that offers the Growth Engine.
+High-Level Language: I added sections for "Complex Organizations" and "Advisory" so the client doesn't feel like their most profitable consulting work is being hidden.
+The "Two Pillars" approach: This allows a visitor to self-identify immediately—either they want a high-level consultant (Advisory) or they want a system to get more customers (Growth Engine).
+
+
