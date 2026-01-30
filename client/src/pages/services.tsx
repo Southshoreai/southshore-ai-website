@@ -36,10 +36,13 @@ const Navbar = () => {
           <img src={logo} alt="South Shore AI" className="h-10 md:h-12" />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
-          <a href="/#strategy" className="text-sm font-medium hover:text-primary transition-colors">Strategy</a>
-          <a href="/#growth-engine" className="text-sm font-medium hover:text-primary transition-colors">Growth Engine</a>
+          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors">Engagement</a>
+          <a href="/packages" className="text-sm font-medium hover:text-primary transition-colors">Packages</a>
+          <a href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
+          <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
+          <a href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
             target="_blank" 
