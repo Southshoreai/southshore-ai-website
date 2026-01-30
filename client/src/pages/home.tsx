@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -49,13 +50,13 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
-          <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
+          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
           <a href="#strategy" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Strategy</a>
           <a href="#growth-engine" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Growth Engine</a>
-          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement</a>
-          <a href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</a>
-          <a href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
-          <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
+          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement</Link>
+          <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</Link>
+          <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
+          <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
           <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
@@ -83,11 +84,11 @@ const Navbar = () => {
             className="md:hidden bg-card border-b border-white/10"
           >
             <div className="flex flex-col p-4 gap-4">
-              <a href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement</a>
-              <a href="/packages" onClick={() => setIsOpen(false)} className="text-lg font-medium">Packages</a>
-              <a href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium">About</a>
-              <a href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium">Blog</a>
-              <a href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</a>
+              <Link href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement</Link>
+              <Link href="/packages" onClick={() => setIsOpen(false)} className="text-lg font-medium">Packages</Link>
+              <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium">About</Link>
+              <Link href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium">Blog</Link>
+              <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</Link>
               <a 
                 href="https://calendly.com/scottpralinsky/30-minute-meeting" 
                 target="_blank"
@@ -443,7 +444,7 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Company</h4>
           <ul className="space-y-3 text-gray-500">
-            <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+            <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
             <li><a href="#case-studies" className="hover:text-primary transition-colors">Case Studies</a></li>
             <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
           </ul>

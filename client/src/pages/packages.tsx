@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -38,12 +39,12 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
-          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors">Engagement</a>
-          <a href="/packages" className="text-sm font-medium hover:text-primary transition-colors">Packages</a>
-          <a href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
-          <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
-          <a href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
+          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">Engagement</Link>
+          <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors">Packages</Link>
+          <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
+          <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
+          <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
             target="_blank" 
