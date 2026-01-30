@@ -52,8 +52,8 @@ const Navbar = () => {
           <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
           <a href="#strategy" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Strategy & Consulting</a>
           <a href="#growth-engine" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">The Growth Engine</a>
+          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement Services</a>
           <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
-          <a href="#case-studies" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Case Studies</a>
           <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
@@ -84,6 +84,7 @@ const Navbar = () => {
               <a href="#" onClick={() => setIsOpen(false)} className="text-lg font-medium">Home</a>
               <a href="#strategy" onClick={() => setIsOpen(false)} className="text-lg font-medium">Strategy & Consulting</a>
               <a href="#growth-engine" onClick={() => setIsOpen(false)} className="text-lg font-medium">The Growth Engine</a>
+              <a href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement Services</a>
               <a 
                 href="https://calendly.com/scottpralinsky/30-minute-meeting" 
                 target="_blank"
