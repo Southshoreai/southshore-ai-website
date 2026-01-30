@@ -1,0 +1,138 @@
+CONTACT PAGE
+SEO Title: Contact South Shore AI | Book Your Free Growth Audit
+SEO Description: Ready to grow? Contact South Shore AI to book your free audit and see a demo of our AI Growth Engine. Located in Whitman, MA.
+(Logo)
+South Shore AI
+Navigating Tomorrow with AI Today
+(Navigation Bar)
+Home | Services | About | Blog | Contact | (617) 545-0717
+(CTA: Header Button)
+Get Growth Audit
+(Hero Section)
+Tagline (small text):
+LET'S DO THIS
+Headline (H1):
+See The AI We Built For You.
+Subheadline:
+Fill out the form below to claim your free Growth Audit (a $497 value). We'll show you a live demo of how an AI agent can start booking appointments for YOUR business.
+(Two-Column Layout)
+LEFT COLUMN: Contact Form
+RIGHT COLUMN: Calendar Embed
+LEFT COLUMN: Contact Form
+Headline (H2):
+Step 1: Tell Us About You
+Form Fields:
+Field
+Type
+Required
+First Name
+Text
+✅
+Last Name
+Text
+✅
+Email
+Email
+✅
+Phone Number
+Phone
+✅
+Company Name
+Text
+Optional
+Website URL
+URL
+Optional
+What's Your Biggest Challenge?
+Dropdown
+✅
+
+Dropdown Options:
+•Getting More Leads
+•Converting Leads to Customers
+•Too Much Manual Work
+•Technology Confusion
+•Something Else
+Message Field:
+Anything else you want us to know? (Optional)
+[Large text area]
+Submit Button:
+Get My Free Audit →
+Trust Text:
+🔒 Your info is safe. We hate spam as much as you do.
+RIGHT COLUMN: Calendar Booking
+Headline (H2):
+Step 2: Pick a Time
+Subheadline:
+Skip the form? Book directly with Scott.
+[EMBED: GoHighLevel Calendar Widget]
+Calendar Settings:
+•15-minute or 30-minute slots
+•Available times shown in visitor's timezone
+•Confirmation email sent automatically
+(Alternative Contact Section)
+Headline (H2):
+Other Ways To Reach Us
+Contact Cards (3 Columns)
+Card 1: Call Us
+📞 (617) 545-0717
+Talk to our AI agent or leave a message. We call back fast.
+Click to Call →
+Card 2: Email Us
+✉️ info@sparkyard.pro
+For questions, partnerships, or just to say hi.
+Send Email →
+Card 3: Visit Us
+📍 Whitman, MA
+Serving the South Shore and beyond.
+Get Directions →
+(Map Section)
+Headline (H2):
+We're Local
+[EMBED: Google Map showing Whitman, MA / South Shore area]
+Caption:
+Based in Whitman, MA. Serving the entire South Shore and businesses across the US.
+(FAQ Section)
+Headline (H2):
+Before You Reach Out...
+Q: Is the Growth Audit really free?
+A: 100% free. No credit card. No obligation. We'll look at your business and show you exactly how AI can help. If it's not a fit, no hard feelings.
+Q: How fast will you respond?
+A: Usually within a few hours. If you book a call, you'll get an instant confirmation. If you fill out the form, expect a personal response within 24 hours (usually much faster).
+Q: What happens after I submit?
+A: You'll get an email right away with next steps. Then we'll reach out to schedule your demo. Simple.
+Q: Can I just call instead?
+A: Absolutely. Call (617) 545-0717 anytime. Our AI agent can help you 24/7, or leave a message and Scott will call you back personally.
+(Urgency CTA Section)
+Headline (H2):
+Don't Wait. Your Competitors Aren't.
+Body Copy:
+Every day without an AI agent is another day of missed leads. Book your free audit now and see what you're leaving on the table.
+CTA Button:
+Claim My Spot Now →
+Scarcity Text:
+⚡ Only 3 free audit spots available this week.
+(Trust Section)
+Headline (H3):
+You're In Good Hands
+Trust Element
+🎓 MIT-Trained AI Expert
+🏆 20+ Years Business Experience
+📍 Local South Shore Business
+🔒 Your Data Is Always Secure
+
+(Footer)
+South Shore AI
+Navigating Tomorrow with AI Today
+Services:
+Growth Engine | AI Integration | SEO & Visibility | Consulting
+Company:
+About Us | Our Process | Careers | Privacy Policy
+Contact:
+📞 (617) 545-0717
+📅 Book a Meeting
+📍 Whitman, MA
+Social:
+LinkedIn
+© 2026 South Shore AI. All rights reserved.
+
