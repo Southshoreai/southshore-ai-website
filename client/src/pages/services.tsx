@@ -12,7 +12,8 @@ import {
   Clock,
   Zap,
   Shield,
-  Bot
+  Bot,
+  Target
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";

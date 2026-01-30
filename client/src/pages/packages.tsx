@@ -14,7 +14,9 @@ import {
   Star,
   MessageSquare,
   Clock,
-  Briefcase
+  Briefcase,
+  Bot,
+  Workflow
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
