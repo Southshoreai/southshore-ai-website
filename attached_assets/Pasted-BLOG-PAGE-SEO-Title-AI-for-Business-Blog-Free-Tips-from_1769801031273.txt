@@ -1,0 +1,137 @@
+BLOG PAGE
+SEO Title: AI for Business Blog | Free Tips from South Shore AI
+SEO Description: Free, simple tips on how to use AI for business growth, lead generation, and SEO. Learn from the AI experts at South Shore AI.
+(Logo)
+South Shore AI
+Navigating Tomorrow with AI Today
+(Navigation Bar)
+Home | Services | About | Blog | Contact | (617) 545-0717
+(CTA: Header Button)
+Get Growth Audit
+(Hero Section)
+Tagline (small text):
+FREE TIPS. ZERO FLUFF.
+Headline (H1):
+AI Tips That Actually Make You Money.
+Subheadline:
+Quick reads. Real advice. No tech jargon. Just stuff you can use today to grow your business.
+(Email Signup Bar - Sticky)
+Inline CTA:
+📧 Want tips sent to your inbox? Subscribe Here →
+Form: Just email field + submit button
+(Featured Article Section)
+Label:
+⭐ FEATURED
+Article Image:
+Thumbnail of AI chatbot on laptop
+Title (H2):
+Is Your Website Leaking Money? Here's How To Plug The Hole.
+Excerpt:
+95% of website visitors leave without doing anything. That's a lot of lost cash. Here's exactly how an AI chatbot can turn those ghosts into paying customers...
+Meta:
+📅 January 5, 2026 | ⏱️ 5 min read
+CTA:
+Read Full Article →
+(Blog Post Grid)
+Headline (H2):
+Latest Articles
+Article 1
+Image:
+Thumbnail
+Title:
+5 AI Tools That Will Double Your Leads (Without Ads)
+Excerpt:
+Stop throwing money at Facebook. These five free AI tools can start generating leads for your small business on autopilot...
+Meta:
+📅 January 3, 2026 | ⏱️ 4 min read
+CTA:
+Read More →
+Article 2
+Image:
+Thumbnail
+Title:
+SEO for Small Businesses in Massachusetts: A 15-Minute Guide
+Excerpt:
+Think SEO is complicated? It's not. Follow these three dead-simple steps to get your local business showing up on Google...
+Meta:
+📅 December 28, 2025 | ⏱️ 6 min read
+CTA:
+Read More →
+Article 3
+Image:
+Thumbnail
+Title:
+Why Your Competitors Are Stealing Your Customers (And How To Stop Them)
+Excerpt:
+They're not smarter than you. They're just faster at following up. Here's the automation secret they don't want you to know...
+Meta:
+📅 December 20, 2025 | ⏱️ 5 min read
+CTA:
+Read More →
+Article 4
+Image:
+Thumbnail
+Title:
+The $500/Month Employee That Never Sleeps
+Excerpt:
+What if you could hire someone who works 24/7, never calls in sick, and costs less than your phone bill? You can. Here's how...
+Meta:
+📅 December 15, 2025 | ⏱️ 4 min read
+CTA:
+Read More →
+Article 5
+Image:
+Thumbnail
+Title:
+How One Coffee Shop Went From 2 Leads to 10 Per Week
+Excerpt:
+A South Shore case study. See exactly what we did and the results they got in just 30 days...
+Meta:
+📅 December 10, 2025 | ⏱️ 7 min read
+CTA:
+Read More →
+(Categories Sidebar or Section)
+Headline (H3):
+Browse By Topic
+Category
+Count
+AI for Business
+8 articles
+Lead Generation
+5 articles
+SEO Tips
+4 articles
+Case Studies
+3 articles
+Automation
+6 articles
+
+(Blog Post Template - For Inside Each Article)
+Structure for every blog post:
+Plain Text
+(Article Hero Image) (Title - H1) (Meta: Date | Read Time | Category) (Article Body - Use H2s for sections) --- (End CTA Box) **Liked this tip?** Imagine having all of this on autopilot. Book a free Growth Audit and we'll show you how our AI can do this for YOUR business. `Book My Free Audit →` --- (Related Articles - 3 thumbnails) --- (Footer)
+(Newsletter CTA Section)
+Headline (H2):
+Get Smarter Every Week
+Body Copy:
+One email. One tip. Every Tuesday. No spam, no fluff—just one actionable idea to grow your business with AI.
+Form:
+Email: [________________]
+Subscribe →
+Trust Text:
+🔒 We hate spam too. Unsubscribe anytime.
+(Footer)
+South Shore AI
+Navigating Tomorrow with AI Today
+Services:
+Growth Engine | AI Integration | SEO & Visibility | Consulting
+Company:
+About Us | Our Process | Careers | Privacy Policy
+Contact:
+📞 (617) 545-0717
+📅 Book a Meeting
+📍 Whitman, MA
+Social:
+LinkedIn
+© 2026 South Shore AI. All rights reserved.
+
