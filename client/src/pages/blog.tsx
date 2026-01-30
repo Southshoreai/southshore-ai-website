@@ -35,12 +35,13 @@ const Navbar = () => {
           <img src={logo} alt="South Shore AI" className="h-10 md:h-12" />
         </a>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <a href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</a>
-          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors">Services</a>
+          <a href="/services" className="text-sm font-medium hover:text-primary transition-colors">Engagement</a>
+          <a href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</a>
           <a href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</a>
           <a href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</a>
-          <a href="/#contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+          <a href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</a>
           <div className="flex items-center gap-4 ml-4">
             <a href="tel:6175450717" className="text-primary font-bold text-sm">(617) 545-0717</a>
             <a 

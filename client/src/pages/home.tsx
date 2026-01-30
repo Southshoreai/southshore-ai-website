@@ -83,10 +83,11 @@ const Navbar = () => {
             className="md:hidden bg-card border-b border-white/10"
           >
             <div className="flex flex-col p-4 gap-4">
-              <a href="#" onClick={() => setIsOpen(false)} className="text-lg font-medium">Home</a>
-              <a href="#strategy" onClick={() => setIsOpen(false)} className="text-lg font-medium">Strategy & Consulting</a>
-              <a href="#growth-engine" onClick={() => setIsOpen(false)} className="text-lg font-medium">The Growth Engine</a>
-              <a href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement Services</a>
+              <a href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement</a>
+              <a href="/packages" onClick={() => setIsOpen(false)} className="text-lg font-medium">Packages</a>
+              <a href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium">About</a>
+              <a href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium">Blog</a>
+              <a href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</a>
               <a 
                 href="https://calendly.com/scottpralinsky/30-minute-meeting" 
                 target="_blank"
