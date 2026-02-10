@@ -499,7 +499,6 @@ export default function Home() {
       <WhyUs />
       <CTA />
       <Footer />
-      <Chatbot />
     </div>
   );
 }
