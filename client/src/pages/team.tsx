@@ -107,7 +107,7 @@ const TeamGrid = () => {
       image: team1
     },
     {
-      name: "Marcus Chen",
+      name: "Von",
       title: "Growth Architect",
       desc: "Expert in digital visibility, searchability, and revenue optimization systems.",
       image: team3
