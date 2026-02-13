@@ -17,7 +17,8 @@ import {
   Clock,
   Briefcase,
   Bot,
-  Workflow
+  Workflow,
+  X
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
@@ -69,13 +70,203 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight max-w-5xl mx-auto">
-            Solutions Scaled to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Your Ambition.</span>
+          <span className="inline-block py-2 px-6 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-bold tracking-widest mb-8 uppercase">
+            The Truth About Your Business Growth
+          </span>
+          <h1 className="text-4xl md:text-7xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
+            Stop Guessing. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Start Growing.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10">
-            We provide the technical foundation and strategic clarity needed to lead in the AI era. Whether you are looking for a productized growth system or a deep-dive organizational transformation, we have an engagement model designed for your goals.
+          <div className="max-w-3xl mx-auto space-y-4 mb-12 text-left md:text-center">
+            <div className="flex items-center gap-3 text-gray-300">
+              <X className="text-red-500 shrink-0" size={20} />
+              <p className="text-lg md:text-xl italic">Marketing that feels like throwing money into a black hole.</p>
+            </div>
+            <div className="flex items-center gap-3 text-gray-300">
+              <X className="text-red-500 shrink-0" size={20} />
+              <p className="text-lg md:text-xl italic">Inconsistent lead flow that keeps you up at night.</p>
+            </div>
+            <div className="flex items-center gap-3 text-gray-300">
+              <X className="text-red-500 shrink-0" size={20} />
+              <p className="text-lg md:text-xl italic">A website that looks good but converts poorly.</p>
+            </div>
+            <div className="flex items-center gap-3 text-gray-300">
+              <X className="text-red-500 shrink-0" size={20} />
+              <p className="text-lg md:text-xl italic">No clear structure for how you actually get customers.</p>
+            </div>
+            <div className="flex items-center gap-3 text-gray-300">
+              <X className="text-red-500 shrink-0" size={20} />
+              <p className="text-lg md:text-xl italic">Revenue unpredictability that stalls your momentum.</p>
+            </div>
+          </div>
+          <p className="text-xl md:text-2xl text-white font-bold max-w-4xl mx-auto leading-relaxed mb-12">
+            You don't need another "marketing tactic." You need a coordinated growth system installed underneath your business.
           </p>
+          <div className="flex justify-center">
+            <a href="https://calendly.com/scottpralinsky/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all shadow-xl hover:-translate-y-1">
+              Book Your Free Growth Audit
+            </a>
+          </div>
         </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const SystemBreakdown = () => {
+  const components = [
+    { title: "Searchability", desc: "Ensuring you are found exactly where your customers are searching, every single time.", icon: <Search size={24} /> },
+    { title: "SEO", desc: "Long-term organic authority that builds a moat around your business.", icon: <Globe size={24} /> },
+    { title: "Website Optimization", desc: "Turning your digital brochure into a high-performance conversion machine.", icon: <Zap size={24} /> },
+    { title: "Authority", desc: "Establishing you as the clear leader in your industry through strategic content.", icon: <Shield size={24} /> },
+    { title: "Lead Capture", desc: "24/7 intelligent engagement that never lets a prospect slip through the cracks.", icon: <MessageSquare size={24} /> },
+    { title: "Conversion Path", desc: "A friction-free journey from 'just looking' to 'booked appointment'.", icon: <Filter size={24} /> },
+    { title: "Automation", desc: "Removing the manual heavy lifting so your team can focus on closing.", icon: <Workflow size={24} /> },
+  ];
+
+  return (
+    <section className="py-24 container mx-auto px-4 bg-card/20 rounded-[40px] border border-white/5">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">A Coordinated Growth System</h2>
+        <p className="text-gray-400 text-xl max-w-3xl mx-auto">
+          We don't just "do marketing." We install a structured system designed to handle every stage of the customer journey.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {components.map((comp, i) => (
+          <div key={i} className="p-8 rounded-2xl bg-background border border-white/10 hover:border-primary/30 transition-all group">
+            <div className="text-primary mb-6 group-hover:scale-110 transition-transform">{comp.icon}</div>
+            <h3 className="text-xl font-bold mb-4">{comp.title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">{comp.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Timeline = () => {
+  const phases = [
+    { 
+      phase: "Phase 1: Deep Audit", 
+      items: ["Current ecosystem analysis", "Searchability gap report", "Revenue pathway identification"] 
+    },
+    { 
+      phase: "Phase 2: Strategic Blueprint", 
+      items: ["Custom growth roadmap", "Tech stack alignment", "Conversion strategy design"] 
+    },
+    { 
+      phase: "Phase 3: Build & Optimize", 
+      items: ["System installation", "Asset optimization", "Lead capture deployment"] 
+    },
+    { 
+      phase: "Phase 4: Activate & Scale", 
+      items: ["Performance monitoring", "Scalable traffic activation", "Continuous optimization"] 
+    },
+  ];
+
+  return (
+    <section className="py-24 container mx-auto px-4">
+      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Your 4-Phase Roadmap</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {phases.map((p, i) => (
+          <div key={i} className="relative">
+            {i < phases.length - 1 && (
+              <div className="hidden lg:block absolute top-12 left-full w-full h-[2px] bg-gradient-to-r from-primary/50 to-transparent z-0"></div>
+            )}
+            <div className="relative z-10 p-8 rounded-2xl bg-card border border-white/10 h-full">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold mb-6 border border-primary/30">
+                {i + 1}
+              </div>
+              <h3 className="text-xl font-bold mb-4">{p.phase}</h3>
+              <ul className="space-y-3">
+                {p.items.map((item, idx) => (
+                  <li key={idx} className="text-sm text-gray-400 flex items-start gap-2">
+                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0"></div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const BeforeAfter = () => {
+  return (
+    <section className="py-24 bg-card/50 border-y border-white/5">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">The Strategic Shift</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
+          <div className="p-12 bg-red-500/5">
+            <h3 className="text-2xl font-bold mb-8 text-red-500 flex items-center gap-3">
+              <X size={28} /> Before Growth Engine
+            </h3>
+            <ul className="space-y-6">
+              {[
+                "Guessing on strategy",
+                "Fragmented, disconnected tools",
+                "Random marketing tactics",
+                "Low clarity on what works",
+                "Revenue plateaus"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-4 text-gray-400 text-lg">
+                  <div className="w-2 h-2 rounded-full bg-red-500 opacity-50"></div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="p-12 bg-primary/5 border-l border-white/10">
+            <h3 className="text-2xl font-bold mb-8 text-primary flex items-center gap-3">
+              <CheckCircle size={28} /> After Growth Engine
+            </h3>
+            <ul className="space-y-6">
+              {[
+                "A coordinated, scalable system",
+                "Clear metrics and visibility",
+                "Optimized conversion flow",
+                "Predictable revenue pipeline",
+                "Scalable business growth"
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-4 text-white text-lg font-medium">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Deliverables = () => {
+  const items = [
+    { title: "Digital Ecosystem Audit", desc: "A comprehensive document identifying exactly where you are losing revenue." },
+    { title: "Growth Roadmap", desc: "A step-by-step strategic blueprint for your specific business goals." },
+    { title: "SEO Correction Plan", desc: "Technical and content fixes to build your organic authority moat." },
+    { title: "Conversion Blueprint", desc: "Visual pathway optimization to turn more browsers into buyers." },
+    { title: "Automation Setup", desc: "Full installation of lead capture and engagement systems." },
+    { title: "Revenue Pathway Diagram", desc: "A clear visual map of how customers find and pay you." },
+  ];
+
+  return (
+    <section className="py-24 container mx-auto px-4">
+      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Tangible Deliverables</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {items.map((item, i) => (
+          <div key={i} className="p-8 rounded-2xl bg-card border border-white/5 flex flex-col items-center text-center">
+            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+              <Star size={24} />
+            </div>
+            <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -310,18 +501,21 @@ const FinalCTA = () => {
   return (
     <section className="py-24 bg-gradient-to-br from-primary/20 via-background to-accent/10">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold mb-8">Not Sure Where to Start?</h2>
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to Professionalize Your Growth?</h2>
         <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
-          Let’s have a 15-minute conversation to identify which path makes the most sense for your current stage of growth. No pressure—just professional alignment.
+          This isn't a sales call. It's a strategy session for business owners who are ready to install a coordinated growth system. We'll identify your gaps and show you the roadmap.
         </p>
-        <a 
-          href="https://calendly.com/scottpralinsky/30-minute-meeting" 
-          target="_blank"
-          rel="noopener noreferrer" 
-          className="inline-block bg-accent hover:bg-orange-600 text-white px-12 py-6 rounded-full font-bold text-2xl transition-all shadow-xl hover:-translate-y-1"
-        >
-          Book a Discovery Call
-        </a>
+        <div className="space-y-4">
+          <a 
+            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="inline-block bg-accent hover:bg-orange-600 text-white px-12 py-6 rounded-full font-bold text-2xl transition-all shadow-xl hover:-translate-y-1"
+          >
+            Book Your Discovery Call
+          </a>
+          <p className="text-gray-500 text-sm">Low risk. High clarity. Professional alignment.</p>
+        </div>
       </div>
     </section>
   );
@@ -348,6 +542,10 @@ export default function PackagesPage() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Navbar />
       <Hero />
+      <SystemBreakdown />
+      <BeforeAfter />
+      <Timeline />
+      <Deliverables />
       <ComparisonTable />
       <PackagesGrid />
       <Guarantee />

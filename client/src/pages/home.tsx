@@ -51,6 +51,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
+          <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Growth Engine</Link>
           <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
