@@ -12,12 +12,15 @@ import {
   Zap, 
   Star,
   Clock,
-  ExternalLink
+  ExternalLink,
+  Menu,
+  X
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,6 +41,7 @@ const Navbar = () => {
           <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
+          <Link href="/team" className="text-sm font-medium hover:text-primary transition-colors">Team</Link>
           <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
           <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
           <div className="flex items-center gap-4 ml-4">
@@ -52,7 +56,27 @@ const Navbar = () => {
             </a>
           </div>
         </div>
+        {/* Mobile Menu Button */}
+        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={28} /> : <div className="p-1"><div className="w-6 h-0.5 bg-white mb-1.5"></div><div className="w-6 h-0.5 bg-white mb-1.5"></div><div className="w-6 h-0.5 bg-white"></div></div>}
+        </button>
       </div>
+
+      {isOpen && (
+        <div className="md:hidden bg-card border-b border-white/10 p-4 flex flex-col gap-4">
+          <Link href="/" onClick={() => setIsOpen(false)} className="text-lg font-medium">Home</Link>
+          <Link href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement</Link>
+          <Link href="/packages" onClick={() => setIsOpen(false)} className="text-lg font-medium">Packages</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium">About</Link>
+          <Link href="/team" onClick={() => setIsOpen(false)} className="text-lg font-medium">Team</Link>
+          <Link href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium">Blog</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</Link>
+          <a href="tel:6175450717" className="flex items-center gap-3 text-lg font-bold text-accent">
+            <Phone size={20} />
+            (617) 545-0717
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
