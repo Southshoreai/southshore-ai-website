@@ -101,7 +101,7 @@ const TeamGrid = () => {
       image: team2
     },
     {
-      name: "Scott Pralinsky",
+      name: "Scott",
       title: "Founder & Principal Strategist",
       desc: "MIT-trained AI expert with over 20 years of executive leadership experience.",
       image: team1
