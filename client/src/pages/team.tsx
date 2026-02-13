@@ -95,16 +95,16 @@ const TeamHero = () => {
 const TeamGrid = () => {
   const team = [
     {
-      name: "Scott Pralinsky",
-      title: "Founder & Principal Strategist",
-      desc: "MIT-trained AI expert with over 20 years of executive leadership experience.",
-      image: team1
-    },
-    {
       name: "Alex Rivera",
       title: "Technical Lead",
       desc: "Specializing in custom AI integrations and workflow automation systems.",
       image: team2
+    },
+    {
+      name: "Scott Pralinsky",
+      title: "Founder & Principal Strategist",
+      desc: "MIT-trained AI expert with over 20 years of executive leadership experience.",
+      image: team1
     },
     {
       name: "Marcus Chen",
