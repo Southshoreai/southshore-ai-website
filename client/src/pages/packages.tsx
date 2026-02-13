@@ -17,7 +17,8 @@ import {
   Clock,
   Briefcase,
   Bot,
-  Workflow
+  Workflow,
+  X
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
@@ -63,19 +64,213 @@ const Hero = () => {
   return (
     <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/10 to-transparent z-0 opacity-50"></div>
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="text-center max-w-5xl mx-auto"
         >
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight max-w-5xl mx-auto">
-            Solutions Scaled to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Your Ambition.</span>
+          <h1 className="text-4xl md:text-7xl font-bold mb-8 leading-tight">
+            Stop Guessing. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Start Growing.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10">
-            We provide the technical foundation and strategic clarity needed to lead in the AI era. Whether you are looking for a productized growth system or a deep-dive organizational transformation, we have an engagement model designed for your goals.
+          <p className="text-2xl md:text-3xl font-bold text-white mb-10 italic">
+            Is your marketing scattered, your ROI inconsistent, and your revenue unpredictable?
           </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mb-12">
+            <div className="space-y-4">
+              {[
+                "Marketing feels like a series of disconnected 'tactics'",
+                "Your website gets traffic but doesn't convert to customers",
+                "You have no clear, structured path for growth"
+              ].map((point, i) => (
+                <div key={i} className="flex gap-3 items-start">
+                  <X className="text-red-500 mt-1 shrink-0" size={20} />
+                  <p className="text-gray-300 font-medium">{point}</p>
+                </div>
+              ))}
+            </div>
+            <div className="space-y-4">
+              {[
+                "Revenue plateaus because of inconsistent lead flow",
+                "You're tired of 'agencies' that don't understand your P&L"
+              ].map((point, i) => (
+                <div key={i} className="flex gap-3 items-start">
+                  <X className="text-red-500 mt-1 shrink-0" size={20} />
+                  <p className="text-gray-300 font-medium">{point}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 p-8 rounded-3xl mb-10">
+            <p className="text-xl md:text-2xl font-bold text-primary">
+              Our Promise: We install a structured, coordinated growth system that turns your digital presence into a predictable revenue engine.
+            </p>
+          </div>
         </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const WhatIsGrowthEngine = () => {
+  return (
+    <section className="py-24 bg-card border-y border-white/5">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-5xl font-bold mb-8">What is the Growth Engine?</h2>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-2xl text-gray-300 leading-relaxed mb-8">
+            It’s not a "marketing package." It’s a structured, coordinated growth system installed underneath your business.
+          </p>
+          <p className="text-xl text-gray-400">
+            Most businesses have fragmented tools that don't talk to each other. We fix the foundation first, then build a clear pathway that moves total strangers into booked appointments—consistently and automatically.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const VisualSystemBreakdown = () => {
+  const components = [
+    { title: "Searchability", desc: "Dominating local and industry search so you're found where it matters.", icon: <Search size={24} /> },
+    { title: "SEO", desc: "Technical and content optimization that builds long-term authority.", icon: <Globe size={24} /> },
+    { title: "Website Optimization", desc: "Turning your 'digital brochure' into a high-converting sales floor.", icon: <CheckCircle size={24} /> },
+    { title: "Authority", desc: "Establishing your brand as the obvious choice in your market.", icon: <Shield size={24} /> },
+    { title: "Lead Capture", desc: "24/7 AI-driven engagement so you never miss a connection.", icon: <MessageSquare size={24} /> },
+    { title: "Conversion Path", desc: "A clear, friction-free journey from click to customer.", icon: <Zap size={24} /> },
+    { title: "Automation", desc: "Backend systems that handle the follow-up so you don't have to.", icon: <Workflow size={24} /> }
+  ];
+
+  return (
+    <section className="py-24 container mx-auto px-4">
+      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">The System Components</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {components.map((c, i) => (
+          <div key={i} className="p-8 rounded-2xl bg-card border border-white/5 hover:border-primary/20 transition-all">
+            <div className="text-primary mb-6">{c.icon}</div>
+            <h3 className="text-xl font-bold mb-3">{c.title}</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">{c.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const TimelineSection = () => {
+  const phases = [
+    { 
+      title: "Phase 1: Deep Audit", 
+      desc: ["Uncovering the hidden leaks in your current digital presence.", "Identifying your highest-leverage growth opportunities."] 
+    },
+    { 
+      title: "Phase 2: Strategic Blueprint", 
+      desc: ["Designing the custom architecture for your growth system.", "Aligning metrics with your actual business goals."] 
+    },
+    { 
+      title: "Phase 3: Build & Optimize", 
+      desc: ["Installing the technical foundation and lead capture tools.", "Streamlining the conversion path for maximum ROI."] 
+    },
+    { 
+      title: "Phase 4: Activate & Scale", 
+      desc: ["Turning on the system and monitoring real-world performance.", "Scaling the parts of the engine that are driving revenue."] 
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-secondary/10 border-y border-white/5">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Your 4-Phase Growth Roadmap</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {phases.map((p, i) => (
+            <div key={i} className="relative">
+              <div className="text-primary font-black text-4xl mb-6 opacity-20">0{i+1}</div>
+              <h3 className="text-xl font-bold mb-4">{p.title}</h3>
+              <div className="space-y-2">
+                {p.desc.map((line, idx) => (
+                  <p key={idx} className="text-gray-400 text-sm leading-relaxed">• {line}</p>
+                ))}
+              </div>
+              {i < phases.length - 1 && (
+                <div className="hidden lg:block absolute top-12 -right-4 text-white/10">
+                  <ArrowRight size={24} />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const BeforeAfter = () => {
+  const points = [
+    { before: "Guessing & Hoping", after: "Coordinated Growth System" },
+    { before: "Fragmented Tools", after: "Clear, Actionable Metrics" },
+    { before: "Random Marketing Tactics", after: "High-Conversion Flow" },
+    { before: "Low Visibility Clarity", after: "Predictable Sales Pipeline" },
+    { before: "Revenue Plateau", after: "Scalable Growth Engine" }
+  ];
+
+  return (
+    <section className="py-24 container mx-auto px-4">
+      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">The Transformation</h2>
+      <div className="max-w-4xl mx-auto grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+        <div className="bg-card p-8 md:p-12">
+          <h3 className="text-2xl font-bold mb-8 text-red-500 flex items-center gap-2">
+            <X size={24} /> Before
+          </h3>
+          <ul className="space-y-6">
+            {points.map((p, i) => (
+              <li key={i} className="text-gray-400 font-medium line-through decoration-red-500/50">{p.before}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="bg-card p-8 md:p-12">
+          <h3 className="text-2xl font-bold mb-8 text-green-500 flex items-center gap-2">
+            <CheckCircle size={24} /> After
+          </h3>
+          <ul className="space-y-6">
+            {points.map((p, i) => (
+              <li key={i} className="text-white font-bold">{p.after}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Deliverables = () => {
+  const items = [
+    "Digital Ecosystem Audit Document",
+    "Custom Growth Roadmap",
+    "Technical SEO Correction Plan",
+    "Conversion Optimization Blueprint",
+    "AI Automation System Setup",
+    "Revenue Pathway Diagram"
+  ];
+
+  return (
+    <section className="py-24 bg-card/50 border-y border-white/5">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">Concrete Deliverables</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {items.map((item, i) => (
+              <div key={i} className="flex items-center gap-4 p-6 rounded-2xl bg-background border border-white/5 shadow-lg">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <CheckCircle size={20} />
+                </div>
+                <span className="font-bold text-lg">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
