@@ -95,7 +95,7 @@ const TeamHero = () => {
 const TeamGrid = () => {
   const team = [
     {
-      name: "Alex Rivera",
+      name: "Arvin",
       title: "Technical Lead",
       desc: "Specializing in custom AI integrations and workflow automation systems.",
       image: team2
