@@ -126,7 +126,7 @@ const TeamGrid = () => {
             transition={{ delay: i * 0.1 }}
             className="group"
           >
-            <div className="relative aspect-square mb-8 overflow-hidden rounded-3xl border border-white/10 group-hover:border-primary/50 transition-all">
+            <div className="relative aspect-[4/5] mb-8 overflow-hidden rounded-3xl border border-white/10 group-hover:border-primary/50 transition-all">
               <img 
                 src={member.image} 
                 alt={member.name} 
