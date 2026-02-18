@@ -409,36 +409,34 @@ const PackagesGrid = () => {
         </div>
 
         {/* Tier 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start lg:flex-row-reverse">
-          <div className="lg:order-2">
-            <span className="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">Tier 2</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Systems Integration & Custom Automation</h2>
-            <p className="text-2xl text-white font-bold mb-6 italic">Bridge the Gap Between Your Tools and Your Talent.</p>
-            <p className="text-gray-300 text-lg leading-relaxed mb-10">
-              Ideal for professional service firms and growing teams who need their tech stack to talk to each other. We don't just give you a tool; we build a workflow.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
-              {[
-                { title: "CRM Migration & Cleanup", desc: "Organizing your data so it’s actually usable.", icon: <Users size={24} /> },
-                { title: "Workflow Automation", desc: "Using AI to handle repetitive back-office tasks.", icon: <Zap size={24} /> },
-                { title: "Custom GPTs & Training", desc: "Building internal AI tools trained on your company data.", icon: <Bot size={24} /> }
-              ].map((item, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-background border border-white/5">
-                  <div className="text-accent mb-4">{item.icon}</div>
-                  <h4 className="font-bold text-white mb-2">{item.title}</h4>
-                  <p className="text-sm text-gray-400">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="p-8 rounded-3xl bg-background border border-accent/20 flex flex-col sm:flex-row items-center justify-between gap-6">
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">Investment</p>
-                <p className="text-3xl font-bold text-accent">Project-based</p>
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-accent font-bold uppercase tracking-widest text-sm mb-4 block">Tier 2</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Systems Integration & Custom Automation</h2>
+          <p className="text-2xl text-white font-bold mb-6 italic">Bridge the Gap Between Your Tools and Your Talent.</p>
+          <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+            Ideal for professional service firms and growing teams who need their tech stack to talk to each other. We don't just give you a tool; we build a workflow.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 text-left">
+            {[
+              { title: "CRM Migration & Cleanup", desc: "Organizing your data so it’s actually usable.", icon: <Users size={24} /> },
+              { title: "Workflow Automation", desc: "Using AI to handle repetitive back-office tasks.", icon: <Zap size={24} /> },
+              { title: "Custom GPTs & Training", desc: "Building internal AI tools trained on your company data.", icon: <Bot size={24} /> }
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl bg-background border border-white/5 h-full">
+                <div className="text-accent mb-4">{item.icon}</div>
+                <h4 className="font-bold text-white mb-2">{item.title}</h4>
+                <p className="text-sm text-gray-400">{item.desc}</p>
               </div>
-              <a href="https://calendly.com/scottpralinsky/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold transition-all whitespace-nowrap">
-                Schedule Discovery Call
-              </a>
+            ))}
+          </div>
+          <div className="p-8 rounded-3xl bg-background border border-accent/20 flex flex-col sm:flex-row items-center justify-between gap-6 max-w-3xl mx-auto">
+            <div className="text-left">
+              <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">Investment</p>
+              <p className="text-3xl font-bold text-accent">Project-based</p>
             </div>
+            <a href="https://calendly.com/scottpralinsky/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold transition-all whitespace-nowrap shadow-lg shadow-accent/20 hover:-translate-y-1">
+              Schedule Discovery Call
+            </a>
           </div>
         </div>
 
