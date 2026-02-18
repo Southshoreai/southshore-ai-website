@@ -111,9 +111,22 @@ const ServiceHero = () => {
           <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
             Your Marketing Isn’t Broken. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Your Foundation Is.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10">
-            Whether it’s a high-value sales lead or a critical stakeholder inquiry, timing is everything. Our AI-driven engagement tools ensure your organization is available 24/7, providing instant, intelligent responses that move the needle.
-          </p>
+          <div className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10 text-left md:text-center flex flex-col items-center">
+            <ul className="space-y-3 inline-block text-left">
+              {[
+                "You’re spending money but can’t trace ROI.",
+                "Your website looks fine but doesn’t convert.",
+                "You post on social media but nothing compounds.",
+                "You don’t know which lever actually drives revenue.",
+                "You’re guessing."
+              ].map((point, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="text-red-500 font-bold">•</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
       </div>
     </section>
