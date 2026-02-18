@@ -44,7 +44,7 @@ const Navbar = () => {
           <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
           <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
           <div className="flex items-center gap-4 ml-4">
-            <a href="tel:6175450717" className="text-primary font-bold text-sm">(617) 545-0717</a>
+            <a href="tel:6175450717" className="text-primary font-bold text-sm">Talk to our AI Assistant</a>
             <a 
               href="https://calendly.com/scottpralinsky/30-minute-meeting" 
               target="_blank" 
