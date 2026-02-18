@@ -148,7 +148,7 @@ const StrategicShift = () => {
                 <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
                   <Zap size={24} />
                 </div>
-                <h3 className="text-2xl font-bold">Foundation First</h3>
+                <h3 className="text-2xl font-bold">The Big Promise</h3>
               </div>
               <ul className="space-y-6">
                 <li className="flex gap-4">
