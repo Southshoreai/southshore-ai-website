@@ -313,44 +313,6 @@ const Deliverables = () => {
   );
 };
 
-const ComparisonTable = () => {
-  const rows = [
-    { feature: "Best For", engine: "SMBs, Local Services, Coaches", advisory: "Nonprofits, Boards, Complex Orgs" },
-    { feature: "Primary Goal", engine: "Lead Gen & Customer Acquisition", advisory: "Efficiency, Governance & Transformation" },
-    { feature: "Format", engine: "Productized Implementation", advisory: "Bespoke Consulting & Roadmaps" },
-    { feature: "Tech Focus", engine: "Foundation, SEO, Lead Capture", advisory: "Custom Integration & Infrastructure" },
-    { feature: "Duration", engine: "Ongoing Monthly Partnership", advisory: "Project-based or Retainer" },
-    { feature: "Investment", engine: "Fixed Monthly Subscription", advisory: "Custom Quote based on Scope" },
-  ];
-
-  return (
-    <section className="py-24 container mx-auto px-4">
-      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Which Path is Right for You?</h2>
-      <div className="max-w-5xl mx-auto overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-card">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-white/5">
-                <th className="p-6 md:p-8 text-xl font-bold border-b border-white/10">Feature</th>
-                <th className="p-6 md:p-8 text-xl font-bold border-b border-white/10 text-primary">The Growth Engine</th>
-                <th className="p-6 md:p-8 text-xl font-bold border-b border-white/10 text-accent">Strategic Advisory</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, i) => (
-                <tr key={i} className="hover:bg-white/5 transition-colors">
-                  <td className="p-6 md:p-8 font-bold text-gray-400 border-b border-white/5">{row.feature}</td>
-                  <td className="p-6 md:p-8 border-b border-white/5">{row.engine}</td>
-                  <td className="p-6 md:p-8 border-b border-white/5">{row.advisory}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const PackagesGrid = () => {
   return (
@@ -563,7 +525,6 @@ export default function PackagesPage() {
     <div className="min-h-screen bg-background text-foreground font-sans">
       <Navbar />
       <Hero />
-      <ComparisonTable />
       <PackagesGrid />
       <Guarantee />
       <FinalCTA />
