@@ -219,19 +219,63 @@ const SystemDiagram = () => {
   );
 };
 
-const FoundationIntegration = () => {
+const Timeline = () => {
+  const phases = [
+    {
+      title: "Phase 1: Deep Audit",
+      duration: "Week 1–2",
+      items: ["Technical review", "Search audit", "Website breakdown", "Competitive scan"]
+    },
+    {
+      title: "Phase 2: Strategic Blueprint",
+      duration: "Week 3",
+      items: ["Clear growth map", "Priority ranking", "Revenue leverage identification"]
+    },
+    {
+      title: "Phase 3: Build & Optimize",
+      duration: "Weeks 4–8",
+      items: ["Structural fixes", "Messaging upgrades", "Conversion improvements", "Automation installs"]
+    },
+    {
+      title: "Phase 4: Activate & Scale",
+      duration: "Ongoing",
+      items: ["Measured traffic", "Data tracking", "Ongoing refinement"]
+    }
+  ];
+
   return (
     <section className="py-24 bg-secondary/10 relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold mb-8">Part of Your Strategic Foundation</h2>
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gray-300 text-xl leading-relaxed mb-12">
-            These tools are not just "add-ons." They are core components of the South Shore AI Foundation. Whether we are implementing these as part of our Growth Engine for SMBs or as part of a Digital Transformation for a large nonprofit, the goal remains the same:
-          </p>
-          <div className="inline-block p-8 rounded-3xl bg-background border border-primary/20 shadow-2xl">
-            <p className="text-2xl md:text-3xl font-bold italic text-primary">
-              "Build systems that work for you, so you don't have to work for your systems."
-            </p>
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Timeline</h2>
+        
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {phases.map((phase, idx) => (
+              <div key={idx} className="relative group">
+                {/* Connector Line (Desktop) */}
+                {idx !== phases.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-white/10 group-hover:bg-primary/50 transition-colors z-0"></div>
+                )}
+                
+                <div className="relative z-10 bg-card border border-white/10 rounded-2xl p-6 h-full hover:border-primary/30 transition-all hover:-translate-y-1">
+                  <div className="w-16 h-16 rounded-full bg-background border-4 border-card flex items-center justify-center text-xl font-bold text-primary mb-6 shadow-xl mx-auto lg:mx-0 relative">
+                    {idx + 1}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-2">{phase.title}</h3>
+                  <p className="text-accent text-sm font-bold uppercase tracking-wider mb-6">{phase.duration}</p>
+                  
+                  <ul className="space-y-3">
+                    {phase.items.map((item, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-gray-400">
+                        <span className="text-primary">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -340,7 +384,7 @@ export default function ServicesPage() {
       <ServiceHero />
       <StrategicShift />
       <SystemDiagram />
-      <FoundationIntegration />
+      <Timeline />
       <WhoThisIsFor />
       <FAQ />
       <FinalCTA />
