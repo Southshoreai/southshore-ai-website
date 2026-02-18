@@ -164,7 +164,7 @@ const StrategicShift = () => {
                 </li>
                 <li className="flex gap-4">
                   <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
-                  <span>Intelligent triage of stakeholder inquiries</span>
+                  <span>A coordinated revenue engine.</span>
                 </li>
               </ul>
             </div>
