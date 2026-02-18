@@ -109,7 +109,7 @@ const ServiceHero = () => {
             Responsiveness at Scale
           </span>
           <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
-            Never Miss a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Connection.</span>
+            Your Marketing Isn’t Broken. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Your Foundation Is.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-10">
             Whether it’s a high-value sales lead or a critical stakeholder inquiry, timing is everything. Our AI-driven engagement tools ensure your organization is available 24/7, providing instant, intelligent responses that move the needle.
