@@ -175,21 +175,6 @@ const TwoPillars = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-background/50 p-10 rounded-3xl border border-white/10 hover:border-primary/30 transition-all flex flex-col"
-          >
-            <h3 className="text-3xl font-bold mb-6 text-primary">Strategic Consulting & Advisory</h3>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
-              For Nonprofits, Complex Organizations, and Boards. We provide high-level AI roadmaps, digital transformation strategy, and executive advisory to help established organizations navigate the AI shift without the noise.
-            </p>
-            <a href="#strategy" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
-              Learn More About Consulting <ArrowRight size={20} />
-            </a>
-          </motion.div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             className="bg-background/50 p-10 rounded-3xl border border-white/10 hover:border-accent/30 transition-all flex flex-col"
           >
             <h3 className="text-3xl font-bold mb-6 text-accent">The Growth Engine</h3>
@@ -198,6 +183,21 @@ const TwoPillars = () => {
             </p>
             <a href="#growth-engine" className="inline-flex items-center gap-2 text-accent font-bold hover:gap-3 transition-all">
               Explore the Growth Engine <ArrowRight size={20} />
+            </a>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="bg-background/50 p-10 rounded-3xl border border-white/10 hover:border-primary/30 transition-all flex flex-col"
+          >
+            <h3 className="text-3xl font-bold mb-6 text-primary">Strategic Consulting & Advisory</h3>
+            <p className="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
+              For Nonprofits, Complex Organizations, and Boards. We provide high-level AI roadmaps, digital transformation strategy, and executive advisory to help established organizations navigate the AI shift without the noise.
+            </p>
+            <a href="#strategy" className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+              Learn More About Consulting <ArrowRight size={20} />
             </a>
           </motion.div>
         </div>
