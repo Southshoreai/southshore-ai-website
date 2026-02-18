@@ -157,7 +157,7 @@ const StrategicShift = () => {
                   <p className="text-sm">It’s a missed donor connection.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-background/50 border border-white/5">
-                  <p className="font-bold text-white mb-2">For Complex Orgs</p>
+                  <p className="font-bold text-white mb-2 text-[16px]">A coordinated revenue engine.</p>
                   <p className="text-sm">It’s an operational bottleneck.</p>
                 </div>
               </div>
