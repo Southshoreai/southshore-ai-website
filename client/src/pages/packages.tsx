@@ -440,13 +440,6 @@ const PackagesGrid = () => {
               </a>
             </div>
           </div>
-          <div className="lg:order-1 relative group">
-            <div className="absolute inset-0 bg-accent/20 blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative p-10 rounded-3xl border border-white/10 bg-background shadow-2xl h-full flex flex-col justify-center">
-              <div className="space-y-8">
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Tier 3 */}
