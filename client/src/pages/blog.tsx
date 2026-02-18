@@ -38,7 +38,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
-          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">Engagement</Link>
+          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">Solution</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
           <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
