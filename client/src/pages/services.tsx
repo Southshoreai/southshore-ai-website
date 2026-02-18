@@ -469,6 +469,37 @@ const WhoItIsFor = () => {
   );
 };
 
+const FinalCTA = () => {
+  return (
+    <section className="py-24 bg-gradient-to-br from-primary/20 via-background to-accent/10">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to Professionalize Your Responsiveness?</h2>
+        <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+          Whether you need a full Growth Audit for your business or a high-level discussion on how AI can streamline your organization's communications, we're ready to help.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a 
+            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all shadow-xl hover:-translate-y-1"
+          >
+            Get Your Free Growth Audit
+          </a>
+          <a 
+            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 text-white px-10 py-5 rounded-full font-bold text-xl transition-all hover:-translate-y-1"
+          >
+            Schedule a Strategy Call
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className="bg-black py-16 border-t border-white/10">
