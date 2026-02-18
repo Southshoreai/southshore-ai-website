@@ -140,9 +140,7 @@ const StrategicShift = () => {
   return (
     <section className="py-24 bg-card border-y border-white/5">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-          </div>
+        <div className="max-w-3xl mx-auto">
           <div className="relative">
             <div className="absolute inset-0 bg-primary/20 blur-[100px] opacity-20"></div>
             <div className="relative bg-background p-8 rounded-3xl border border-white/10 shadow-2xl">
