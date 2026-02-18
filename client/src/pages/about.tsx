@@ -18,6 +18,9 @@ import {
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
 import headshot from "@assets/Scott_AI_Polo_Shirt_Professional_1767385616187.png";
+import team1 from "@assets/WhatsApp_Image_2026-02-12_at_5.33.40_PM_1770978022473.jpeg";
+import team2 from "@assets/4_1770978022474.png";
+import team3 from "@assets/IMG_6385_(1)_1770987075422.jpg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +44,6 @@ const Navbar = () => {
           <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">Engagement</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
-          <Link href="/team" className="text-sm font-medium hover:text-primary transition-colors">Team</Link>
           <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
           <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
           <a href="tel:6175450717" className="flex items-center gap-2 text-sm font-bold text-accent hover:text-orange-400 transition-colors">
@@ -71,7 +73,6 @@ const Navbar = () => {
           <Link href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement</Link>
           <Link href="/packages" onClick={() => setIsOpen(false)} className="text-lg font-medium">Packages</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium">About</Link>
-          <Link href="/team" onClick={() => setIsOpen(false)} className="text-lg font-medium">Team</Link>
           <Link href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium">Blog</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</Link>
           <a href="tel:6175450717" className="flex items-center gap-3 text-lg font-bold text-accent">
@@ -212,6 +213,62 @@ const WhyUs = () => {
   );
 };
 
+const TeamGrid = () => {
+  const team = [
+    {
+      name: "Arvin",
+      title: "Technical Lead",
+      desc: "Specializing in custom AI integrations and workflow automation systems.",
+      image: team2
+    },
+    {
+      name: "Scott",
+      title: "Founder & Principal Strategist",
+      desc: "MIT-trained AI expert with over 20 years of executive leadership experience.",
+      image: team1
+    },
+    {
+      name: "Von",
+      title: "Growth Architect",
+      desc: "Expert in digital visibility, searchability, and revenue optimization systems.",
+      image: team3
+    }
+  ];
+
+  return (
+    <section className="py-24 container mx-auto px-4 bg-card/30">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Team</h2>
+        <p className="text-gray-400">Combining deep business leadership with world-class AI technical expertise.</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        {team.map((member, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="group"
+          >
+            <div className="relative aspect-square mb-8 overflow-hidden rounded-3xl border border-white/10 group-hover:border-primary/50 transition-all">
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
+            <p className="text-primary font-bold mb-4 uppercase tracking-wider text-sm">{member.title}</p>
+            <p className="text-gray-400 leading-relaxed">{member.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const Leadership = () => {
   return (
     <section className="py-24 bg-card/50">
@@ -303,7 +360,7 @@ export default function AboutPage() {
       <WhoWeHelp />
       <HowWeWork />
       <WhyUs />
-      <Leadership />
+      <TeamGrid />
       <FinalCTA />
       <Footer />
     </div>
