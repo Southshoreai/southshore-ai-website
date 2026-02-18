@@ -470,9 +470,7 @@ const PackagesGrid = () => {
                 <p className="text-sm text-gray-500 uppercase tracking-widest mb-1">Investment</p>
                 <p className="text-3xl font-bold">Retainer</p>
               </div>
-              <a href="https://calendly.com/scottpralinsky/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-full font-bold transition-all whitespace-nowrap">
-                Request a Private Briefing
-              </a>
+              <a href="https://calendly.com/scottpralinsky/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-full font-bold transition-all whitespace-nowrap">Request a Consultation</a>
             </div>
           </div>
           <div className="relative group">
