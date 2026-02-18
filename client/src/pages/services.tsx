@@ -379,24 +379,58 @@ const Deliverables = () => {
   );
 };
 
-const FAQ = () => {
-  const faqs = [
-    { q: "Is this just for marketing?", a: "No. While these tools are excellent for marketing, they are primarily efficiency tools. They are used by nonprofits to manage information, by consultants to triage leads, and by organizations to automate repetitive administrative tasks." },
-    { q: "How long does implementation take?", a: "Most of our AI engagement tools can be deployed within 2-4 weeks, depending on the complexity of your knowledge base and the depth of integration required." },
-    { q: "Do I need technical skills to manage this?", a: "Not at all. We build, train, and maintain the systems for you. You'll have access to a simple dashboard to see results and transcripts, but we handle the heavy lifting." }
-  ];
-
+const BeforeAfter = () => {
   return (
     <section className="py-24 bg-card/50">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="text-3xl font-bold mb-12 text-center">Common Questions</h2>
-        <div className="space-y-6">
-          {faqs.map((faq, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-background border border-white/5">
-              <h4 className="text-xl font-bold mb-4 text-primary">{faq.q}</h4>
-              <p className="text-gray-400 leading-relaxed">{faq.a}</p>
-            </div>
-          ))}
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Before / After Snapshot</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Before Column */}
+          <div className="p-8 rounded-3xl bg-background/50 border border-red-500/20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-red-500/50"></div>
+            <h3 className="text-xl font-bold mb-8 text-red-400 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-sm">✕</span>
+              Before Growth Engine
+            </h3>
+            <ul className="space-y-6">
+              {[
+                "Guessing",
+                "Fragmented tools",
+                "No data clarity",
+                "Random marketing",
+                "Revenue plateau"
+              ].map((item, i) => (
+                <li key={i} className="flex gap-4 text-gray-400">
+                  <span className="text-red-500/50 mt-1">•</span>
+                  <span className="text-lg">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* After Column */}
+          <div className="p-8 rounded-3xl bg-gradient-to-b from-primary/10 to-background border border-primary/30 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+            <h3 className="text-xl font-bold mb-8 text-primary flex items-center gap-3">
+              <span className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-sm">✓</span>
+              After Growth Engine
+            </h3>
+            <ul className="space-y-6">
+              {[
+                "Clear growth map",
+                "Coordinated channels",
+                "Measured conversion flow",
+                "Predictable pipeline",
+                "Confident scaling"
+              ].map((item, i) => (
+                <li key={i} className="flex gap-4 text-white">
+                  <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
+                  <span className="text-lg font-medium">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -459,7 +493,7 @@ export default function ServicesPage() {
       <SystemDiagram />
       <Timeline />
       <Deliverables />
-      <FAQ />
+      <BeforeAfter />
       <FinalCTA />
       <Footer />
     </div>
