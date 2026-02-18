@@ -498,8 +498,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TwoPillars />
-      <StrategicAdvisory />
       <GrowthEngine />
+      <StrategicAdvisory />
       <Philosophy />
       <WhoWeHelp />
       <CaseStudies />
