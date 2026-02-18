@@ -126,6 +126,9 @@ const ServiceHero = () => {
                 </li>
               ))}
             </ul>
+            <h2 className="text-2xl md:text-3xl font-bold mt-12 text-white">
+              The Growth Engine fixes the structure before you scale the traffic.
+            </h2>
           </div>
         </motion.div>
       </div>
