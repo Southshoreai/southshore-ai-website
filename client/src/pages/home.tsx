@@ -237,9 +237,9 @@ const StrategicAdvisory = () => {
               </div>
             ))}
           </div>
-          <a href="#" className="text-primary hover:text-white transition-colors underline underline-offset-4 font-medium">
+          <Link href="/blog" className="text-primary hover:text-white transition-colors underline underline-offset-4 font-medium">
             See our work with Nonprofits and Complex Organizations →
-          </a>
+          </Link>
         </motion.div>
         <div className="relative">
           <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-20"></div>
