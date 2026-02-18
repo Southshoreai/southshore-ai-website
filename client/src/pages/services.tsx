@@ -156,7 +156,7 @@ const StrategicShift = () => {
               <ul className="space-y-6">
                 <li className="flex gap-4">
                   <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
-                  <span>24/7 Availability across Voice, SMS, and Web</span>
+                  <span>Not more activity.</span>
                 </li>
                 <li className="flex gap-4">
                   <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
