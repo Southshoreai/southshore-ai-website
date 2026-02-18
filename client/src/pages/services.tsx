@@ -147,9 +147,6 @@ const StrategicShift = () => {
               <p>
                 In today’s digital landscape, "available during business hours" is no longer enough. Every missed call, unread website inquiry, or delayed response represents a missed opportunity for growth or a lapse in service.
               </p>
-              <p className="pt-4">
-                South Shore AI provides the technical infrastructure to ensure your organization never goes silent. We deploy "Lead Capture & Engagement" systems that act as a digital concierge—responding instantly, answering questions accurately, and triaging inquiries so your team can focus on high-level work.
-              </p>
             </div>
           </div>
           <div className="relative">
