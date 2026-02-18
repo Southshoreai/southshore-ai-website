@@ -255,7 +255,7 @@ const TeamGrid = () => {
               <img 
                 src={member.image} 
                 alt={member.name} 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105 group-hover:scale-100" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
