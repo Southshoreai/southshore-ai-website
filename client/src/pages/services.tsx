@@ -175,89 +175,45 @@ const StrategicShift = () => {
   );
 };
 
-const ServicesGrid = () => {
-  const services = [
-    {
-      icon: <MessageSquare size={32} />,
-      title: "Intelligent Voice AI",
-      value: "The Conversational Interface",
-      desc: "Static websites are becoming a thing of the past. Today’s users expect immediate interaction. Our Voice AI provides a sophisticated conversational layer to your digital presence, allowing users to speak naturally to your organization.",
-      apps: [
-        { type: "Business", use: "Convert browsers into booked appointments through a talking website." },
-        { type: "Consulting", use: "Provide immediate answers to complex service questions without human intervention." },
-        { type: "Nonprofits", use: "Offer a 24/7 information line for community members or volunteers." }
-      ],
-      features: ["Natural Language Processing (NLP)", "Trained on your knowledge base", "Direct calendar integration"]
-    },
-    {
-      icon: <Smartphone size={32} />,
-      title: "Instant Engagement Systems",
-      value: "Automated Responsiveness",
-      desc: "Responsiveness is the #1 factor in conversion and trust. If you can't answer the phone, our system ensures the conversation doesn't end there. By instantly shifting a missed voice call to a text-based engagement, you preserve the relationship.",
-      apps: [
-        { type: "Professional Services", use: "Ensure potential clients feel heard the moment they reach out." },
-        { type: "Local Businesses", use: "Stop the 'calling the next guy' cycle with a 5-second text back." },
-        { type: "Operations", use: "Reduce the 'phone tag' that eats up staff time every week." }
-      ],
-      features: ["Missed Call Text Back", "Automated SMS Triage", "Instant Lead Notifications"]
-    },
-    {
-      icon: <Bot size={32} />,
-      title: "The 24/7 Digital Concierge",
-      value: "Nuanced AI Chatbots",
-      desc: "A website shouldn't just be a brochure; it should be a functional member of your team. Our AI Chatbots are trained on your unique data, allowing them to provide nuanced, accurate support around the clock.",
-      apps: [
-        { type: "Complex Orgs", use: "Triage inquiries—answering simple stuff and escalating the complex." },
-        { type: "E-Commerce", use: "Handle pricing, shipping, and product questions instantly." },
-        { type: "Education", use: "Help users navigate resources or find specific documents within a large site." }
-      ],
-      features: ["Multi-page Knowledge Base", "Lead capture & qualification", "Seamless human hand-off"]
-    }
+const SystemDiagram = () => {
+  const steps = [
+    { title: "Searchability", icon: <Search size={24} /> },
+    { title: "SEO", icon: <Target size={24} /> },
+    { title: "Website", icon: <Smartphone size={24} /> },
+    { title: "Authority", icon: <Shield size={24} /> },
+    { title: "Lead Capture", icon: <Users size={24} /> },
+    { title: "Conversion Path", icon: <ArrowRight size={24} /> },
+    { title: "Automation", icon: <Zap size={24} /> }
   ];
 
   return (
-    <section className="py-24 container mx-auto px-4">
-      <div className="space-y-32">
-        {services.map((s, idx) => (
-          <div key={idx} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-start ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-            <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-              <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 shadow-lg shadow-primary/5">
-                {s.icon}
+    <section className="py-24 container mx-auto px-4 overflow-hidden">
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">The Growth System</h2>
+        <p className="text-gray-400">A unified flow for predictable results</p>
+      </div>
+      
+      <div className="relative max-w-6xl mx-auto">
+        {/* Connecting Line (Desktop) */}
+        <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-white/5 via-primary/50 to-white/5 -translate-y-1/2 z-0"></div>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 relative z-10">
+          {steps.map((step, idx) => (
+            <div key={idx} className="flex flex-col items-center group">
+              <div className="w-16 h-16 rounded-2xl bg-card border border-white/10 flex items-center justify-center text-primary group-hover:text-accent group-hover:border-accent/50 transition-all shadow-lg group-hover:shadow-accent/20 mb-6 bg-background relative z-10">
+                {step.icon}
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">{s.title}</h2>
-              <p className="text-accent font-bold mb-6 text-lg uppercase tracking-wider">{s.value}</p>
-              <p className="text-gray-300 text-lg leading-relaxed mb-10">{s.desc}</p>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-center">{step.title}</h3>
               
-              <div className="space-y-8">
-                <h4 className="font-bold text-white text-xl border-l-2 border-primary pl-4">How it Applies</h4>
-                {s.apps.map((app, i) => (
-                  <div key={i}>
-                    <span className="font-bold text-primary">{app.type}: </span>
-                    <span className="text-gray-400">{app.use}</span>
-                  </div>
-                ))}
-              </div>
+              {/* Mobile/Tablet Arrow (hidden on desktop last item) */}
+              {idx !== steps.length - 1 && (
+                <div className="lg:hidden mt-4 text-white/20">
+                  <ArrowRight size={16} className="rotate-90 md:rotate-0" />
+                </div>
+              )}
             </div>
-            
-            <div className={`bg-card p-10 rounded-3xl border border-white/10 shadow-xl ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-              <h4 className="text-xl font-bold mb-8 flex items-center gap-2">
-                <Zap size={20} className="text-accent" />
-                Key Features
-              </h4>
-              <ul className="space-y-6">
-                {s.features.map((f, i) => (
-                  <li key={i} className="flex gap-4 text-gray-300">
-                    <CheckCircle className="text-accent mt-1 shrink-0" size={18} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/5">
-                <p className="text-sm text-gray-500 italic">Part of our "Foundation First" integration. Designed to scale your responsiveness without increasing headcount.</p>
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -383,7 +339,7 @@ export default function ServicesPage() {
       <Navbar />
       <ServiceHero />
       <StrategicShift />
-      <ServicesGrid />
+      <SystemDiagram />
       <FoundationIntegration />
       <WhoThisIsFor />
       <FAQ />
