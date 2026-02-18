@@ -142,7 +142,7 @@ const StrategicShift = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">The High Cost of Silence</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">The Big Promise</h2>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
                 In today’s digital landscape, "available during business hours" is no longer enough. Every missed call, unread website inquiry, or delayed response represents a missed opportunity for growth or a lapse in service.
