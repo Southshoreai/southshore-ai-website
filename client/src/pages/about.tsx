@@ -48,7 +48,7 @@ const Navbar = () => {
           <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
           <a href="tel:6175450717" className="flex items-center gap-2 text-sm font-bold text-accent hover:text-orange-400 transition-colors">
             <Phone size={14} />
-            (617) 545-0717
+            Talk to our AI Assistant
           </a>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
@@ -76,7 +76,7 @@ const Navbar = () => {
           <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</Link>
           <a href="tel:6175450717" className="flex items-center gap-3 text-lg font-bold text-accent">
             <Phone size={20} />
-            (617) 545-0717
+            Talk to our AI Assistant
           </a>
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
