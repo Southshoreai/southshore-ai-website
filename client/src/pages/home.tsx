@@ -51,7 +51,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-6">
           <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
-          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Engagement</Link>
+          <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Solution</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
           <Link href="/team" className="text-sm font-medium hover:text-primary transition-colors">Team</Link>
@@ -76,7 +76,6 @@ const Navbar = () => {
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
-
       {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
