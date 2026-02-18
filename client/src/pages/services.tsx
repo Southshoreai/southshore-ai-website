@@ -142,7 +142,6 @@ const StrategicShift = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">The Big Promise</h2>
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>We install a predictable growth system underneath your business.</p>
             </div>
