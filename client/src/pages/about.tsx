@@ -19,7 +19,7 @@ import {
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
 import headshot from "@assets/Scott_AI_Polo_Shirt_Professional_1767385616187.png";
 import team1 from "@assets/WhatsApp_Image_2026-02-12_at_5.33.40_PM_1770978022473.jpeg";
-import team2 from "@assets/4_1770978022474.png";
+import team2 from "@assets/Arvin-2026_1771455510310.png";
 import team3 from "@assets/IMG_6385_(1)_1770987075422.jpg";
 
 const Navbar = () => {
