@@ -437,31 +437,32 @@ const BeforeAfter = () => {
   );
 };
 
-const FinalCTA = () => {
+const WhoItIsFor = () => {
+  const targets = [
+    { title: "$500k–$10M businesses", icon: <Briefcase size={24} /> },
+    { title: "Local service firms", icon: <Target size={24} /> },
+    { title: "Founder-led companies", icon: <Users size={24} /> },
+    { title: "Professional services", icon: <Shield size={24} /> },
+    { title: "Businesses already spending on marketing but not seeing leverage", icon: <Zap size={24} />, fullWidth: true }
+  ];
+
   return (
-    <section className="py-24 bg-gradient-to-br from-primary/20 via-background to-accent/10">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to Professionalize Your Responsiveness?</h2>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
-          Whether you need a full Growth Audit for your business or a high-level discussion on how AI can streamline your organization's communications, we're ready to help.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a 
-            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
-            target="_blank"
-            rel="noopener noreferrer" 
-            className="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all shadow-xl hover:-translate-y-1"
-          >
-            Get Your Free Growth Audit
-          </a>
-          <a 
-            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
-            target="_blank"
-            rel="noopener noreferrer" 
-            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 text-white px-10 py-5 rounded-full font-bold text-xl transition-all hover:-translate-y-1"
-          >
-            Schedule a Strategy Call
-          </a>
+    <section className="py-24 bg-secondary/10 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Who It’s For</h2>
+        
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          {targets.map((target, idx) => (
+            <div 
+              key={idx} 
+              className={`p-8 rounded-2xl bg-card border border-white/5 hover:border-primary/20 transition-all flex items-center gap-6 group ${target.fullWidth ? 'md:col-span-2' : ''}`}
+            >
+              <div className="w-12 h-12 rounded-xl bg-background flex items-center justify-center text-primary group-hover:text-accent group-hover:scale-110 transition-all shrink-0">
+                {target.icon}
+              </div>
+              <h3 className="text-xl font-bold">{target.title}</h3>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -494,6 +495,7 @@ export default function ServicesPage() {
       <Timeline />
       <Deliverables />
       <BeforeAfter />
+      <WhoItIsFor />
       <FinalCTA />
       <Footer />
     </div>
