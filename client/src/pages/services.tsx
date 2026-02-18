@@ -283,24 +283,97 @@ const Timeline = () => {
   );
 };
 
-const WhoThisIsFor = () => {
-  const audiences = [
-    { title: "For the Growth-Minded Business", desc: "Focus on ROI, lead conversion, and calendar density.", icon: <Target className="text-accent" size={24} /> },
-    { title: "For the Complex Organization", desc: "Focus on operational efficiency, stakeholder satisfaction, and staff productivity.", icon: <Users className="text-primary" size={24} /> },
-    { title: "For the Executive Leader", desc: "Focus on data-backed insights and a professionalized digital presence.", icon: <Shield className="text-white" size={24} /> }
+const Deliverables = () => {
+  const items = [
+    "Full digital ecosystem audit document",
+    "Prioritized action roadmap",
+    "Messaging clarity framework",
+    "SEO technical correction plan",
+    "Conversion optimization blueprint",
+    "Lead capture strategy",
+    "Revenue pathway diagram"
   ];
 
   return (
     <section className="py-24 container mx-auto px-4">
-      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">Flexible Solutions for Every Mission</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {audiences.map((a, i) => (
-          <div key={i} className="p-10 rounded-3xl bg-card border border-white/5 hover:border-primary/20 transition-all">
-            <div className="mb-6">{a.icon}</div>
-            <h3 className="text-xl font-bold mb-4">{a.title}</h3>
-            <p className="text-gray-400 leading-relaxed">{a.desc}</p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">What You Actually Deliver</h2>
+          <div className="space-y-6">
+            <p className="text-gray-400 text-lg mb-8">
+              We don't just give you "advice." We hand you a comprehensive, executable asset library that becomes the intellectual property of your business.
+            </p>
+            <ul className="space-y-4">
+              {items.map((item, i) => (
+                <li key={i} className="flex gap-4 items-center p-4 rounded-xl bg-card border border-white/5 hover:border-primary/20 transition-all">
+                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <CheckCircle size={16} />
+                  </div>
+                  <span className="font-medium text-lg">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        ))}
+        </div>
+
+        <div className="relative">
+          {/* Abstract background elements */}
+          <div className="absolute -top-10 -right-10 w-64 h-64 bg-accent/20 rounded-full blur-[80px] opacity-50"></div>
+          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/20 rounded-full blur-[80px] opacity-50"></div>
+
+          <div className="grid grid-cols-2 gap-4 relative z-10">
+            {/* Mock Document: Audit Dashboard */}
+            <div className="col-span-2 bg-card border border-white/10 rounded-xl p-4 shadow-2xl">
+              <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="text-xs text-gray-500 ml-2">Audit_Dashboard_v2.pdf</span>
+              </div>
+              <div className="space-y-3">
+                <div className="flex gap-4">
+                  <div className="w-1/3 h-20 bg-white/5 rounded-lg animate-pulse"></div>
+                  <div className="w-1/3 h-20 bg-white/5 rounded-lg animate-pulse"></div>
+                  <div className="w-1/3 h-20 bg-white/5 rounded-lg animate-pulse"></div>
+                </div>
+                <div className="h-32 bg-white/5 rounded-lg w-full"></div>
+              </div>
+            </div>
+
+            {/* Mock Document: Strategy Roadmap */}
+            <div className="bg-card border border-white/10 rounded-xl p-4 shadow-xl -rotate-2 hover:rotate-0 transition-transform duration-500">
+              <div className="flex items-center justify-between mb-4">
+                 <span className="text-xs font-bold text-accent uppercase">Strategy Map</span>
+                 <Shield size={14} className="text-gray-500" />
+              </div>
+              <div className="space-y-2">
+                <div className="h-2 bg-white/10 rounded w-3/4"></div>
+                <div className="h-2 bg-white/10 rounded w-1/2"></div>
+                <div className="h-2 bg-white/10 rounded w-full"></div>
+                <div className="h-2 bg-white/10 rounded w-5/6"></div>
+              </div>
+              <div className="mt-4 flex gap-2">
+                 <div className="w-6 h-6 rounded-full bg-primary/20"></div>
+                 <div className="w-6 h-6 rounded-full bg-white/10"></div>
+              </div>
+            </div>
+
+            {/* Mock Document: Funnel Map */}
+            <div className="bg-card border border-white/10 rounded-xl p-4 shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500">
+               <div className="flex items-center justify-between mb-4">
+                 <span className="text-xs font-bold text-primary uppercase">Funnel Flow</span>
+                 <ArrowRight size={14} className="text-gray-500" />
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-16 h-8 border-2 border-white/10 rounded flex items-center justify-center text-[8px] text-gray-500">TRAFFIC</div>
+                <div className="h-4 w-0.5 bg-white/10"></div>
+                <div className="w-16 h-8 border-2 border-primary/30 bg-primary/5 rounded flex items-center justify-center text-[8px] text-primary">LANDING</div>
+                <div className="h-4 w-0.5 bg-white/10"></div>
+                <div className="w-16 h-8 border-2 border-accent/30 bg-accent/5 rounded flex items-center justify-center text-[8px] text-accent">SALE</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -385,7 +458,7 @@ export default function ServicesPage() {
       <StrategicShift />
       <SystemDiagram />
       <Timeline />
-      <WhoThisIsFor />
+      <Deliverables />
       <FAQ />
       <FinalCTA />
       <Footer />
