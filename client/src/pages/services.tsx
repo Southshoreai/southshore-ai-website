@@ -149,7 +149,7 @@ const StrategicShift = () => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
                 <div className="p-4 rounded-xl bg-background/50 border border-white/5">
-                  <p className="font-bold text-accent mb-2">For Business</p>
+                  <p className="font-bold text-accent mb-2 text-[16px]">Not more activity.</p>
                   <p className="text-sm">It’s a lost customer.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-background/50 border border-white/5">
