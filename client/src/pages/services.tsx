@@ -473,10 +473,30 @@ const FinalCTA = () => {
   return (
     <section className="py-24 bg-gradient-to-br from-primary/20 via-background to-accent/10">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to Professionalize Your Responsiveness?</h2>
-        <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-12">
-          Whether you need a full Growth Audit for your business or a high-level discussion on how AI can streamline your organization's communications, we're ready to help.
-        </p>
+        <h2 className="text-4xl md:text-6xl font-bold mb-8">Clear Next Step</h2>
+        <div className="max-w-2xl mx-auto mb-12 space-y-4">
+          <p className="text-xl text-gray-300">
+            Stop guessing. Book a Growth Audit Strategy Call.
+          </p>
+          <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-left space-y-4">
+            <h4 className="font-bold text-white text-lg">What happens on this call:</h4>
+            <ul className="space-y-3">
+              <li className="flex gap-3 text-gray-400">
+                <CheckCircle className="text-primary shrink-0" size={20} />
+                <span>We review your current digital footprint and identify leaks.</span>
+              </li>
+              <li className="flex gap-3 text-gray-400">
+                <CheckCircle className="text-primary shrink-0" size={20} />
+                <span>We map out a 90-day implementation plan.</span>
+              </li>
+              <li className="flex gap-3 text-gray-400">
+                <CheckCircle className="text-primary shrink-0" size={20} />
+                <span>You leave with clarity, whether you hire us or not.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <a 
             href="https://calendly.com/scottpralinsky/30-minute-meeting" 
@@ -484,15 +504,7 @@ const FinalCTA = () => {
             rel="noopener noreferrer" 
             className="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white px-10 py-5 rounded-full font-bold text-xl transition-all shadow-xl hover:-translate-y-1"
           >
-            Get Your Free Growth Audit
-          </a>
-          <a 
-            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
-            target="_blank"
-            rel="noopener noreferrer" 
-            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 text-white px-10 py-5 rounded-full font-bold text-xl transition-all hover:-translate-y-1"
-          >
-            Schedule a Strategy Call
+            Book Your Growth Audit Strategy Call
           </a>
         </div>
       </div>
