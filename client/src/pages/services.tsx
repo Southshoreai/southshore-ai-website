@@ -150,6 +150,9 @@ const StrategicShift = () => {
                 </div>
                 <h3 className="text-2xl font-bold">The Big Promise</h3>
               </div>
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                We install a predictable growth system under your business.
+              </p>
               <ul className="space-y-6">
                 <li className="flex gap-4">
                   <CheckCircle className="text-primary mt-1 shrink-0" size={20} />
