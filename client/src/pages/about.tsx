@@ -216,10 +216,10 @@ const WhyUs = () => {
 const TeamGrid = () => {
   const team = [
     {
-      name: "Arvin",
-      title: "Technical Lead",
-      desc: "Specializing in custom AI integrations and workflow automation systems.",
-      image: team2
+      name: "Von",
+      title: "Growth Architect",
+      desc: "Expert in digital visibility, searchability, and revenue optimization systems.",
+      image: team3
     },
     {
       name: "Scott",
@@ -228,10 +228,10 @@ const TeamGrid = () => {
       image: team1
     },
     {
-      name: "Von",
-      title: "Growth Architect",
-      desc: "Expert in digital visibility, searchability, and revenue optimization systems.",
-      image: team3
+      name: "Arvin",
+      title: "Technical Lead",
+      desc: "Specializing in custom AI integrations and workflow automation systems.",
+      image: team2
     }
   ];
 
