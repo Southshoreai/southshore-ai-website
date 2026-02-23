@@ -321,7 +321,7 @@ const Deliverables = () => {
     <section className="py-24 container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">What You Actually Deliver</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">What We Actually Deliver</h2>
           <div className="space-y-6">
             <p className="text-gray-400 text-lg mb-8">
               We don't just give you "advice." We hand you a comprehensive, executable asset library that becomes the intellectual property of your business.
