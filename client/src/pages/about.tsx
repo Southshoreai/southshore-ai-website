@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
-import headshot from "@assets/Scott_AI_Polo_Shirt_Professional_1767385616187.png";
+import headshot from "@assets/Gemini_Generated_Image_1pcm21pcm21pcm21_1771841520951.png";
 import team1 from "@assets/Gemini_Generated_Image_nhl76ynhl76ynhl7_1771455598851.png";
 import team2 from "@assets/unnamed_(8)_1771839268365.png";
 import team3 from "@assets/IMG_6385_(1)_1770987075422.jpg";
