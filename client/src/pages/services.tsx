@@ -422,17 +422,60 @@ const Deliverables = () => {
             </div>
 
             {/* Mock Document: Funnel Map */}
-            <div className="bg-card border border-white/10 rounded-xl p-4 shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500">
-               <div className="flex items-center justify-between mb-4">
-                 <span className="text-xs font-bold text-primary uppercase">Funnel Flow</span>
-                 <ArrowRight size={14} className="text-gray-500" />
+            <div className="bg-card border border-white/10 rounded-xl p-6 shadow-xl rotate-2 hover:rotate-0 transition-transform duration-500 flex flex-col justify-between">
+               <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                 <span className="text-sm font-bold text-primary uppercase tracking-wider">Funnel Architecture</span>
+                 <ArrowRight size={16} className="text-primary" />
               </div>
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-16 h-8 border-2 border-white/10 rounded flex items-center justify-center text-[8px] text-gray-500">TRAFFIC</div>
-                <div className="h-4 w-0.5 bg-white/10"></div>
-                <div className="w-16 h-8 border-2 border-primary/30 bg-primary/5 rounded flex items-center justify-center text-[8px] text-primary">LANDING</div>
-                <div className="h-4 w-0.5 bg-white/10"></div>
-                <div className="w-16 h-8 border-2 border-accent/30 bg-accent/5 rounded flex items-center justify-center text-[8px] text-accent">SALE</div>
+              
+              <div className="flex flex-col gap-3 flex-grow justify-center">
+                {/* Traffic Source */}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Target size={20} className="text-gray-400" />
+                  </div>
+                  <div className="flex-grow">
+                    <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full w-[85%] bg-gray-500 rounded-full"></div>
+                    </div>
+                    <div className="flex justify-between mt-1">
+                      <span className="text-[10px] text-gray-500">Ad Traffic</span>
+                      <span className="text-[10px] text-gray-400 font-bold">8.5k</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Capture */}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                    <Users size={20} className="text-primary" />
+                  </div>
+                  <div className="flex-grow">
+                    <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full w-[45%] bg-primary rounded-full"></div>
+                    </div>
+                    <div className="flex justify-between mt-1">
+                      <span className="text-[10px] text-gray-500">Leads Captured</span>
+                      <span className="text-[10px] text-primary font-bold">3.8k</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Conversion */}
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
+                    <Zap size={20} className="text-accent" />
+                  </div>
+                  <div className="flex-grow">
+                    <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-full w-[15%] bg-accent rounded-full"></div>
+                    </div>
+                    <div className="flex justify-between mt-1">
+                      <span className="text-[10px] text-gray-500">Sales Closed</span>
+                      <span className="text-[10px] text-accent font-bold">1.2k</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
