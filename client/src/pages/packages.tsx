@@ -506,14 +506,49 @@ const FinalCTA = () => {
 const Footer = () => {
   return (
     <footer className="bg-black py-16 border-t border-white/10">
-      <div className="container mx-auto px-4 text-center">
-        <img src={logo} alt="South Shore AI" className="h-8 mb-8 mx-auto opacity-50" />
-        <p className="text-gray-600 text-sm mb-8">© {new Date().getFullYear()} South Shore AI. All rights reserved.</p>
-        <div className="flex justify-center gap-8 text-gray-500 text-sm">
-          <a href="/" className="hover:text-primary transition-colors">Home</a>
-          <a href="/services" className="hover:text-primary transition-colors">Services</a>
-          <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
+        <div className="col-span-1 md:col-span-1">
+          <img src={logo} alt="South Shore AI" className="h-8 mb-6 opacity-80" />
+          <p className="text-gray-500 leading-relaxed mb-6">
+            Navigating Tomorrow with AI Today. High-level AI strategy and productized growth solutions for mission-driven organizations and businesses.
+          </p>
         </div>
+        
+        <div>
+          <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Services</h4>
+          <ul className="space-y-3 text-gray-500">
+            <li><a href="#strategy" className="hover:text-primary transition-colors">Strategic Advisory</a></li>
+            <li><a href="#strategy" className="hover:text-primary transition-colors">Nonprofit AI Strategy</a></li>
+            <li><a href="#growth-engine" className="hover:text-primary transition-colors">The Growth Engine</a></li>
+            <li><a href="#" className="hover:text-primary transition-colors">Digital Transformation</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Company</h4>
+          <ul className="space-y-3 text-gray-500">
+            <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+            <li><a href="#case-studies" className="hover:text-primary transition-colors">Case Studies</a></li>
+            <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Contact</h4>
+          <ul className="space-y-3 text-gray-500">
+            <li className="flex items-start gap-3">
+              <div className="mt-1 text-accent"><Phone size={14} /></div>
+              <a href="tel:6175450717" className="hover:text-primary transition-colors">(617) 545-0717</a>
+            </li>
+            <li className="flex items-start gap-3">
+              <div className="mt-1 text-accent"><Target size={14} /></div>
+              <span>Whitman, MA</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="container mx-auto px-4 mt-16 pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
+        &copy; {new Date().getFullYear()} South Shore AI. All rights reserved.
       </div>
     </footer>
   );

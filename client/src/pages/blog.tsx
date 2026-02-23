@@ -278,31 +278,30 @@ const NewsletterSection = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-black py-20 border-t border-white/10">
+    <footer className="bg-black py-16 border-t border-white/10">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
-        <div>
+        <div className="col-span-1 md:col-span-1">
           <img src={logo} alt="South Shore AI" className="h-8 mb-6 opacity-80" />
           <p className="text-gray-500 leading-relaxed mb-6">
-            Navigating Tomorrow with AI Today. High-level AI strategy and productized growth solutions.
+            Navigating Tomorrow with AI Today. High-level AI strategy and productized growth solutions for mission-driven organizations and businesses.
           </p>
         </div>
         
         <div>
           <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Services</h4>
           <ul className="space-y-3 text-gray-500">
-            <li><a href="#" className="hover:text-primary transition-colors">Growth Engine</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">AI Integration</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">SEO & Visibility</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Consulting</a></li>
+            <li><a href="#strategy" className="hover:text-primary transition-colors">Strategic Advisory</a></li>
+            <li><a href="#strategy" className="hover:text-primary transition-colors">Nonprofit AI Strategy</a></li>
+            <li><a href="#growth-engine" className="hover:text-primary transition-colors">The Growth Engine</a></li>
+            <li><a href="#" className="hover:text-primary transition-colors">Digital Transformation</a></li>
           </ul>
         </div>
         
         <div>
           <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Company</h4>
           <ul className="space-y-3 text-gray-500">
-            <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Our Process</a></li>
-            <li><a href="#" className="hover:text-primary transition-colors">Careers</a></li>
+            <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+            <li><a href="#case-studies" className="hover:text-primary transition-colors">Case Studies</a></li>
             <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
           </ul>
         </div>
@@ -310,17 +309,19 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Contact</h4>
           <ul className="space-y-3 text-gray-500">
-            <li className="flex items-center gap-3">
-              <Phone size={14} className="text-accent" /> <a href="tel:6175450717" className="hover:text-primary transition-colors">(617) 545-0717</a>
+            <li className="flex items-start gap-3">
+              <div className="mt-1 text-accent"><Phone size={14} /></div>
+              <a href="tel:6175450717" className="hover:text-primary transition-colors">(617) 545-0717</a>
             </li>
-            <li className="flex items-center gap-3">
-              <Calendar size={14} className="text-accent" /> Whitman, MA
+            <li className="flex items-start gap-3">
+              <div className="mt-1 text-accent"><Target size={14} /></div>
+              <span>Whitman, MA</span>
             </li>
           </ul>
         </div>
       </div>
-      <div className="container mx-auto px-4 mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
-        &copy; 2026 South Shore AI. All rights reserved.
+      <div className="container mx-auto px-4 mt-16 pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
+        &copy; {new Date().getFullYear()} South Shore AI. All rights reserved.
       </div>
     </footer>
   );
