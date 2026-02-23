@@ -182,7 +182,7 @@ const ContactFormSection = () => {
         </div>
 
         {/* Right Column: Calendar */}
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 hidden">
           <div className="bg-card p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl flex-grow">
             <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
               <span className="bg-accent/20 text-accent w-10 h-10 rounded-full flex items-center justify-center text-sm">2</span>
