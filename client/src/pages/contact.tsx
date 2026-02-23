@@ -255,25 +255,6 @@ const AlternativeContact = () => {
   );
 };
 
-const MapSection = () => {
-  return (
-    <section className="py-24 container mx-auto px-4">
-      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">We're Local</h2>
-      <div className="aspect-[21/9] bg-card rounded-[40px] border border-white/10 shadow-2xl overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-700">
-        <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm z-10">
-           <div className="text-center p-8 bg-card border border-white/10 rounded-2xl shadow-xl">
-              <MapPin size={48} className="text-accent mx-auto mb-4" />
-              <p className="text-xl font-bold">Based in Whitman, MA</p>
-              <p className="text-gray-400">Serving the entire South Shore and businesses across the US.</p>
-           </div>
-        </div>
-        {/* Placeholder for Google Map Embed */}
-        <div className="w-full h-full bg-white/5 pattern-grid opacity-20"></div>
-      </div>
-    </section>
-  );
-};
-
 const ContactFAQ = () => {
   const faqs = [
     { 
@@ -416,7 +397,6 @@ export default function ContactPage() {
       <ContactHero />
       <ContactFormSection />
       <AlternativeContact />
-      <MapSection />
       <ContactFAQ />
       <FinalCTA />
       <TrustSection />
