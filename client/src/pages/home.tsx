@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
-import headshot from "@assets/Scott_AI_Polo_Shirt_Professional_1767385616187.png";
+import headshot from "@assets/Gemini_Generated_Image_1pcm21pcm21pcm21_1771841589461.png";
 import heroVideo from "@assets/generated_videos/abstract_blue_and_teal_data_flows_for_ai_business_background.mp4";
 
 // --- Components ---
