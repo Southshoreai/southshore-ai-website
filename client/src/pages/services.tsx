@@ -381,20 +381,43 @@ const Deliverables = () => {
             </div>
 
             {/* Mock Document: Strategy Roadmap */}
-            <div className="bg-card border border-white/10 rounded-xl p-4 shadow-xl -rotate-2 hover:rotate-0 transition-transform duration-500">
-              <div className="flex items-center justify-between mb-4">
-                 <span className="text-xs font-bold text-accent uppercase">Strategy Map</span>
-                 <Shield size={14} className="text-gray-500" />
+            <div className="bg-card border border-white/10 rounded-xl p-6 shadow-xl -rotate-2 hover:rotate-0 transition-transform duration-500">
+              <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                 <span className="text-sm font-bold text-accent uppercase tracking-wider">Strategy Map</span>
+                 <Shield size={16} className="text-accent" />
               </div>
-              <div className="space-y-2">
-                <div className="h-2 bg-white/10 rounded w-3/4"></div>
-                <div className="h-2 bg-white/10 rounded w-1/2"></div>
-                <div className="h-2 bg-white/10 rounded w-full"></div>
-                <div className="h-2 bg-white/10 rounded w-5/6"></div>
+              
+              {/* Timeline Steps */}
+              <div className="space-y-5 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[2px] before:bg-white/10">
+                <div className="relative pl-8">
+                  <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center z-10">
+                    <div className="w-2 h-2 rounded-full bg-accent"></div>
+                  </div>
+                  <h4 className="text-sm font-bold text-white mb-1">Phase 1: Foundation</h4>
+                  <p className="text-xs text-gray-500">CRM Setup & Data Migration</p>
+                </div>
+                
+                <div className="relative pl-8">
+                  <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-background border-2 border-white/20 flex items-center justify-center z-10">
+                  </div>
+                  <h4 className="text-sm font-bold text-gray-400 mb-1">Phase 2: Automation</h4>
+                  <p className="text-xs text-gray-600">Lead Nurture Sequences</p>
+                </div>
+                
+                <div className="relative pl-8">
+                  <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-background border-2 border-white/20 flex items-center justify-center z-10">
+                  </div>
+                  <h4 className="text-sm font-bold text-gray-400 mb-1">Phase 3: Scale</h4>
+                  <p className="text-xs text-gray-600">Paid Traffic Integration</p>
+                </div>
               </div>
-              <div className="mt-4 flex gap-2">
-                 <div className="w-6 h-6 rounded-full bg-primary/20"></div>
-                 <div className="w-6 h-6 rounded-full bg-white/10"></div>
+              
+              <div className="mt-8 pt-4 border-t border-white/5 flex justify-between items-center">
+                 <span className="text-xs text-gray-500">Q3 Roadmap</span>
+                 <div className="flex -space-x-2">
+                   <div className="w-6 h-6 rounded-full bg-primary/20 border border-card flex items-center justify-center text-[10px] text-primary">S</div>
+                   <div className="w-6 h-6 rounded-full bg-accent/20 border border-card flex items-center justify-center text-[10px] text-accent">A</div>
+                 </div>
               </div>
             </div>
 
