@@ -1,6 +1,6 @@
 import { Link } from "wouter";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import { 
   Phone, 
   MessageSquare, 
@@ -22,6 +22,29 @@ import {
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
 
 // --- Components ---
+
+const AnimatedCounter = ({ value, duration = 2, delay = 0, format = (v: number) => Math.round(v).toString() }: { value: number, duration?: number, delay?: number, format?: (v: number) => string }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [displayValue, setDisplayValue] = useState("0");
+
+  useEffect(() => {
+    if (isInView) {
+      const timeout = setTimeout(() => {
+        const controls = animate(0, value, {
+          duration: duration,
+          onUpdate(latest) {
+            setDisplayValue(format(latest));
+          },
+        });
+        return controls.stop;
+      }, delay * 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isInView, value, duration, delay, format]);
+
+  return <span ref={ref}>{displayValue}</span>;
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -340,17 +363,17 @@ const Deliverables = () => {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="bg-background/50 rounded-lg p-4 border border-white/5 flex flex-col justify-center">
                     <span className="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Leads</span>
-                    <span className="text-2xl font-bold text-white">1,248</span>
+                    <span className="text-2xl font-bold text-white"><AnimatedCounter value={1248} format={(v) => v.toLocaleString()} /></span>
                     <span className="text-xs text-green-400 mt-1 flex items-center">↑ 12% vs last month</span>
                   </div>
                   <div className="bg-background/50 rounded-lg p-4 border border-white/5 flex flex-col justify-center">
                     <span className="text-xs text-gray-500 uppercase tracking-wider mb-1">Conversion Rate</span>
-                    <span className="text-2xl font-bold text-primary">4.2%</span>
+                    <span className="text-2xl font-bold text-primary"><AnimatedCounter value={4.2} duration={2.5} delay={0.2} format={(v) => v.toFixed(1) + "%"} /></span>
                     <span className="text-xs text-green-400 mt-1 flex items-center">↑ 0.8% vs last month</span>
                   </div>
                   <div className="bg-background/50 rounded-lg p-4 border border-white/5 flex flex-col justify-center">
                     <span className="text-xs text-gray-500 uppercase tracking-wider mb-1">Cost Per Lead</span>
-                    <span className="text-2xl font-bold text-accent">$42.50</span>
+                    <span className="text-2xl font-bold text-accent">$<AnimatedCounter value={42.50} duration={2} delay={0.4} format={(v) => v.toFixed(2)} /></span>
                     <span className="text-xs text-green-400 mt-1 flex items-center">↓ $5.20 vs last month</span>
                   </div>
                 </div>
