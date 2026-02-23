@@ -142,7 +142,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a 
-              href="#growth-engine" 
+              href="/services" 
               className="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-orange-500/30"
             >
               Discover the Growth Engine
