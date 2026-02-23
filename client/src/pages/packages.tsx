@@ -41,25 +41,27 @@ const Navbar = () => {
           <img src={logo} alt="South Shore AI" className="h-10 md:h-12" />
         </a>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8 ml-auto">
           <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">Home</Link>
           <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors">Solution</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
           <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
           <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
-          <a href="tel:6175450717" className="flex items-center gap-2 text-sm font-bold text-accent hover:text-orange-400 transition-colors">
-            <Phone size={14} />
-            Talk to our AI Assistant
-          </a>
-          <a 
-            href="https://calendly.com/scottpralinsky/30-minute-meeting" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-accent hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg text-sm"
-          >
-            Discovery Call
-          </a>
+          <div className="flex items-center gap-6 ml-4 border-l border-white/10 pl-6">
+            <a href="tel:6175450717" className="flex items-center gap-2 text-sm font-bold text-accent hover:text-orange-400 transition-colors shrink-0">
+              <Phone size={14} />
+              Talk to our AI Assistant
+            </a>
+            <a 
+              href="https://calendly.com/scottpralinsky/30-minute-meeting" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-accent hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg text-sm shrink-0 whitespace-nowrap"
+            >
+              Discovery Call
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
