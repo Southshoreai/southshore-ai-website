@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link href="/services" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Solution</Link>
           <Link href="/packages" className="text-sm font-medium hover:text-primary transition-colors text-nowrap">Packages</Link>
           <Link href="/about" className="text-sm font-medium hover:text-primary transition-colors">About</Link>
-          <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors">Blog</Link>
+          
           <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">Contact</Link>
           <div className="flex items-center gap-4 ml-4">
             <a href="tel:6175450717" className="flex items-center gap-2 text-sm font-bold text-accent hover:text-orange-400 transition-colors">
@@ -69,7 +69,7 @@ const Navbar = () => {
           <Link href="/services" onClick={() => setIsOpen(false)} className="text-lg font-medium">Engagement</Link>
           <Link href="/packages" onClick={() => setIsOpen(false)} className="text-lg font-medium">Packages</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium">About</Link>
-          <Link href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium">Blog</Link>
+          
           <Link href="/contact" onClick={() => setIsOpen(false)} className="text-lg font-medium">Contact</Link>
           <a href="tel:6175450717" className="flex items-center gap-3 text-lg font-bold text-accent">
             <Phone size={20} />
