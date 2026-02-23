@@ -26,7 +26,7 @@ import {
 } from "lucide-react";
 
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
-import headshot from "@assets/Gemini_Generated_Image_1pcm21pcm21pcm21_1771841589461.png";
+import headshot from "@assets/Gemini_Generated_Image_3r7rqo3r7rqo3r7r_(1)_1771842376088.png";
 import heroVideo from "@assets/generated_videos/abstract_blue_and_teal_data_flows_for_ai_business_background.mp4";
 
 // --- Components ---
