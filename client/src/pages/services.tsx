@@ -321,20 +321,62 @@ const Deliverables = () => {
 
           <div className="grid grid-cols-2 gap-4 relative z-10">
             {/* Mock Document: Audit Dashboard */}
-            <div className="col-span-2 bg-card border border-white/10 rounded-xl p-4 shadow-2xl">
-              <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-xs text-gray-500 ml-2">Audit_Dashboard_v2.pdf</span>
-              </div>
-              <div className="space-y-3">
-                <div className="flex gap-4">
-                  <div className="w-1/3 h-20 bg-white/5 rounded-lg animate-pulse"></div>
-                  <div className="w-1/3 h-20 bg-white/5 rounded-lg animate-pulse"></div>
-                  <div className="w-1/3 h-20 bg-white/5 rounded-lg animate-pulse"></div>
+            <div className="col-span-2 bg-card border border-white/10 rounded-xl p-6 shadow-2xl">
+              <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <span className="text-sm font-medium text-gray-300 ml-2">Executive Overview</span>
                 </div>
-                <div className="h-32 bg-white/5 rounded-lg w-full"></div>
+                <div className="flex gap-2">
+                   <div className="px-3 py-1 bg-green-500/10 text-green-400 rounded-full text-xs font-bold border border-green-500/20">+24% Growth</div>
+                </div>
+              </div>
+              
+              {/* Dashboard Content */}
+              <div className="space-y-6">
+                {/* KPI Row */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-background/50 rounded-lg p-4 border border-white/5 flex flex-col justify-center">
+                    <span className="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Leads</span>
+                    <span className="text-2xl font-bold text-white">1,248</span>
+                    <span className="text-xs text-green-400 mt-1 flex items-center">↑ 12% vs last month</span>
+                  </div>
+                  <div className="bg-background/50 rounded-lg p-4 border border-white/5 flex flex-col justify-center">
+                    <span className="text-xs text-gray-500 uppercase tracking-wider mb-1">Conversion Rate</span>
+                    <span className="text-2xl font-bold text-primary">4.2%</span>
+                    <span className="text-xs text-green-400 mt-1 flex items-center">↑ 0.8% vs last month</span>
+                  </div>
+                  <div className="bg-background/50 rounded-lg p-4 border border-white/5 flex flex-col justify-center">
+                    <span className="text-xs text-gray-500 uppercase tracking-wider mb-1">Cost Per Lead</span>
+                    <span className="text-2xl font-bold text-accent">$42.50</span>
+                    <span className="text-xs text-green-400 mt-1 flex items-center">↓ $5.20 vs last month</span>
+                  </div>
+                </div>
+                
+                {/* Chart Area */}
+                <div className="bg-background/50 rounded-lg p-4 border border-white/5 h-40 flex items-end justify-between px-8 py-4 relative group cursor-pointer overflow-hidden">
+                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                   
+                   {/* Simulated Bar Chart */}
+                   <div className="w-8 bg-white/10 rounded-t-sm h-[30%] hover:bg-primary/50 transition-colors relative group-hover:h-[40%] duration-300"></div>
+                   <div className="w-8 bg-white/10 rounded-t-sm h-[45%] hover:bg-primary/50 transition-colors relative group-hover:h-[55%] duration-300"></div>
+                   <div className="w-8 bg-white/10 rounded-t-sm h-[25%] hover:bg-primary/50 transition-colors relative group-hover:h-[35%] duration-300"></div>
+                   <div className="w-8 bg-white/20 rounded-t-sm h-[60%] hover:bg-primary/50 transition-colors relative group-hover:h-[70%] duration-300"></div>
+                   <div className="w-8 bg-white/20 rounded-t-sm h-[80%] hover:bg-primary/50 transition-colors relative group-hover:h-[90%] duration-300"></div>
+                   <div className="w-8 bg-primary/80 rounded-t-sm h-[100%] hover:bg-primary transition-colors relative shadow-[0_0_15px_rgba(255,255,255,0.2)]"></div>
+                   
+                   {/* Chart Labels */}
+                   <div className="absolute bottom-1 left-0 w-full flex justify-between px-8">
+                     <span className="text-[10px] text-gray-600">Jan</span>
+                     <span className="text-[10px] text-gray-600">Feb</span>
+                     <span className="text-[10px] text-gray-600">Mar</span>
+                     <span className="text-[10px] text-gray-600">Apr</span>
+                     <span className="text-[10px] text-gray-600">May</span>
+                     <span className="text-[10px] text-primary font-bold">Jun</span>
+                   </div>
+                </div>
               </div>
             </div>
 
