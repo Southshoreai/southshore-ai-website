@@ -230,14 +230,6 @@ const AlternativeContact = () => {
       desc: "For questions, partnerships, or just to say hi.",
       link: "mailto:info@southshore.ai",
       cta: "Send Email →"
-    },
-    { 
-      title: "Visit Us", 
-      icon: <MapPin size={32} />, 
-      info: "Whitman, MA", 
-      desc: "Serving the South Shore and beyond.",
-      link: "https://maps.google.com",
-      cta: "Get Directions →"
     }
   ];
 
@@ -245,7 +237,7 @@ const AlternativeContact = () => {
     <section className="py-24 bg-secondary/10">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-16">Other Ways To Reach Us</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {cards.map((card, i) => (
             <div key={i} className="p-10 rounded-3xl bg-card border border-white/5 hover:border-primary/20 transition-all flex flex-col items-center">
               <div className="text-primary mb-6">{card.icon}</div>
