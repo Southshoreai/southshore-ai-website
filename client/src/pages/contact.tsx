@@ -226,9 +226,9 @@ const AlternativeContact = () => {
     { 
       title: "Email Us", 
       icon: <Mail size={32} />, 
-      info: "info@sparkyard.pro", 
+      info: "info@southshore.ai", 
       desc: "For questions, partnerships, or just to say hi.",
-      link: "mailto:info@sparkyard.pro",
+      link: "mailto:info@southshore.ai",
       cta: "Send Email →"
     },
     { 
