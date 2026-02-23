@@ -219,7 +219,7 @@ const AlternativeContact = () => {
       icon: <Phone size={32} />, 
       info: "(617) 545-0717", 
       desc: "Talk to our AI agent or leave a message. We call back fast.",
-      link: "tel:6175450717",
+      link: "tel:+16175450717",
       cta: "Click to Call →"
     },
     { 
