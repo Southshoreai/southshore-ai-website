@@ -118,8 +118,8 @@ const ContactFormSection = () => {
   });
 
   return (
-    <section className="py-20 container mx-auto px-4">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section className="py-20 container mx-auto px-4 flex justify-center">
+      <div className="w-full max-w-3xl">
         {/* Left Column: Form */}
         <div className="bg-card p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
           <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
