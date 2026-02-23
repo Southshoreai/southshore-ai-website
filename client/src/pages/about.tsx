@@ -19,7 +19,7 @@ import {
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
 import headshot from "@assets/Gemini_Generated_Image_1pcm21pcm21pcm21_1771841589461.png";
 import team1 from "@assets/Gemini_Generated_Image_1pcm21pcm21pcm21_1771841589461.png";
-import team2 from "@assets/unnamed_(8)_1771839268365.png";
+import team2 from "@assets/Gemini_Generated_Image_btd7xzbtd7xzbtd7_1771841627436.png";
 import team3 from "@assets/IMG_6385_(1)_1770987075422.jpg";
 
 const Navbar = () => {
