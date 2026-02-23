@@ -400,7 +400,7 @@ const Footer = () => {
           <h4 className="font-bold text-white mb-6 uppercase tracking-wider">Contact</h4>
           <ul className="space-y-3 text-gray-500">
             <li className="flex items-center gap-3">
-              <Phone size={14} className="text-accent" /> <a href="tel:6175450717" className="hover:text-primary transition-colors">(617) 545-0717</a>
+              <Phone size={14} className="text-accent" /> <a href="tel:+16175450717" className="hover:text-primary transition-colors">(617) 545-0717</a>
             </li>
             <li className="flex items-center gap-3">
               <MapPin size={14} className="text-accent" /> Whitman, MA
