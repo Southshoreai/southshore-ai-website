@@ -320,7 +320,6 @@ const TrustSection = () => {
   const elements = [
     { icon: <Star className="text-accent" size={24} />, title: "MIT-Trained AI Expert" },
     { icon: <Clock className="text-primary" size={24} />, title: "20+ Years Business Experience" },
-    { icon: <MapPin className="text-white" size={24} />, title: "Local South Shore Business" },
     { icon: <Shield className="text-accent" size={24} />, title: "Your Data Is Always Secure" }
   ];
 
