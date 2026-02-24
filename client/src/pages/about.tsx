@@ -218,7 +218,7 @@ const TeamGrid = () => {
   const team = [
     {
       name: "Von",
-      title: "Growth Architect",
+      title: "Director of Community & Client Success",
       desc: "Expert in digital visibility, searchability, and revenue optimization systems.",
       image: team3
     },
