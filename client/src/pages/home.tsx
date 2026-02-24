@@ -141,15 +141,15 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a 
+            <Link 
               href="/services" 
-              className="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-orange-500/30"
+              className="w-full sm:w-auto bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl hover:shadow-orange-500/30 text-center"
             >
               Discover the Growth Engine
-            </a>
+            </Link>
             <a 
               href="#strategy" 
-              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all"
+              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 text-white px-8 py-4 rounded-full font-bold text-lg transition-all text-center"
             >
               Strategic Advisory Options
             </a>
