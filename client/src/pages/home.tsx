@@ -491,6 +491,112 @@ const Chatbot = () => {
   );
 };
 
+const SubscriptionPopup = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  useEffect(() => {
+    // Show popup after 3 seconds
+    const timer = setTimeout(() => {
+      const hasSeenPopup = sessionStorage.getItem("hasSeenSubscriptionPopup");
+      if (!hasSeenPopup) {
+        setIsOpen(true);
+      }
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    sessionStorage.setItem("hasSeenSubscriptionPopup", "true");
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setTimeout(() => {
+        handleClose();
+      }, 2000);
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            onClick={handleClose}
+          />
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="relative w-full max-w-md bg-card border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+          >
+            <button 
+              onClick={handleClose}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            >
+              <X size={20} />
+            </button>
+            
+            <div className="p-8 sm:p-10 text-center">
+              <div className="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <Bot size={32} />
+              </div>
+              
+              {!subscribed ? (
+                <>
+                  <h3 className="text-2xl font-bold text-white mb-3">Get AI Insights Weekly</h3>
+                  <p className="text-gray-400 mb-8">
+                    Join our newsletter to receive the latest strategies on implementing AI in your business.
+                  </p>
+                  
+                  <form onSubmit={handleSubscribe} className="space-y-4">
+                    <input 
+                      type="email" 
+                      placeholder="Enter your email" 
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                    />
+                    <button 
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-all"
+                    >
+                      Subscribe Now
+                    </button>
+                  </form>
+                  <p className="text-xs text-gray-500 mt-6">
+                    We respect your privacy. No spam, ever.
+                  </p>
+                </>
+              ) : (
+                <div className="py-8">
+                  <div className="text-green-400 mb-4 flex justify-center">
+                    <CheckCircle size={48} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">You're in!</h3>
+                  <p className="text-gray-400">
+                    Thanks for subscribing. Check your inbox soon.
+                  </p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 selection:text-white">
@@ -505,6 +611,7 @@ export default function Home() {
       <WhyUs />
       <CTA />
       <Footer />
+      <SubscriptionPopup />
     </div>
   );
 }
