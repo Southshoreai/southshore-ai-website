@@ -230,7 +230,7 @@ const TeamGrid = () => {
     },
     {
       name: "Arvin",
-      title: "Technical Lead",
+      title: "Implementation & Automation Manager",
       desc: "Specializing in custom AI integrations and workflow automation systems.",
       image: team2
     }
