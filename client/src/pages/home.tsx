@@ -547,54 +547,24 @@ const SubscriptionPopup = () => {
               <X size={20} />
             </button>
             
-            <div className="p-8 sm:p-10 text-center relative z-10">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 border border-white/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-inner rotate-3">
-                <Bot size={36} className="-rotate-3" />
-              </div>
-              
-              {!subscribed ? (
-                <>
-                  <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Stay Ahead of the Curve</h3>
-                  <p className="text-gray-400 mb-8 leading-relaxed text-sm">
-                    Join our newsletter to receive the latest strategies on implementing AI in your business, delivered straight to your inbox.
-                  </p>
-                  
-                  <form onSubmit={handleSubscribe} className="space-y-4">
-                    <input 
-                      type="email" 
-                      placeholder="Enter your work email" 
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-background/60 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all text-center"
-                    />
-                    <button 
-                      type="submit"
-                      className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] border border-white/10"
-                    >
-                      Subscribe Now
-                    </button>
-                  </form>
-                  <p className="text-xs text-gray-500 mt-6 flex items-center justify-center gap-1.5">
-                    <CheckCircle size={12} className="text-green-500" />
-                    We respect your privacy. No spam, ever.
-                  </p>
-                </>
-              ) : (
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="py-10"
-                >
-                  <div className="w-20 h-20 bg-green-500/20 border border-green-500/30 text-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-                    <CheckCircle size={40} />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white mb-3">You're in!</h3>
-                  <p className="text-gray-400">
-                    Thanks for subscribing. Check your inbox soon for your first AI insight.
-                  </p>
-                </motion.div>
-              )}
+            <div className="p-8 sm:p-10 text-center relative z-10 h-[500px]">
+              <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+                  style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
+                  id="inline-q4Cy4rTD09A2MLJQpI4q" 
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="South Shore AI Newsletter Form"
+                  data-height="440"
+                  data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
+                  data-form-id="q4Cy4rTD09A2MLJQpI4q"
+                  title="South Shore AI Newsletter Form"
+              />
             </div>
             
             {/* Decorative background elements */}
