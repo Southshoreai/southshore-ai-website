@@ -493,8 +493,6 @@ const Chatbot = () => {
 
 const SubscriptionPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
     // Show popup after 3 seconds
@@ -507,19 +505,23 @@ const SubscriptionPopup = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      const script = document.createElement("script");
+      script.src = "https://link.msgsndr.com/js/form_embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+      return () => {
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
+    }
+  }, [isOpen]);
+
   const handleClose = () => {
     setIsOpen(false);
     sessionStorage.setItem("hasSeenSubscriptionPopup", "true");
-  };
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setTimeout(() => {
-        handleClose();
-      }, 2000);
-    }
   };
 
   return (
@@ -541,54 +543,29 @@ const SubscriptionPopup = () => {
           >
             <button 
               onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10 bg-black/50 p-1 rounded-full"
             >
               <X size={20} />
             </button>
             
-            <div className="p-8 sm:p-10 text-center">
-              <div className="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Bot size={32} />
-              </div>
-              
-              {!subscribed ? (
-                <>
-                  <h3 className="text-2xl font-bold text-white mb-3">Get AI Insights Weekly</h3>
-                  <p className="text-gray-400 mb-8">
-                    Join our newsletter to receive the latest strategies on implementing AI in your business.
-                  </p>
-                  
-                  <form onSubmit={handleSubscribe} className="space-y-4">
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email" 
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    />
-                    <button 
-                      type="submit"
-                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-all"
-                    >
-                      Subscribe Now
-                    </button>
-                  </form>
-                  <p className="text-xs text-gray-500 mt-6">
-                    We respect your privacy. No spam, ever.
-                  </p>
-                </>
-              ) : (
-                <div className="py-8">
-                  <div className="text-green-400 mb-4 flex justify-center">
-                    <CheckCircle size={48} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">You're in!</h3>
-                  <p className="text-gray-400">
-                    Thanks for subscribing. Check your inbox soon.
-                  </p>
-                </div>
-              )}
+            <div className="w-full pt-12 pb-4 px-4 min-h-[450px]">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+                style={{ width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+                id="inline-q4Cy4rTD09A2MLJQpI4q" 
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-trigger-value=""
+                data-activation-type="alwaysActivated"
+                data-activation-value=""
+                data-deactivation-type="neverDeactivate"
+                data-deactivation-value=""
+                data-form-name="South Shore AI Newsletter Form"
+                data-height="400"
+                data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
+                data-form-id="q4Cy4rTD09A2MLJQpI4q"
+                title="South Shore AI Newsletter Form"
+              />
             </div>
           </motion.div>
         </div>
