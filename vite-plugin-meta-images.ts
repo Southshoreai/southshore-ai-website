@@ -9,6 +9,13 @@ import path from 'path';
 export function metaImagesPlugin(): Plugin {
   return {
     name: 'vite-plugin-meta-images',
+    config(config) {
+      if (config.server) {
+        config.server.host = "::";
+      } else {
+        config.server = { host: "::" };
+      }
+    },
     transformIndexHtml(html) {
       const baseUrl = getDeploymentUrl();
       if (!baseUrl) {
