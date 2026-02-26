@@ -547,10 +547,10 @@ const SubscriptionPopup = () => {
               <X size={20} />
             </button>
             
-            <div className="p-8 sm:p-10 text-center relative z-10 h-[500px]">
+            <div className="p-2 sm:p-4 pt-10 text-center relative z-10 h-[520px] w-full overflow-hidden">
               <iframe
                   src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
-                  style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
+                  style={{ width: '100%', height: '100%', border: 'none', borderRadius: '16px', backgroundColor: 'transparent' }}
                   id="inline-q4Cy4rTD09A2MLJQpI4q" 
                   data-layout="{'id':'INLINE'}"
                   data-trigger-type="alwaysShow"
@@ -560,10 +560,11 @@ const SubscriptionPopup = () => {
                   data-deactivation-type="neverDeactivate"
                   data-deactivation-value=""
                   data-form-name="South Shore AI Newsletter Form"
-                  data-height="440"
+                  data-height="480"
                   data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
                   data-form-id="q4Cy4rTD09A2MLJQpI4q"
                   title="South Shore AI Newsletter Form"
+                  scrolling="no"
               />
             </div>
             
