@@ -252,24 +252,31 @@ const ArticleGrid = () => {
 
 const NewsletterSection = () => {
   return (
-    <section className="py-24 bg-card border-y border-white/10">
-      <div className="container mx-auto px-4 max-w-4xl text-center">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">Get Smarter Every Week</h2>
-        <p className="text-gray-400 text-xl mb-10">
+    <section className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-card border-y border-white/10 z-0"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-[100px] z-0 rounded-full"></div>
+      
+      <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
+        <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 border border-white/10 text-primary rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-inner rotate-3">
+          <Mail size={36} className="-rotate-3" />
+        </div>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Get Smarter Every Week</h2>
+        <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed">
           One email. One tip. Every Tuesday. No spam, no fluff—just one actionable idea to grow your business with AI.
         </p>
-        <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-6" onSubmit={(e) => e.preventDefault()}>
+        <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-8" onSubmit={(e) => e.preventDefault()}>
           <input 
             type="email" 
-            placeholder="Email Address" 
-            className="flex-grow bg-background border border-white/10 px-6 py-4 rounded-full text-white focus:outline-none focus:ring-2 focus:ring-primary"
+            placeholder="Enter your work email" 
+            className="flex-grow bg-background/60 border border-white/10 px-6 py-4 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all backdrop-blur-sm"
           />
-          <button className="bg-primary hover:bg-primary/80 text-white px-10 py-4 rounded-full font-bold transition-all shadow-xl shadow-primary/20">
-            Subscribe
+          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] border border-white/10 whitespace-nowrap">
+            Subscribe Now
           </button>
         </form>
-        <p className="text-gray-600 text-xs flex items-center justify-center gap-2">
-          <Shield size={12} /> 🔒 We hate spam too. Unsubscribe anytime.
+        <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
+          <Shield size={14} className="text-green-500" />
+          We respect your privacy. Unsubscribe anytime.
         </p>
       </div>
     </section>

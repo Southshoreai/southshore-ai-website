@@ -537,59 +537,69 @@ const SubscriptionPopup = () => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-md bg-card border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-md bg-card/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden shadow-primary/20"
           >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
             <button 
               onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+              className="absolute top-5 right-5 text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-full p-2 transition-all"
             >
               <X size={20} />
             </button>
             
-            <div className="p-8 sm:p-10 text-center">
-              <div className="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                <Bot size={32} />
+            <div className="p-8 sm:p-10 text-center relative z-10">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 border border-white/10 text-primary rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-inner rotate-3">
+                <Bot size={36} className="-rotate-3" />
               </div>
               
               {!subscribed ? (
                 <>
-                  <h3 className="text-2xl font-bold text-white mb-3">Get AI Insights Weekly</h3>
-                  <p className="text-gray-400 mb-8">
-                    Join our newsletter to receive the latest strategies on implementing AI in your business.
+                  <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">Stay Ahead of the Curve</h3>
+                  <p className="text-gray-400 mb-8 leading-relaxed text-sm">
+                    Join our newsletter to receive the latest strategies on implementing AI in your business, delivered straight to your inbox.
                   </p>
                   
                   <form onSubmit={handleSubscribe} className="space-y-4">
                     <input 
                       type="email" 
-                      placeholder="Enter your email" 
+                      placeholder="Enter your work email" 
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-background border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                      className="w-full bg-background/60 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all text-center"
                     />
                     <button 
                       type="submit"
-                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white font-bold py-3 px-4 rounded-xl shadow-lg transition-all"
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-[0.98] border border-white/10"
                     >
                       Subscribe Now
                     </button>
                   </form>
-                  <p className="text-xs text-gray-500 mt-6">
+                  <p className="text-xs text-gray-500 mt-6 flex items-center justify-center gap-1.5">
+                    <CheckCircle size={12} className="text-green-500" />
                     We respect your privacy. No spam, ever.
                   </p>
                 </>
               ) : (
-                <div className="py-8">
-                  <div className="text-green-400 mb-4 flex justify-center">
-                    <CheckCircle size={48} />
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="py-10"
+                >
+                  <div className="w-20 h-20 bg-green-500/20 border border-green-500/30 text-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+                    <CheckCircle size={40} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">You're in!</h3>
+                  <h3 className="text-3xl font-bold text-white mb-3">You're in!</h3>
                   <p className="text-gray-400">
-                    Thanks for subscribing. Check your inbox soon.
+                    Thanks for subscribing. Check your inbox soon for your first AI insight.
                   </p>
-                </div>
+                </motion.div>
               )}
             </div>
+            
+            {/* Decorative background elements */}
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/20 rounded-full blur-[80px]"></div>
+            <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-[80px]"></div>
           </motion.div>
         </div>
       )}
