@@ -545,7 +545,7 @@ const SubscriptionPopup = () => {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-md bg-card/90 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl overflow-hidden shadow-primary/20"
+            className="relative w-full max-w-md bg-[#1d293a] border border-white/10 rounded-3xl shadow-2xl overflow-hidden shadow-primary/20"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
             <button 
