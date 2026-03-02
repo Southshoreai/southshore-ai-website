@@ -560,7 +560,7 @@ const SubscriptionPopup = () => {
                   data-deactivation-type="neverDeactivate"
                   data-deactivation-value=""
                   data-form-name="South Shore AI Newsletter Form"
-                  data-height="438"
+                  data-height="undefined"
                   data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
                   data-form-id="q4Cy4rTD09A2MLJQpI4q"
                   title="South Shore AI Newsletter Form"
