@@ -493,7 +493,6 @@ const Chatbot = () => {
 
 const SubscriptionPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
@@ -507,19 +506,28 @@ const SubscriptionPopup = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      try {
+        const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+        if (data && (data.event === 'formSubmit' || data.type === 'submit' || data.type === 'form-submit' || data.message === 'formSubmit')) {
+          setSubscribed(true);
+          setTimeout(() => {
+            handleClose();
+          }, 3000);
+        }
+      } catch (e) {
+        // ignore JSON parse errors
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   const handleClose = () => {
     setIsOpen(false);
     sessionStorage.setItem("hasSeenSubscriptionPopup", "true");
-  };
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setTimeout(() => {
-        handleClose();
-      }, 2000);
-    }
   };
 
   return (
@@ -542,29 +550,43 @@ const SubscriptionPopup = () => {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-accent to-primary"></div>
             <button 
               onClick={handleClose}
-              className="absolute top-5 right-5 text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-full p-2 transition-all"
+              className="absolute top-5 right-5 text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-full p-2 transition-all z-20"
             >
               <X size={20} />
             </button>
             
-            <div className="p-2 sm:p-4 pt-10 text-center relative z-10 h-[520px] w-full overflow-hidden">
-              <iframe
-                  src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
-                  style={{ display: 'none', width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
-                  id="inline-q4Cy4rTD09A2MLJQpI4q" 
-                  data-layout="{'id':'INLINE'}"
-                  data-trigger-type="showAfter"
-                  data-trigger-value="3"
-                  data-activation-type="alwaysActivated"
-                  data-activation-value=""
-                  data-deactivation-type="neverDeactivate"
-                  data-deactivation-value=""
-                  data-form-name="South Shore AI Newsletter Form"
-                  data-height="438"
-                  data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
-                  data-form-id="q4Cy4rTD09A2MLJQpI4q"
-                  title="South Shore AI Newsletter Form"
-              />
+            <div className="p-2 sm:p-4 pt-10 text-center relative z-10 h-[520px] w-full flex flex-col justify-center items-center overflow-hidden">
+              {subscribed ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center h-full p-6 text-center space-y-4"
+                >
+                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 mb-2">
+                    <CheckCircle size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Thank you for subscribing to our Newsletter!</h3>
+                  <p className="text-gray-300">Welcome to South Shore AI</p>
+                </motion.div>
+              ) : (
+                <iframe
+                    src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+                    style={{ display: 'none', width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
+                    id="inline-q4Cy4rTD09A2MLJQpI4q" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="showAfter"
+                    data-trigger-value="3"
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="South Shore AI Newsletter Form"
+                    data-height="438"
+                    data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
+                    data-form-id="q4Cy4rTD09A2MLJQpI4q"
+                    title="South Shore AI Newsletter Form"
+                />
+              )}
             </div>
             
             {/* Decorative background elements */}
