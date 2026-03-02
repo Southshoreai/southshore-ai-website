@@ -555,7 +555,7 @@ const SubscriptionPopup = () => {
               <X size={20} />
             </button>
             
-            <div className="p-2 sm:p-4 pt-10 text-center relative z-10 h-[520px] w-full flex flex-col justify-center items-center overflow-hidden">
+            <div className="p-2 sm:p-4 pt-10 text-center relative z-10 h-[520px] w-full flex flex-col justify-center items-center overflow-hidden bg-[#1d293a]">
               {subscribed ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}
