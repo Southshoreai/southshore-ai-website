@@ -634,7 +634,6 @@ export default function Home() {
       <WhyUs />
       <CTA />
       <Footer />
-      <SubscriptionPopup />
     </div>
   );
 }
