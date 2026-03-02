@@ -509,15 +509,36 @@ const SubscriptionPopup = () => {
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       try {
+        console.log("Iframe message received:", event.data);
         const data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-        if (data && (data.event === 'formSubmit' || data.type === 'submit' || data.type === 'form-submit' || data.message === 'formSubmit')) {
+        console.log("Parsed iframe message data:", data);
+        
+        // LeadConnector form submit events usually have this structure
+        if (data && (
+            data.event === 'formSubmit' || 
+            data.type === 'submit' || 
+            data.type === 'form-submit' || 
+            data.message === 'formSubmit' ||
+            (data.name === 'formSubmit') ||
+            (data.name === 'form_submit') ||
+            (data.event === 'form_submit') ||
+            (data.message === 'form_submit') ||
+            (event.data.includes('formSubmit')) ||
+            (event.data.includes('form_submit'))
+        )) {
           setSubscribed(true);
           setTimeout(() => {
             handleClose();
           }, 3000);
         }
       } catch (e) {
-        // ignore JSON parse errors
+        // String messages might not be JSON, just check the string itself
+        if (typeof event.data === 'string' && (event.data.includes('submit') || event.data.includes('formSubmit'))) {
+          setSubscribed(true);
+          setTimeout(() => {
+            handleClose();
+          }, 3000);
+        }
       }
     };
 
