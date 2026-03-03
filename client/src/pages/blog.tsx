@@ -251,6 +251,19 @@ const ArticleGrid = () => {
 };
 
 const NewsletterSection = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://link.msgsndr.com/js/form_embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-card border-y border-white/10 z-0"></div>
@@ -264,20 +277,25 @@ const NewsletterSection = () => {
         <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed">
           One email. One tip. Every Tuesday. No spam, no fluff—just one actionable idea to grow your business with AI.
         </p>
-        <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-8" onSubmit={(e) => e.preventDefault()}>
-          <input 
-            type="email" 
-            placeholder="Enter your work email" 
-            className="flex-grow bg-background/60 border border-white/10 px-6 py-4 rounded-2xl text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all backdrop-blur-sm"
-          />
-          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] border border-white/10 whitespace-nowrap">
-            Subscribe Now
-          </button>
-        </form>
-        <p className="text-gray-500 text-sm flex items-center justify-center gap-2">
-          <Shield size={14} className="text-green-500" />
-          We respect your privacy. Unsubscribe anytime.
-        </p>
+        <div className="w-full max-w-xl mx-auto bg-[#1d293a] rounded-xl overflow-hidden shadow-xl mb-8 p-4 border border-white/10">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+            style={{ width: "100%", height: "450px", border: "none", borderRadius: "4px" }}
+            id="inline-q4Cy4rTD09A2MLJQpI4q"
+            data-layout='{"id":"INLINE"}'
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="South Shore AI Newsletter Form"
+            data-height="450"
+            data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
+            data-form-id="q4Cy4rTD09A2MLJQpI4q"
+            title="South Shore AI Newsletter Form"
+          ></iframe>
+        </div>
       </div>
     </section>
   );
