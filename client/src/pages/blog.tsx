@@ -267,7 +267,6 @@ const NewsletterSection = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-card border-y border-white/10 z-0"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-full bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-[100px] z-0 rounded-full"></div>
       
       <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
         <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 border border-white/10 text-primary rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-inner rotate-3">
