@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 
 export function NewsletterPopup() {
   const [shouldShow, setShouldShow] = useState(false);
@@ -65,27 +66,50 @@ export function NewsletterPopup() {
     }
   }, [shouldShow]);
 
+  const handleClose = () => {
+    setShouldShow(false);
+  };
+
   if (!shouldShow) return null;
 
-  // Render the exact embed code provided. LeadConnector's JS will handle the popup rendering
-  // based on the data attributes below (like data-trigger-type="showAfter").
   return (
-    <iframe
-      src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
-      style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
-      id="popup-q4Cy4rTD09A2MLJQpI4q" 
-      data-layout='{"id":"POPUP"}'
-      data-trigger-type="showAfter"
-      data-trigger-value="3"
-      data-activation-type="alwaysActivated"
-      data-activation-value=""
-      data-deactivation-type="neverDeactivate"
-      data-deactivation-value=""
-      data-form-name="South Shore AI Newsletter Form"
-      data-height="348"
-      data-layout-iframe-id="popup-q4Cy4rTD09A2MLJQpI4q"
-      data-form-id="q4Cy4rTD09A2MLJQpI4q"
-      title="South Shore AI Newsletter Form"
-    ></iframe>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      {/* Darkened background overlay with blur effect */}
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={handleClose}
+      />
+      
+      {/* Modal Content */}
+      <div className="relative w-full max-w-xl bg-background rounded-xl shadow-2xl overflow-hidden z-[101] animate-in fade-in zoom-in-95 duration-300 border border-white/10">
+        <button 
+          onClick={handleClose}
+          className="absolute right-4 top-4 p-2 bg-white/10 hover:bg-white/20 text-gray-400 hover:text-white rounded-full transition-all z-20"
+          aria-label="Close"
+        >
+          <X className="h-5 w-5" />
+        </button>
+        
+        <div className="w-full pt-10 px-4 pb-4 bg-[#1d293a]">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+            style={{ width: "100%", height: "450px", border: "none", borderRadius: "4px" }}
+            id="popup-q4Cy4rTD09A2MLJQpI4q" 
+            data-layout='{"id":"POPUP"}'
+            data-trigger-type="showAfter"
+            data-trigger-value="3"
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="South Shore AI Newsletter Form"
+            data-height="348"
+            data-layout-iframe-id="popup-q4Cy4rTD09A2MLJQpI4q"
+            data-form-id="q4Cy4rTD09A2MLJQpI4q"
+            title="South Shore AI Newsletter Form"
+          ></iframe>
+        </div>
+      </div>
+    </div>
   );
 }
