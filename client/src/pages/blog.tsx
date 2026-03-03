@@ -276,25 +276,23 @@ const NewsletterSection = () => {
         <p className="text-gray-300 text-lg md:text-xl mb-10 leading-relaxed">
           One email. One tip. Every Tuesday. No spam, no fluff—just one actionable idea to grow your business with AI.
         </p>
-        <div className="w-full max-w-xl mx-auto bg-[#1d293a] rounded-xl overflow-hidden shadow-xl mb-8 p-4 border border-white/10">
-          <iframe
-            src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
-            style={{ width: "100%", height: "450px", border: "none", borderRadius: "4px" }}
-            id="inline-q4Cy4rTD09A2MLJQpI4q"
-            data-layout='{"id":"INLINE"}'
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="South Shore AI Newsletter Form"
-            data-height="450"
-            data-layout-iframe-id="inline-q4Cy4rTD09A2MLJQpI4q"
-            data-form-id="q4Cy4rTD09A2MLJQpI4q"
-            title="South Shore AI Newsletter Form"
-          ></iframe>
-        </div>
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+          style={{ display: "none", width: "100%", height: "100%", border: "none", borderRadius: "4px" }}
+          id="popup-q4Cy4rTD09A2MLJQpI4q" 
+          data-layout='{"id":"POPUP"}'
+          data-trigger-type="showAfter"
+          data-trigger-value="3"
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="South Shore AI Newsletter Pop-up Form"
+          data-height="348"
+          data-layout-iframe-id="popup-q4Cy4rTD09A2MLJQpI4q"
+          data-form-id="q4Cy4rTD09A2MLJQpI4q"
+          title="South Shore AI Newsletter Pop-up Form"
+        ></iframe>
       </div>
     </section>
   );
