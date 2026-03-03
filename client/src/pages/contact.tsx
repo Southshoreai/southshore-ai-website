@@ -107,105 +107,21 @@ const ContactHero = () => {
 };
 
 const ContactFormSection = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    companyName: "",
-    website: "",
-    challenge: "",
-    message: ""
-  });
-
   return (
     <section className="py-20 container mx-auto px-4 flex justify-center">
-      <div className="w-full max-w-3xl">
-        {/* Left Column: Form */}
-        <div className="bg-card p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <span className="bg-primary/20 text-primary w-10 h-10 rounded-full flex items-center justify-center text-sm">1</span>
-            Step 1: Tell Us About You
+      <div className="w-full max-w-4xl">
+        <div className="bg-card p-4 md:p-8 rounded-3xl border border-white/10 shadow-2xl overflow-hidden">
+          <h2 className="text-3xl font-bold mb-8 flex items-center justify-center gap-3 text-center">
+            Book Your Free Growth Audit
           </h2>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">First Name <span className="text-red-500">*</span></label>
-                <input required type="text" className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Last Name <span className="text-red-500">*</span></label>
-                <input required type="text" className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none" />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Email <span className="text-red-500">*</span></label>
-                <input required type="email" className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Phone Number <span className="text-red-500">*</span></label>
-                <input required type="tel" className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none" />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Company Name</label>
-                <input type="text" className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-400">Website URL</label>
-                <input type="url" className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-400">What's Your Biggest Challenge? <span className="text-red-500">*</span></label>
-              <select required className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none appearance-none">
-                <option value="">Select an option</option>
-                <option value="leads">Getting More Leads</option>
-                <option value="converting">Converting Leads to Customers</option>
-                <option value="manual">Too Much Manual Work</option>
-                <option value="tech">Technology Confusion</option>
-                <option value="other">Something Else</option>
-              </select>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-gray-400">Anything else you want us to know? (Optional)</label>
-              <textarea rows={4} className="w-full bg-background border border-white/10 px-4 py-3 rounded-xl focus:ring-2 focus:ring-primary outline-none resize-none"></textarea>
-            </div>
-            <button className="w-full bg-primary hover:bg-primary/80 text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-primary/20 transition-all flex items-center justify-center gap-3">
-              Get My Free Audit <ArrowRight size={20} />
-            </button>
-            <p className="text-center text-xs text-gray-500 flex items-center justify-center gap-2">
-              <Shield size={12} /> 🔒 Your info is safe. We hate spam as much as you do.
-            </p>
-          </form>
-        </div>
-
-        {/* Right Column: Calendar */}
-        <div className="flex flex-col gap-12 hidden">
-          <div className="bg-card p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl flex-grow">
-            <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-              <span className="bg-accent/20 text-accent w-10 h-10 rounded-full flex items-center justify-center text-sm">2</span>
-              Step 2: Pick a Time
-            </h2>
-            <p className="text-gray-400 mb-8">Skip the form? Book directly with Scott.</p>
-            <div className="aspect-[4/5] md:aspect-auto md:h-[600px] w-full bg-background/50 rounded-2xl border border-white/5 flex items-center justify-center overflow-hidden">
-               {/* Embed Placeholder */}
-               <div className="text-center p-8">
-                 <Calendar size={64} className="text-primary/20 mx-auto mb-6" />
-                 <p className="text-gray-500 font-medium">GoHighLevel Calendar Widget Embed</p>
-                 <p className="text-xs text-gray-600 mt-2">Available times shown in visitor's timezone</p>
-                 <a 
-                   href="https://calendly.com/scottpralinsky/30-minute-meeting" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   className="mt-8 inline-flex items-center gap-2 text-primary font-bold hover:underline"
-                 >
-                   Open External Scheduler <ExternalLink size={16} />
-                 </a>
-               </div>
-            </div>
+          <div className="h-[700px] w-full" style={{minWidth: '320px'}}>
+            <iframe
+              src="https://calendly.com/scottpralinsky/30-minute-meeting?embed_domain=&embed_type=Inline"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              title="Select a Date & Time - Calendly"
+            ></iframe>
           </div>
         </div>
       </div>
