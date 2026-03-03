@@ -63,11 +63,14 @@ export function NewsletterPopup() {
         </button>
         
         <div className="w-full pt-10 px-4 pb-4 bg-white">
-          <iframe 
-            src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q" 
-            style={{ width: "100%", height: "400px", border: "none", borderRadius: "4px" }} 
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/q4Cy4rTD09A2MLJQpI4q"
+            style={{ width: "100%", height: "348px", border: "none", borderRadius: "4px" }}
             id="popup-q4Cy4rTD09A2MLJQpI4q" 
-            data-form-id="q4Cy4rTD09A2MLJQpI4q" 
+            data-form-name="South Shore AI Newsletter Form"
+            data-height="348"
+            data-layout-iframe-id="popup-q4Cy4rTD09A2MLJQpI4q"
+            data-form-id="q4Cy4rTD09A2MLJQpI4q"
             title="South Shore AI Newsletter Form"
           ></iframe>
         </div>
