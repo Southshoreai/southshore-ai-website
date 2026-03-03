@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function NewsletterPopup() {
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     // Only add the script if it doesn't already exist
     if (!document.querySelector('script[src="https://link.msgsndr.com/js/form_embed.js"]')) {
       const script = document.createElement("script");
@@ -10,6 +13,8 @@ export function NewsletterPopup() {
       document.body.appendChild(script);
     }
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <iframe
