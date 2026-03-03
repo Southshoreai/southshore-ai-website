@@ -11,6 +11,7 @@ import PackagesPage from "@/pages/packages";
 import AboutPage from "@/pages/about";
 import BlogPage from "@/pages/blog";
 import ContactPage from "@/pages/contact";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 
 function Router() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <TooltipProvider>
         <ScrollToTop />
         <Toaster />
+        <NewsletterPopup />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>
