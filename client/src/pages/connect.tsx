@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
-import headshot from "@assets/Gemini_Generated_Image_3r7rqo3r7rqo3r7r_(1)_1771842376088.png";
 
 const profile = {
   name: "Scott Pralinsky",
@@ -62,7 +61,7 @@ export default function ConnectPage() {
               className="mx-auto mb-8 h-10 w-auto opacity-95"
             />
             <img
-              src={headshot}
+              src="/images/scott-pralinsky-speaking.jpg"
               alt="Scott Pralinsky"
               className="mx-auto mb-5 h-20 w-20 rounded-3xl border border-primary/40 object-cover object-center shadow-[0_0_55px_rgba(79,209,197,0.18)]"
             />
