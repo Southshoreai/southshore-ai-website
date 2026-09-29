@@ -63,7 +63,7 @@ export default function ConnectPage() {
             <img
               src="/images/scott-pralinsky-speaking.jpg"
               alt="Scott Pralinsky"
-              className="mx-auto mb-5 h-20 w-20 rounded-3xl border border-primary/40 object-cover object-center shadow-[0_0_55px_rgba(79,209,197,0.18)]"
+              className="mx-auto mb-6 h-48 w-48 rounded-3xl border border-primary/40 object-cover object-[center_20%] shadow-[0_0_55px_rgba(79,209,197,0.18)]"
             />
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
               Meet Scott Pralinsky
