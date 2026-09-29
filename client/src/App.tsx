@@ -11,11 +11,13 @@ import PackagesPage from "@/pages/packages";
 import AboutPage from "@/pages/about";
 import BlogPage from "@/pages/blog";
 import ContactPage from "@/pages/contact";
+import ConnectPage from "@/pages/connect";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/connect" component={ConnectPage} />
       <Route path="/services" component={ServicesPage} />
       <Route path="/packages" component={PackagesPage} />
       <Route path="/about" component={AboutPage} />
