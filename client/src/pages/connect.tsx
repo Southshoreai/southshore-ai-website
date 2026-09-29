@@ -12,6 +12,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import logo from "@assets/South_Shore_AI_Inverted_Color_(2)_1767386478873.png";
+import headshot from "@assets/Gemini_Generated_Image_3r7rqo3r7rqo3r7r_(1)_1771842376088.png";
 
 const profile = {
   name: "Scott Pralinsky",
@@ -19,7 +20,7 @@ const profile = {
   email: "scott@pralinsky.com",
   phoneDisplay: "520-345-1088",
   phoneHref: "+15203451088",
-  quickUrl: "https://www.southshore.ai/connect",
+  quickUrl: "https://southshore.ai/connect",
 };
 
 export default function ConnectPage() {
@@ -60,9 +61,11 @@ export default function ConnectPage() {
               alt="South Shore AI"
               className="mx-auto mb-8 h-10 w-auto opacity-95"
             />
-            <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl border border-primary/40 bg-gradient-to-br from-primary/20 to-secondary/20 text-2xl font-bold text-primary shadow-[0_0_55px_rgba(79,209,197,0.18)]">
-              SP
-            </div>
+            <img
+              src={headshot}
+              alt="Scott Pralinsky"
+              className="mx-auto mb-5 h-20 w-20 rounded-3xl border border-primary/40 object-cover object-center shadow-[0_0_55px_rgba(79,209,197,0.18)]"
+            />
             <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.2em] text-primary">
               Meet Scott Pralinsky
             </p>
@@ -141,7 +144,7 @@ export default function ConnectPage() {
               This is hosted on South Shore AI’s live domain—no temporary Manus address required.
             </p>
             <div className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-background/70 p-2 pl-3">
-              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-primary">www.southshore.ai/connect</span>
+              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-primary">southshore.ai/connect</span>
               <button
                 type="button"
                 onClick={copyLink}
