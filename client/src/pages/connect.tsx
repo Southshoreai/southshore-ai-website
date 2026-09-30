@@ -19,7 +19,7 @@ const profile = {
   email: "scott@pralinsky.com",
   phoneDisplay: "520-345-1088",
   phoneHref: "+15203451088",
-  quickUrl: "https://southshore.ai/connect",
+  quickUrl: "https://www.southshore.ai/connect",
 };
 
 export default function ConnectPage() {
@@ -143,7 +143,7 @@ export default function ConnectPage() {
               This is hosted on South Shore AI’s live domain—no temporary Manus address required.
             </p>
             <div className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-background/70 p-2 pl-3">
-              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-primary">southshore.ai/connect</span>
+              <span className="min-w-0 flex-1 truncate font-mono text-[11px] text-primary">www.southshore.ai/connect</span>
               <button
                 type="button"
                 onClick={copyLink}
