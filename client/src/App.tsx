@@ -1,42 +1,43 @@
-import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import ScrollToTop from "@/components/scroll-to-top";
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/home";
-import ServicesPage from "@/pages/services";
-import PackagesPage from "@/pages/packages";
-import AboutPage from "@/pages/about";
-import BlogPage from "@/pages/blog";
-import ContactPage from "@/pages/contact";
-import ConnectPage from "@/pages/connect";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import Home from "./pages/Home";
+import Connect from "./pages/Connect";
+
 
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/connect" component={ConnectPage} />
-      <Route path="/services" component={ServicesPage} />
-      <Route path="/packages" component={PackagesPage} />
-      <Route path="/about" component={AboutPage} />
-      <Route path="/blog" component={BlogPage} />
-      <Route path="/contact" component={ContactPage} />
+      <Route path={"/"} component={Home} />
+      <Route path={"/connect"} component={Connect} />
+      <Route path={"/404"} component={NotFound} />
+      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
 }
 
+// NOTE: About Theme
+// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
+//   to keep consistent foreground/background color across components
+// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
+
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ScrollToTop />
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <ErrorBoundary>
+      <ThemeProvider
+        defaultTheme="light"
+        // switchable
+      >
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 
