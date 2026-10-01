@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { CALENDLY_LINK } from '@/data/siteData';
+import { CalmViewToggle } from '@/components/CalmViewToggle';
 import { Menu, X, Shield, Calendar, Users, Eye, Sparkles } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
@@ -82,6 +83,8 @@ export const Navbar: React.FC = () => {
               );
             })}
           </nav>
+
+          <CalmViewToggle />
 
           {/* Primary CTA */}
           <div className="hidden 2xl:flex items-center gap-3">
