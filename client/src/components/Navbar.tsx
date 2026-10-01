@@ -22,8 +22,8 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 bg-[#0A0E1A]/90 backdrop-blur-md border-b border-white/10">
       {/* Top micro banner */}
-      <div className="bg-gradient-to-r from-[#6F47C6]/30 via-[#0D9488]/30 to-[#F97316]/20 border-b border-white/5 py-1.5 px-4 text-xs text-center text-slate-300">
-        <span className="inline-flex items-center gap-1.5 font-medium">
+      <div className="bg-gradient-to-r from-[#6F47C6]/30 via-[#0D9488]/30 to-[#F97316]/20 border-b border-white/5 py-1 px-3 sm:py-1.5 sm:px-4 text-[11px] sm:text-xs leading-snug text-center text-slate-300">
+        <span className="inline-flex items-center justify-center gap-1.5 font-medium">
           <Sparkles className="w-3.5 h-3.5 text-togetha-purpleLight" />
           <span>Working version preparing for supervised volunteer testing in Massachusetts</span>
           <span className="hidden md:inline text-slate-500">·</span>
@@ -33,12 +33,12 @@ export const Navbar: React.FC = () => {
         </span>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 gap-3">
           {/* Brand lockup */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="flex items-center gap-2.5">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-teal to-togetha-purple flex items-center justify-center p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+          <Link href="/" className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3 group">
+            <div className="flex min-w-0 items-center gap-2 sm:gap-2.5">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-gradient-to-br from-brand-teal to-togetha-purple flex items-center justify-center p-0.5 shadow-lg group-hover:scale-105 transition-transform">
                 <img 
                   src="/assets/togetha_symbol_only_light.png" 
                   alt="Togetha Mark" 
@@ -49,14 +49,14 @@ export const Navbar: React.FC = () => {
                   }}
                 />
               </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
-                  South Shore AI
-                  <span className="text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-brand-slate text-brand-tealLight border border-brand-teal/30">
+              <div className="min-w-0 flex flex-col">
+                <span className="whitespace-nowrap text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+                  <span>South Shore AI</span>
+                  <span className="hidden md:inline-flex text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-brand-slate text-brand-tealLight border border-brand-teal/30">
                     Flagship
                   </span>
                 </span>
-                <span className="text-xs text-slate-400 font-medium">
+                <span className="hidden sm:block text-xs text-slate-400 font-medium">
                   Togetha · Supported Connection
                 </span>
               </div>
@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Primary CTA */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <Link
               href="/views"
               className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/10 transition-all flex items-center gap-1.5"
@@ -105,18 +105,18 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile hamburger */}
-          <div className="xl:hidden flex items-center gap-2">
+          <div className="xl:hidden flex shrink-0 items-center gap-2">
             <a
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-brand-orange text-white"
+              className="hidden sm:inline-flex px-3 py-1.5 text-xs font-semibold rounded-lg bg-brand-orange text-white"
             >
               Book Demo
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg bg-white/5 text-slate-300 hover:text-white"
+              className="p-2.5 rounded-lg bg-white/5 text-slate-300 hover:text-white"
               aria-label="Toggle Navigation"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

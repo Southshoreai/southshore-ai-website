@@ -12,9 +12,9 @@ import {
 
 export const Home: React.FC = () => {
   return (
-    <div className="space-y-24 pb-20 overflow-hidden">
+    <div className="space-y-16 sm:space-y-24 pb-16 sm:pb-20 overflow-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-12 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-8 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#6F47C6]/20 via-[#0D9488]/15 to-transparent rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
