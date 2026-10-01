@@ -103,3 +103,27 @@
 html {
   scroll-behavior: smooth;
 }
+/* SSAI & Togetha Utility Classes from Published Site */
+.glass-panel {
+  background: rgba(22, 31, 48, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(26, 38, 59, 0.85);
+  border-color: rgba(13, 148, 136, 0.4);
+  transform: translateY(-2px);
+}
+.glow-teal {
+  box-shadow: 0 0 35px -8px rgba(13, 148, 136, 0.35);
+}
+.glow-purple {
+  box-shadow: 0 0 35px -8px rgba(111, 71, 198, 0.35);
+}
+.glow-orange {
+  box-shadow: 0 0 35px -8px rgba(249, 115, 22, 0.4);
+}
