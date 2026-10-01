@@ -1,10 +1,10 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PageMetadata } from "@/components/PageMetadata";
-import { Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { CalmViewProvider } from "./contexts/CalmViewContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -26,9 +26,21 @@ const Accessibility = lazy(() => import("./pages/Accessibility").then((module) =
 const Connect = lazy(() => import("./pages/Connect"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
+function RouteTransition() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    requestAnimationFrame(() => document.getElementById("main-content")?.focus({ preventScroll: true }));
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0A0E1A] text-slate-100">
+      <RouteTransition />
       <PageMetadata />
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
