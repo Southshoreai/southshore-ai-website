@@ -87,6 +87,8 @@ export const Footer: React.FC = () => {
               <li><Link href="/founding-partners" className="hover:text-white transition-colors">Founding Partners</Link></li>
               <li><Link href="/providers" className="hover:text-white transition-colors">Provider Agencies & DDS</Link></li>
               <li><Link href="/partners/coaches" className="hover:text-white transition-colors">Dating Coaches & WORK Inc</Link></li>
+              <li><Link href="/coalition" className="hover:text-white transition-colors">Coalition Model</Link></li>
+              <li><Link href="/field-notes" className="hover:text-white transition-colors">Founder’s Field Notes</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Founder Credentials</Link></li>
               <li><Link href="/connect" className="hover:text-white transition-colors">Schedule Briefing</Link></li>
             </ul>
@@ -110,6 +112,7 @@ export const Footer: React.FC = () => {
                 <strong className="text-slate-200 block">WORK Inc</strong>
                 <span>In-person coaching & community program partner</span>
               </div>
+              <div><Link href="/readiness" className="font-semibold text-slate-200 hover:text-white transition-colors">Public readiness status</Link></div>
             </div>
           </div>
         </div>
@@ -141,6 +144,7 @@ export const Footer: React.FC = () => {
           <p>© {new Date().getFullYear()} South Shore AI, LLC. All IP and software rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="/safety-and-trust" className="hover:text-slate-300">Privacy & Governance</Link>
+            <Link href="/accessibility" className="hover:text-slate-300">Accessibility</Link>
             <Link href="/about" className="hover:text-slate-300">Executive Leadership</Link>
             <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 flex items-center gap-1">
               <span>Book Walkthrough</span>

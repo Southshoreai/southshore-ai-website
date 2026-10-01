@@ -121,6 +121,8 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="brand-icon-button p-2.5 rounded-lg"
               aria-label="Toggle Navigation"
+              aria-expanded={isOpen}
+              aria-controls="site-navigation-menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -130,7 +132,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
+        <div id="site-navigation-menu" className="2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}

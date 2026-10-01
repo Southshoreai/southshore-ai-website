@@ -103,6 +103,67 @@
     outline: 3px solid #A58AE2;
     outline-offset: 3px;
   }
+
+  #main-content:focus {
+    outline: none;
+  }
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 50%;
+  transform: translate(-50%, -160%);
+  border: 1px solid rgba(214, 199, 247, 0.75);
+  border-radius: 0.75rem;
+  background: #6F47C6;
+  color: #FFFFFF;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.95);
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
+.seo-snapshot {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  color: #F1EEFF;
+}
+
+.seo-snapshot h1 {
+  max-width: 54rem;
+  font-size: clamp(2.25rem, 7vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.seo-snapshot p {
+  max-width: 48rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #D4D9E8;
+}
+
+.seo-snapshot ul {
+  max-width: 48rem;
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
+  color: #C9B9F2;
+}
+
+.seo-snapshot__eyebrow,
+.seo-snapshot__status {
+  font-family: var(--font-mono);
+  font-size: 0.75rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Eyebrow styling matching SSAI brand guidelines */

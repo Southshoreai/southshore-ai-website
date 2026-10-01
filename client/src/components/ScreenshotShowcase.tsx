@@ -1,10 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { DEMO_SCREENSHOTS, DemoScreenshot } from '@/data/siteData';
 import { Eye, X, ChevronRight, Sparkles, Shield, Users, Layers } from 'lucide-react';
 
 export const ScreenshotShowcase: React.FC = () => {
   const [selectedFilter, setSelectedFilter] = useState<string>('all');
   const [activeModalScreen, setActiveModalScreen] = useState<DemoScreenshot | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!activeModalScreen) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setActiveModalScreen(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      previouslyFocused?.focus();
+    };
+  }, [activeModalScreen]);
 
   const filterTabs = [
     { id: 'all', label: 'All Screens (13)' },
@@ -54,10 +70,11 @@ export const ScreenshotShowcase: React.FC = () => {
       {/* Grid of Screenshots */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredScreens.map((screen) => (
-          <div
+          <button
+            type="button"
             key={screen.id}
             onClick={() => setActiveModalScreen(screen)}
-            className="group cursor-pointer glass-panel rounded-2xl border border-white/10 overflow-hidden glass-panel-hover flex flex-col justify-between"
+            className="group cursor-pointer text-left glass-panel rounded-2xl border border-white/10 overflow-hidden glass-panel-hover flex flex-col justify-between"
           >
             <div className="relative aspect-[9/13] bg-black/60 p-2 overflow-hidden flex items-center justify-center">
               <img
@@ -88,7 +105,7 @@ export const ScreenshotShowcase: React.FC = () => {
                 {screen.description}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
@@ -99,11 +116,15 @@ export const ScreenshotShowcase: React.FC = () => {
           onClick={() => setActiveModalScreen(null)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="screenshot-modal-title"
             className="relative max-w-4xl w-full max-h-[90vh] bg-[#0E1524] border border-white/20 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
+              ref={closeButtonRef}
               onClick={() => setActiveModalScreen(null)}
               className="brand-icon-button absolute top-4 right-4 z-20 p-2 rounded-full"
               aria-label="Close modal"
@@ -127,7 +148,7 @@ export const ScreenshotShowcase: React.FC = () => {
                   <span className="text-xs font-mono text-brand-tealLight uppercase tracking-wider block">
                     {activeModalScreen.audience}
                   </span>
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                  <h3 id="screenshot-modal-title" className="text-2xl font-bold text-white tracking-tight">
                     {activeModalScreen.title}
                   </h3>
                   <p className="text-sm text-slate-300">

@@ -85,6 +85,16 @@ export const FoundingPartners: React.FC = () => {
             >
               Book Private Founding Briefing
             </a>
+            <a
+              href="/briefings/togetha-founding-partner-briefing.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-tealLight/40 bg-brand-teal/10 px-4 py-3 text-sm font-semibold text-brand-tealLight transition-colors hover:border-brand-tealLight hover:bg-brand-teal/20 hover:text-white"
+            >
+              <FileText className="h-4 w-4" />
+              Read the one-page briefing
+            </a>
+            <p className="mt-2 text-center text-[11px] leading-relaxed text-slate-400">Uses the approved evidence, public-status language, and metric caveats from this site.</p>
           </div>
         </div>
       </div>

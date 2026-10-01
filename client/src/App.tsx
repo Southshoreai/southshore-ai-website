@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { PageMetadata } from "@/components/PageMetadata";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { CalmViewProvider } from "./contexts/CalmViewContext";
@@ -18,14 +19,20 @@ const FoundingPartners = lazy(() => import("./pages/FoundingPartners").then((mod
 const SafetyAndTrust = lazy(() => import("./pages/SafetyAndTrust").then((module) => ({ default: module.SafetyAndTrust })));
 const SystemViews = lazy(() => import("./pages/SystemViews").then((module) => ({ default: module.SystemViews })));
 const About = lazy(() => import("./pages/About").then((module) => ({ default: module.About })));
+const Coalition = lazy(() => import("./pages/Coalition").then((module) => ({ default: module.Coalition })));
+const FieldNotes = lazy(() => import("./pages/FieldNotes").then((module) => ({ default: module.FieldNotes })));
+const Readiness = lazy(() => import("./pages/Readiness").then((module) => ({ default: module.Readiness })));
+const Accessibility = lazy(() => import("./pages/Accessibility").then((module) => ({ default: module.Accessibility })));
 const Connect = lazy(() => import("./pages/Connect"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 
 function Router() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0A0E1A] text-slate-100">
+      <PageMetadata />
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
-      <main className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1">
         <Suspense fallback={<div role="status" className="mx-auto flex min-h-[45vh] max-w-7xl items-center px-4 text-sm text-slate-300">Preparing your view…</div>}>
           <Switch>
             <Route path={"/"} component={Home} />
@@ -37,6 +44,10 @@ function Router() {
             <Route path={"/founding-partners"} component={FoundingPartners} />
             <Route path={"/safety-and-trust"} component={SafetyAndTrust} />
             <Route path={"/views"} component={SystemViews} />
+            <Route path={"/coalition"} component={Coalition} />
+            <Route path={"/field-notes"} component={FieldNotes} />
+            <Route path={"/readiness"} component={Readiness} />
+            <Route path={"/accessibility"} component={Accessibility} />
             <Route path={"/about"} component={About} />
             <Route path={"/connect"} component={Connect} />
             <Route path={"/404"} component={NotFound} />
