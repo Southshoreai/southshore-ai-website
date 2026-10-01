@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { CALENDLY_LINK } from '@/data/siteData';
+import { FoundingPartnerDecisionRoom } from '@/components/FoundingPartnerDecisionRoom';
 import { ProofRibbon } from '@/components/ProofRibbon';
 import { Briefcase, Heart, Award, Shield, CheckCircle2, Calendar, FileText, ArrowRight } from 'lucide-react';
 
@@ -87,6 +88,8 @@ export const FoundingPartners: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <FoundingPartnerDecisionRoom />
 
       {/* Choose What You Fund Grid */}
       <div className="space-y-8">

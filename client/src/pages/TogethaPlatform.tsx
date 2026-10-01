@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { CALENDLY_LINK } from '@/data/siteData';
+import { ModeExplorer } from '@/components/ModeExplorer';
 import { ScreenshotShowcase } from '@/components/ScreenshotShowcase';
 import { 
   Shield, Heart, Users, Clock, Compass, Layers, CheckCircle, ArrowRight, Calendar 
@@ -94,6 +95,8 @@ export const TogethaPlatform: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <ModeExplorer />
 
       <div className="space-y-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
