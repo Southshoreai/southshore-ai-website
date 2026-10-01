@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'wouter';
-import { CALENDLY_LINK } from '@/data/siteData';
-import { Shield, Lock, AlertTriangle, Eye, CheckCircle2, Phone, FileText } from 'lucide-react';
+import { TrustScenarioExplorer } from '@/components/TrustScenarioExplorer';
+import { Shield, AlertTriangle, Phone } from 'lucide-react';
 
 export const SafetyAndTrust: React.FC = () => {
   return (
@@ -14,7 +13,7 @@ export const SafetyAndTrust: React.FC = () => {
           Coaching and Protection, Not Surveillance.
         </h1>
         <p className="text-lg text-slate-300 font-serif leading-relaxed">
-          Mainstream dating apps leave vulnerable adults exposed to scams and harassment. Togetha implements layered, pattern-based safety safeguards that coach members toward safe choices without taking away their adult autonomy.
+          Togetha uses layered, pattern-based safeguards that coach members toward safer choices without taking away their adult autonomy.
         </p>
       </div>
 
@@ -27,7 +26,7 @@ export const SafetyAndTrust: React.FC = () => {
             <h3 className="text-2xl font-bold text-white">In-Chat Safety Tips</h3>
           </div>
           <p className="text-sm text-slate-300 leading-relaxed font-serif">
-            When a member types a phone number, home address, or sensitive detail in a chat thread, an inline safety card appears immediately: "It's usually best to chat here for a while before sharing personal info."
+            When a member types a phone number, home address, or sensitive detail in a chat thread, an inline safety card can offer a clear reminder: "It's usually best to chat here for a while before sharing personal info."
           </p>
           <div className="p-4 rounded-xl bg-slate-900/90 border border-white/5 text-xs text-slate-300 space-y-2">
             <span className="font-mono text-brand-tealLight font-bold">THE "WARN, DON'T BLOCK" RULE:</span>
@@ -44,15 +43,17 @@ export const SafetyAndTrust: React.FC = () => {
             <h3 className="text-2xl font-bold text-white">Financial Scam Interception</h3>
           </div>
           <p className="text-sm text-slate-300 leading-relaxed font-serif">
-            Messages attempting to solicit money, gift cards, or crypto transfers are caught by real-time pattern detectors and held for a human moderator to check before the recipient ever sees them.
+            Messages asking for money or gift cards are held for a trained person to check before the recipient ever sees them.
           </p>
           <div className="p-4 rounded-xl bg-slate-900/90 border border-white/5 text-xs text-slate-300 space-y-2">
-            <span className="font-mono text-brand-orange font-bold">PROTECTION FROM PREDATORS:</span>
-            <p>Financial exploitation is the #1 danger for adults with I/DD online. Togetha stops financial solicitations silently and logs every incident to an immutable audit trail.</p>
+            <span className="font-mono text-brand-orange font-bold">MONEY AND GIFT-CARD REQUESTS:</span>
+            <p>Safety actions are recorded in a permanent audit trail. Review is limited to the item that needs attention, not an entire private conversation.</p>
           </div>
           <img src="/screenshots/09-message-held-for-review.png" alt="Message Held" className="rounded-xl border border-white/10 shadow-lg mt-2" />
         </div>
       </div>
+
+      <TrustScenarioExplorer />
 
       {/* Persistent Help Button */}
       <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 space-y-6">
