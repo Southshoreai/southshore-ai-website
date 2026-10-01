@@ -34,15 +34,16 @@ export const ScreenshotShowcase: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Category Tabs */}
-      <div className="flex flex-wrap gap-2 justify-center">
+      <div className="brand-control-group flex flex-wrap gap-2 justify-center p-1.5 rounded-2xl">
         {filterTabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setSelectedFilter(tab.id)}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+            aria-pressed={selectedFilter === tab.id}
+            className={`brand-control px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold ${
               selectedFilter === tab.id
-                ? 'bg-brand-teal text-white shadow glow-teal'
-                : 'bg-brand-card hover:bg-brand-slate text-slate-300 hover:text-white border border-white/5'
+                ? tab.id === 'safety' ? 'brand-control-safe' : 'brand-control-active'
+                : ''
             }`}
           >
             {tab.label}
@@ -104,7 +105,7 @@ export const ScreenshotShowcase: React.FC = () => {
             {/* Close Button */}
             <button
               onClick={() => setActiveModalScreen(null)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 hover:bg-black/90 text-white transition-colors border border-white/10"
+              className="brand-icon-button absolute top-4 right-4 z-20 p-2 rounded-full"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -155,7 +156,7 @@ export const ScreenshotShowcase: React.FC = () => {
                 </span>
                 <button
                   onClick={() => setActiveModalScreen(null)}
-                  className="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold"
+                  className="brand-button-secondary px-4 py-2 rounded-lg text-xs font-semibold"
                 >
                   Close Screen
                 </button>

@@ -20,9 +20,9 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0A0E1A]/90 backdrop-blur-md border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-[#0A0E1A]/90 backdrop-blur-md border-b border-brand-teal/25">
       {/* Top micro banner */}
-      <div className="bg-gradient-to-r from-[#6F47C6]/30 via-[#0D9488]/30 to-[#F97316]/20 border-b border-white/5 py-1 px-3 sm:py-1.5 sm:px-4 text-[11px] sm:text-xs leading-snug text-center text-slate-300">
+      <div className="bg-gradient-to-r from-togetha-purple/35 via-brand-teal/30 to-brand-orange/25 border-b border-white/10 py-1 px-3 sm:py-1.5 sm:px-4 text-[11px] sm:text-xs leading-snug text-center text-slate-100">
         <span className="inline-flex items-center justify-center gap-1.5 font-medium">
           <Sparkles className="w-3.5 h-3.5 text-togetha-purpleLight" />
           <span>Working version preparing for supervised volunteer testing in Massachusetts</span>
@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1">
+          <nav className="hidden 2xl:flex items-center gap-1">
             {navLinks.map((link) => {
               const isActive = location === link.href;
               return (
@@ -73,7 +73,7 @@ export const Navbar: React.FC = () => {
                   href={link.href}
                   className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${
                     isActive
-                      ? 'text-white bg-white/10 font-semibold'
+                    ? 'text-white bg-togetha-purple border border-togetha-purpleLight/50 font-semibold shadow-lg'
                       : 'text-slate-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -84,10 +84,10 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Primary CTA */}
-          <div className="hidden xl:flex items-center gap-3">
+          <div className="hidden 2xl:flex items-center gap-3">
             <Link
               href="/views"
-              className="px-3.5 py-2 text-xs font-semibold rounded-lg bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/10 transition-all flex items-center gap-1.5"
+              className="brand-button-secondary px-3.5 py-2 text-xs font-semibold rounded-lg flex items-center gap-1.5"
             >
               <Eye className="w-3.5 h-3.5 text-brand-tealLight" />
               <span>Explore Views</span>
@@ -97,7 +97,7 @@ export const Navbar: React.FC = () => {
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-brand-orange to-brand-orangeHover hover:brightness-110 text-white shadow-lg glow-orange transition-all flex items-center gap-1.5"
+              className="brand-button-connect px-4 py-2 text-sm font-semibold rounded-lg flex items-center gap-1.5"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Walkthrough</span>
@@ -105,18 +105,18 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile hamburger */}
-          <div className="xl:hidden flex shrink-0 items-center gap-2">
+          <div className="2xl:hidden flex shrink-0 items-center gap-2">
             <a
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex px-3 py-1.5 text-xs font-semibold rounded-lg bg-brand-orange text-white"
+              className="brand-button-connect hidden sm:inline-flex px-3 py-1.5 text-xs font-semibold rounded-lg"
             >
               Book Demo
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 rounded-lg bg-white/5 text-slate-300 hover:text-white"
+              className="brand-icon-button p-2.5 rounded-lg"
               aria-label="Toggle Navigation"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -127,7 +127,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
+        <div className="2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -135,7 +135,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(false)}
               className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${
                 location === link.href
-                  ? 'text-white bg-brand-teal/20 text-brand-tealLight'
+                  ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45'
                   : 'text-slate-300 hover:bg-white/5 hover:text-white'
               }`}
             >
@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
             <Link
               href="/views"
               onClick={() => setIsOpen(false)}
-              className="w-full text-center py-2.5 rounded-lg bg-brand-card text-white font-medium border border-white/10"
+              className="brand-button-secondary w-full text-center py-2.5 rounded-lg font-medium"
             >
               Explore 5 System Views
             </Link>
@@ -154,7 +154,7 @@ export const Navbar: React.FC = () => {
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center py-2.5 rounded-lg bg-brand-orange text-white font-semibold shadow glow-orange"
+              className="brand-button-connect w-full text-center py-2.5 rounded-lg font-semibold"
             >
               Book 30-Min Walkthrough
             </a>

@@ -1,6 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Togetha semantic color system from Togetha We Build/togetha/CLAUDE.md § Brand. */
+@theme {
+  --color-brand-teal: #4276B4;
+  --color-brand-tealLight: #8FADD4;
+  --color-brand-navy: #28365A;
+  --color-brand-card: #1E2A4B;
+  --color-brand-slate: #34436A;
+  --color-brand-orange: #C43F34;
+  --color-brand-orangeHover: #A8322A;
+  --color-togetha-purple: #6F47C6;
+  --color-togetha-purpleLight: #A58AE2;
+  --color-togetha-green: #357F5F;
+  --color-togetha-greenLight: #79B493;
+  --color-togetha-warning: #B3261E;
+  --color-togetha-coral: #C43F34;
+}
+
 @layer base {
   :root {
     --font-brand: "Figtree", ui-sans-serif, system-ui, sans-serif;
@@ -51,8 +68,13 @@
 
   body {
     font-family: var(--font-brand);
-    background-color: var(--color-ssai-ink-950);
+    background:
+      radial-gradient(circle at 12% -8%, rgba(111, 71, 198, 0.26), transparent 30rem),
+      radial-gradient(circle at 88% 10%, rgba(66, 118, 180, 0.18), transparent 28rem),
+      radial-gradient(circle at 52% 110%, rgba(196, 63, 52, 0.10), transparent 34rem),
+      #0A0E1A;
     color: var(--color-ssai-ink-50);
+    min-width: 320px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -70,6 +92,16 @@
 
   .font-mono {
     font-family: var(--font-mono);
+  }
+
+  ::selection {
+    color: #FFFFFF;
+    background: #6F47C6;
+  }
+
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid #A58AE2;
+    outline-offset: 3px;
   }
 }
 
@@ -103,27 +135,142 @@
 html {
   scroll-behavior: smooth;
 }
-/* SSAI & Togetha Utility Classes from Published Site */
+/* SSAI & Togetha utility classes */
 .glass-panel {
-  background: rgba(22, 31, 48, 0.7);
+  background: linear-gradient(135deg, rgba(42, 54, 90, 0.82) 0%, rgba(24, 32, 57, 0.88) 55%, rgba(32, 35, 68, 0.88) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(165, 138, 226, 0.22);
+  box-shadow: 0 18px 48px -32px rgba(0, 0, 0, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 .glass-panel-hover {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(26, 38, 59, 0.85);
-  border-color: rgba(13, 148, 136, 0.4);
+  background: linear-gradient(135deg, rgba(62, 72, 119, 0.92) 0%, rgba(32, 40, 75, 0.95) 100%);
+  border-color: rgba(165, 138, 226, 0.65);
   transform: translateY(-2px);
 }
 .glow-teal {
-  box-shadow: 0 0 35px -8px rgba(13, 148, 136, 0.35);
+  box-shadow: 0 0 40px -10px rgba(66, 118, 180, 0.62);
 }
 .glow-purple {
-  box-shadow: 0 0 35px -8px rgba(111, 71, 198, 0.35);
+  box-shadow: 0 0 42px -10px rgba(111, 71, 198, 0.58);
 }
 .glow-orange {
-  box-shadow: 0 0 35px -8px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 0 38px -10px rgba(196, 63, 52, 0.58);
+}
+
+/* Shared marketing hierarchy and interaction states */
+.brand-page-title,
+.brand-heading-spectrum {
+  background-image: linear-gradient(105deg, #C9B9F2 0%, #A58AE2 24%, #6F47C6 45%, #8FADD4 70%, #E58A80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+.brand-page-title {
+  display: inline-block;
+}
+main h1:not(.home-hero-title) {
+  display: inline-block;
+  background-image: linear-gradient(105deg, #C9B9F2 0%, #A58AE2 24%, #6F47C6 45%, #8FADD4 70%, #E58A80 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand-button,
+.brand-button-connect,
+.brand-button-secondary,
+.brand-control,
+.brand-icon-button {
+  min-height: 44px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+.brand-button {
+  color: #FFFFFF;
+  border: 1px solid rgba(214, 199, 247, 0.52);
+  background: linear-gradient(115deg, #6F47C6 0%, #5940A4 54%, #4276B4 120%);
+  box-shadow: 0 12px 26px -15px rgba(111, 71, 198, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.brand-button:hover {
+  color: #FFFFFF;
+  background: linear-gradient(115deg, #805BD2 0%, #6F47C6 50%, #4C86CA 120%);
+  box-shadow: 0 16px 30px -14px rgba(111, 71, 198, 0.95);
+  transform: translateY(-1px);
+}
+.brand-button-connect {
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 205, 199, 0.46);
+  background: linear-gradient(115deg, #C43F34 0%, #A8322A 72%, #7E2830 130%);
+  box-shadow: 0 12px 26px -15px rgba(196, 63, 52, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+.brand-button-connect:hover {
+  color: #FFFFFF;
+  background: linear-gradient(115deg, #D45649 0%, #B23830 72%, #8C2D34 130%);
+  box-shadow: 0 16px 30px -14px rgba(196, 63, 52, 0.9);
+  transform: translateY(-1px);
+}
+.brand-button-secondary,
+.brand-control {
+  color: #F5F4FF;
+  border: 1px solid rgba(143, 173, 212, 0.55);
+  background: rgba(40, 54, 90, 0.74);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.brand-button-secondary:hover,
+.brand-control:hover {
+  color: #FFFFFF;
+  border-color: rgba(165, 138, 226, 0.88);
+  background: rgba(62, 72, 119, 0.9);
+  transform: translateY(-1px);
+}
+.brand-icon-button {
+  color: #E6E9FF;
+  border: 1px solid rgba(143, 173, 212, 0.35);
+  background: rgba(40, 54, 90, 0.82);
+}
+.brand-icon-button:hover {
+  color: #FFFFFF;
+  border-color: rgba(165, 138, 226, 0.82);
+  background: rgba(62, 72, 119, 0.98);
+}
+.brand-control-group {
+  background: linear-gradient(135deg, rgba(30, 42, 75, 0.92), rgba(24, 32, 57, 0.96));
+  border: 1px solid rgba(143, 173, 212, 0.36);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 36px -28px rgba(0, 0, 0, 0.95);
+}
+.brand-control-active {
+  color: #FFFFFF;
+  border: 1px solid rgba(220, 210, 250, 0.65);
+  background: linear-gradient(115deg, #6F47C6 0%, #5D45B0 58%, #4276B4 135%);
+  box-shadow: 0 9px 24px -14px rgba(111, 71, 198, 0.94), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+.brand-control-active:hover {
+  color: #FFFFFF;
+  background: linear-gradient(115deg, #805BD2 0%, #6F47C6 58%, #4D86C8 135%);
+}
+.brand-control-safe {
+  color: #FFFFFF;
+  border: 1px solid rgba(180, 222, 197, 0.54);
+  background: linear-gradient(115deg, #357F5F 0%, #2F6B54 100%);
+  box-shadow: 0 9px 24px -14px rgba(53, 127, 95, 0.92), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel-hover,
+  .brand-button,
+  .brand-button-connect,
+  .brand-button-secondary,
+  .brand-control,
+  .brand-icon-button {
+    transition: none;
+  }
+  .glass-panel-hover:hover,
+  .brand-button:hover,
+  .brand-button-connect:hover,
+  .brand-button-secondary:hover,
+  .brand-control:hover {
+    transform: none;
+  }
 }

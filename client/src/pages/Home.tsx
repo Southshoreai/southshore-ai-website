@@ -15,19 +15,19 @@ export const Home: React.FC = () => {
     <div className="space-y-16 sm:space-y-24 pb-16 sm:pb-20 overflow-hidden">
       {/* 1. HERO SECTION */}
       <section className="relative pt-8 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#6F47C6]/20 via-[#0D9488]/15 to-transparent rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-togetha-purple/30 via-brand-teal/25 to-brand-orange/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-slate-300 backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy/80 border border-togetha-purple/40 text-xs sm:text-sm text-slate-200 backdrop-blur-md shadow-lg">
             <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse" />
             <span className="font-semibold text-white">South Shore AI Flagship</span>
             <span className="text-slate-500">·</span>
             <span>Togetha Connection Framework</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto">
+          <h1 className="home-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto">
             Connection Deserves a <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-tealLight via-white to-togetha-purpleLight">
+            <span className="brand-heading-spectrum">
               Better Way In.
             </span>
           </h1>
@@ -41,7 +41,7 @@ export const Home: React.FC = () => {
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-orange to-brand-orangeHover text-white font-semibold shadow-xl glow-orange flex items-center gap-2 hover:scale-[1.02] transition-transform"
+              className="brand-button px-6 py-3.5 rounded-xl font-semibold flex items-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Book 30-Min Walkthrough</span>
@@ -49,7 +49,7 @@ export const Home: React.FC = () => {
 
             <Link
               href="/views"
-              className="px-6 py-3.5 rounded-xl bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/15 font-semibold transition-all flex items-center gap-2"
+              className="brand-button-secondary px-6 py-3.5 rounded-xl font-semibold flex items-center gap-2"
             >
               <Eye className="w-4 h-4 text-brand-tealLight" />
               <span>Explore 5 System Views</span>
@@ -86,7 +86,7 @@ export const Home: React.FC = () => {
           <span className="text-xs font-mono uppercase tracking-wider text-brand-tealLight">
             One Framework · Multiple Perspectives
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          <h2 className="brand-page-title text-3xl sm:text-4xl font-bold tracking-tight">
             Built for Everyone in the Connection Ecosystem
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
@@ -198,14 +198,14 @@ export const Home: React.FC = () => {
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-brand-orangeHover text-white font-bold text-base shadow-xl flex items-center gap-2 hover:scale-105 transition-transform"
+              className="brand-button-connect px-8 py-4 rounded-xl font-bold text-base flex items-center gap-2"
             >
               <Calendar className="w-5 h-5" />
               <span>Book 30-Minute Walkthrough</span>
             </a>
             <Link
               href="/connect"
-              className="px-6 py-4 rounded-xl bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/10 font-medium text-base transition-colors"
+              className="brand-button-secondary px-6 py-4 rounded-xl font-medium text-base"
             >
               Direct Contact Directory
             </Link>

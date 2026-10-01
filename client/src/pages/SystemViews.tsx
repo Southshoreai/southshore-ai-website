@@ -43,7 +43,7 @@ export const SystemViews: React.FC = () => {
         <span className="text-xs font-mono uppercase tracking-wider text-brand-tealLight font-bold">
           Role-Based System Architecture
         </span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
           Explore the 5 System Views
         </h1>
         <p className="text-lg text-slate-300 font-serif leading-relaxed">
@@ -52,15 +52,16 @@ export const SystemViews: React.FC = () => {
       </div>
 
       {/* View Tabs */}
-      <div className="flex flex-wrap gap-2 p-1.5 rounded-2xl bg-brand-navy border border-white/10 justify-center">
+      <div className="brand-control-group flex flex-wrap gap-2 p-1.5 rounded-2xl justify-center">
         {views.map((v) => (
           <button
             key={v.id}
             onClick={() => setActiveTab(v.id)}
-            className={`px-5 py-3 rounded-xl text-sm font-semibold transition-all ${
+            aria-pressed={activeTab === v.id}
+            className={`brand-control px-5 py-3 rounded-xl text-sm font-semibold ${
               activeTab === v.id
-                ? 'bg-brand-card text-white border border-white/20 shadow glow-teal'
-                : 'text-slate-400 hover:text-white hover:bg-white/5'
+                ? 'brand-control-active'
+                : ''
             }`}
           >
             {v.title}
@@ -69,7 +70,7 @@ export const SystemViews: React.FC = () => {
       </div>
 
       {/* Active View Context */}
-      <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 space-y-2">
+      <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-togetha-purple/30 space-y-2">
         <span className="text-xs font-mono text-togetha-purpleLight font-bold uppercase">{currentView.subtitle}</span>
         <h3 className="text-2xl font-bold text-white">{currentView.title}</h3>
         <p className="text-sm text-slate-300 font-serif leading-relaxed max-w-3xl">{currentView.description}</p>

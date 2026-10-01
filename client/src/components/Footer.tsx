@@ -7,10 +7,10 @@ export const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/10 bg-[#060911] text-slate-400">
       {/* Top CTA Banner */}
-      <div className="border-b border-white/10 py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#111827]/40 to-transparent">
+      <div className="border-b border-brand-teal/25 py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-togetha-purple/20 via-brand-teal/15 to-brand-orange/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1 text-center md:text-left">
-            <h3 className="text-2xl font-bold text-white tracking-tight">
+            <h3 className="brand-heading-spectrum text-2xl font-bold tracking-tight">
               See Togetha Working in Real Time
             </h3>
             <p className="text-sm text-slate-300 max-w-xl">
@@ -22,14 +22,14 @@ export const Footer: React.FC = () => {
               href={CALENDLY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-brand-orange to-brand-orangeHover text-white font-semibold shadow-lg glow-orange flex items-center gap-2 hover:scale-[1.02] transition-transform"
+              className="brand-button-connect px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Book 30-Min Walkthrough</span>
             </a>
             <Link
               href="/connect"
-              className="px-5 py-3 rounded-xl bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/10 font-medium transition-colors"
+              className="brand-button-secondary px-5 py-3 rounded-xl font-medium"
             >
               Contact Directory
             </Link>

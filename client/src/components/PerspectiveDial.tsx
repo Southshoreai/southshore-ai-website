@@ -129,17 +129,18 @@ export const PerspectiveDial: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Perspective Tabs Selector */}
-      <div className="flex flex-wrap gap-2 p-1.5 rounded-2xl bg-brand-navy border border-white/10 justify-center">
+      <div className="brand-control-group flex flex-wrap gap-2 p-1.5 rounded-2xl justify-center">
         {PERSPECTIVES.map((p) => {
           const isSelected = p.id === selectedId;
           return (
             <button
               key={p.id}
               onClick={() => setSelectedId(p.id)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+              aria-pressed={isSelected}
+              className={`brand-control flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold ${
                 isSelected
-                  ? 'bg-gradient-to-r from-brand-card to-brand-slate text-white border border-white/20 shadow-lg scale-102'
-                  : 'text-slate-400 hover:text-white hover:bg-white/5'
+                  ? 'brand-control-active'
+                  : ''
               }`}
             >
               <span>{p.icon}</span>
@@ -184,7 +185,7 @@ export const PerspectiveDial: React.FC = () => {
             <div className="pt-4 flex flex-wrap gap-4">
               <Link
                 href={active.primaryCtaLink}
-                className="px-5 py-2.5 rounded-xl bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold text-sm shadow glow-orange flex items-center gap-2 transition-transform hover:scale-[1.02]"
+                className="brand-button px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2"
               >
                 <span>{active.primaryCtaText}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -194,14 +195,14 @@ export const PerspectiveDial: React.FC = () => {
                   href={active.secondaryCtaLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/10 font-medium text-sm transition-colors"
+                  className="brand-button-secondary px-5 py-2.5 rounded-xl font-medium text-sm"
                 >
                   {active.secondaryCtaText}
                 </a>
               ) : (
                 <Link
                   href={active.secondaryCtaLink}
-                  className="px-5 py-2.5 rounded-xl bg-brand-card hover:bg-brand-slate text-slate-200 border border-white/10 font-medium text-sm transition-colors"
+                  className="brand-button-secondary px-5 py-2.5 rounded-xl font-medium text-sm"
                 >
                   {active.secondaryCtaText}
                 </Link>
