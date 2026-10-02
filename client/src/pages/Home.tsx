@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { CALENDLY_LINK } from '@/data/siteData';
 import { ConceptVideo } from '@/components/ConceptVideo';
 import { ConnectionJourney } from '@/components/ConnectionJourney';
+import { ConnectionConstellation } from '@/components/ConnectionConstellation';
 import { PerspectiveDial } from '@/components/PerspectiveDial';
 import { ProofAtlas } from '@/components/ProofAtlas';
 import { ProofRibbon } from '@/components/ProofRibbon';
@@ -93,13 +94,16 @@ export const Home: React.FC = () => {
       {/* 3. CONNECTION JOURNEY */}
       <ConnectionJourney />
 
-      {/* 4. PROOF ATLAS */}
+      {/* 4. CONNECTION CONSTELLATION */}
+      <ConnectionConstellation />
+
+      {/* 5. PROOF ATLAS */}
       <ProofAtlas />
 
-      {/* 5. APPROVED VOICES */}
+      {/* 6. APPROVED VOICES */}
       <VoicesSection />
 
-      {/* 6. PERSPECTIVE SWITCHER */}
+      {/* 7. PERSPECTIVE SWITCHER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase tracking-wider text-brand-tealLight">
@@ -116,7 +120,7 @@ export const Home: React.FC = () => {
         <PerspectiveDial />
       </section>
 
-      {/* 7. THE TWO HALVES MODEL */}
+      {/* 8. THE TWO HALVES MODEL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -183,7 +187,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 8. DEMO SCREENSHOT SHOWCASE */}
+      {/* 9. DEMO SCREENSHOT SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase tracking-wider text-brand-tealLight">
@@ -200,7 +204,7 @@ export const Home: React.FC = () => {
         <ScreenshotShowcase />
       </section>
 
-      {/* 9. CALL TO ACTION / CONVERSION */}
+      {/* 10. CALL TO ACTION / CONVERSION */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-orange/30 shadow-2xl relative overflow-hidden text-center space-y-6 glow-orange">
           <span className="text-xs font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-brand-orange/20 text-brand-orange border border-brand-orange/40 inline-block">
