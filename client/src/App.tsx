@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { CalmViewNotice } from "@/components/CalmViewNotice";
 import { PageMetadata } from "@/components/PageMetadata";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -39,11 +40,12 @@ function RouteTransition() {
 
 function Router() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#0A0E1A] text-slate-100">
+    <div className="app-shell min-h-screen flex flex-col bg-[#0A0E1A] text-slate-100">
       <RouteTransition />
       <PageMetadata />
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
+      <CalmViewNotice />
       <main id="main-content" tabIndex={-1} className="flex-1">
         <Suspense fallback={<div role="status" className="mx-auto flex min-h-[45vh] max-w-7xl items-center px-4 text-sm text-slate-300">Preparing your view…</div>}>
           <Switch>

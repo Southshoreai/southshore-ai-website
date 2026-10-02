@@ -21,9 +21,9 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0A0E1A]/90 backdrop-blur-md border-b border-brand-teal/25">
+    <header className="site-header sticky top-0 z-50 bg-[#0A0E1A]/90 backdrop-blur-md border-b border-brand-teal/25">
       {/* Top micro banner */}
-      <div className="bg-gradient-to-r from-togetha-purple/35 via-brand-teal/30 to-brand-orange/25 border-b border-white/10 py-1 px-3 sm:py-1.5 sm:px-4 text-[11px] sm:text-xs leading-snug text-center text-slate-100">
+      <div className="site-status-banner bg-gradient-to-r from-togetha-purple/35 via-brand-teal/30 to-brand-orange/25 border-b border-white/10 py-1 px-3 sm:py-1.5 sm:px-4 text-[11px] sm:text-xs leading-snug text-center text-slate-100">
         <span className="inline-flex items-center justify-center gap-1.5 font-medium">
           <Sparkles className="w-3.5 h-3.5 text-togetha-purpleLight" />
           <span>Working version preparing for supervised volunteer testing in Massachusetts</span>
@@ -132,7 +132,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div id="site-navigation-menu" className="2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
+        <div id="site-navigation-menu" className="site-nav-menu 2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}

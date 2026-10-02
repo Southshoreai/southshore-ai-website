@@ -19,7 +19,7 @@ export const Home: React.FC = () => {
     <div className="space-y-16 sm:space-y-24 pb-16 sm:pb-20 overflow-hidden">
       {/* 1. HERO SECTION */}
       <section className="relative pt-8 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-togetha-purple/30 via-brand-teal/25 to-brand-orange/15 rounded-full blur-[120px] pointer-events-none" />
+        <div className="hero-aura absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-togetha-purple/30 via-brand-teal/25 to-brand-orange/15 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy/80 border border-togetha-purple/40 text-xs sm:text-sm text-slate-200 backdrop-blur-md shadow-lg">
@@ -30,9 +30,9 @@ export const Home: React.FC = () => {
           </div>
 
           <h1 className="home-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto">
-            Connection Deserves a <br className="hidden sm:inline" />
+            Meet people. <br className="hidden sm:inline" />
             <span className="brand-heading-spectrum">
-              Better Way In.
+              Your pace. Your way.
             </span>
           </h1>
 
@@ -82,7 +82,7 @@ export const Home: React.FC = () => {
             </span>
           </div>
 
-          <div className="pt-10 max-w-5xl mx-auto">
+          <div className="calm-hide-motion pt-10 max-w-5xl mx-auto">
             <ConceptVideo />
           </div>
         </div>
