@@ -19,80 +19,81 @@ export const Home: React.FC = () => {
   return (
     <div className="space-y-16 sm:space-y-24 pb-16 sm:pb-20 overflow-hidden">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-8 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="hero-aura absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-togetha-purple/30 via-brand-teal/25 to-brand-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <section className="relative isolate min-h-[760px] overflow-hidden border-b border-brand-teal/20 sm:min-h-[690px]">
+        <img
+          src="/assets/hero/togetha-community-arrival.webp"
+          alt="Illustrative vision of adults arriving at a welcoming community gathering."
+          className="absolute inset-0 -z-30 h-full w-full object-cover object-[68%_center] sm:object-center"
+        />
+        <div className="absolute inset-0 -z-20 bg-[linear-gradient(90deg,rgba(5,9,17,0.98)_0%,rgba(5,9,17,0.91)_32%,rgba(5,9,17,0.58)_57%,rgba(5,9,17,0.15)_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(0deg,rgba(5,9,17,0.82)_0%,rgba(5,9,17,0.05)_48%,rgba(5,9,17,0.42)_100%)]" />
+        <div className="absolute -left-16 top-1/3 -z-10 h-80 w-80 rounded-full bg-togetha-purple/25 blur-[100px]" />
 
-        <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy/80 border border-togetha-purple/40 text-xs sm:text-sm text-slate-200 backdrop-blur-md shadow-lg">
-            <span className="w-2 h-2 rounded-full bg-brand-teal animate-pulse" />
-            <span className="font-semibold text-white">South Shore AI Flagship</span>
-            <span className="text-slate-500">·</span>
-            <span>Togetha Connection Framework</span>
+        <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-4 py-14 sm:min-h-[690px] sm:px-6 sm:py-16 lg:px-8">
+          <div className="max-w-2xl space-y-6 sm:space-y-7">
+            <div className="inline-flex items-center gap-2 rounded-full border border-togetha-purpleLight/35 bg-brand-navy/80 px-3.5 py-1.5 text-xs text-slate-100 shadow-lg backdrop-blur-md sm:text-sm">
+              <span className="h-2 w-2 rounded-full bg-brand-teal shadow-[0_0_14px_rgba(75,217,201,0.95)]" />
+              <span className="font-semibold text-white">South Shore AI Flagship</span>
+              <span className="text-slate-500">·</span>
+              <span>Togetha Connection Framework</span>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <img
+                src="/assets/togetha-hero-mark.webp"
+                alt="Togetha"
+                className="h-auto w-[76px] rounded-2xl border border-white/15 shadow-[0_16px_30px_rgba(5,9,17,0.55)] sm:w-[92px]"
+              />
+              <span className="text-xs font-mono uppercase tracking-[0.18em] text-brand-tealLight">A better way into connection</span>
+            </div>
+
+            <h1 className="home-hero-title text-4xl font-extrabold leading-[1.04] tracking-tight text-white sm:text-6xl lg:text-7xl">
+              Meet people. <br />
+              <span className="brand-heading-spectrum">Your pace. Your way.</span>
+            </h1>
+
+            <p className="max-w-xl text-lg leading-relaxed text-slate-200 font-serif sm:text-xl">
+              A statewide framework expanding access to safe, supported relationships for autistic adults and adults with intellectual and developmental disabilities in Massachusetts—to combat loneliness and isolation.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3 pt-1 sm:gap-4">
+              <a
+                href="#connection-journey"
+                className="brand-button px-5 py-3 rounded-xl font-semibold flex items-center gap-2 sm:px-6 sm:py-3.5"
+              >
+                <Heart className="w-4 h-4" />
+                <span>See How Togetha Works</span>
+              </a>
+
+              <a
+                href={CALENDLY_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="brand-button-connect px-5 py-3 rounded-xl font-semibold flex items-center gap-2 sm:px-6 sm:py-3.5"
+              >
+                <Calendar className="w-4 h-4" />
+                <span>Book a Private Briefing</span>
+              </a>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-300">
+              <span className="inline-flex items-center gap-1.5"><Heart className="h-3.5 w-3.5 text-togetha-purpleLight" />Members &amp; families: start with the journey</span>
+              <Link href="/founding-partners" className="inline-flex items-center gap-1.5 font-semibold text-brand-tealLight transition-colors hover:text-white">
+                Founding partners: see the evidence &amp; opportunity <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-x-6 gap-y-2 rounded-2xl border border-white/10 bg-[#080d18]/55 px-4 py-3 text-[11px] font-mono text-slate-300 backdrop-blur-sm sm:gap-x-7">
+              <span className="flex items-center gap-1.5"><Shield className="w-3.5 h-3.5 text-brand-teal" />SSAI Technology &amp; Operations</span>
+              <span className="flex items-center gap-1.5"><Heart className="w-3.5 h-3.5 text-togetha-purpleLight" />Hopeful Hearts Statewide Governance</span>
+              <span className="flex items-center gap-1.5"><Award className="w-3.5 h-3.5 text-brand-orange" />Shriver Center Research</span>
+            </div>
           </div>
-
-          <div className="-mt-2 mb-2 flex justify-center sm:-mt-3 sm:mb-3">
-            <img
-              src="/assets/togetha-hero-mark.webp"
-              alt="Togetha"
-              className="h-auto w-[96px] rounded-[1.35rem] border border-white/10 shadow-[0_14px_28px_rgba(58,37,115,0.35)] sm:w-[116px] lg:w-[128px]"
-            />
-          </div>
-
-          <h1 className="home-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto">
-            Meet people. <br className="hidden sm:inline" />
-            <span className="brand-heading-spectrum">
-              Your pace. Your way.
-            </span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-serif">
-            A statewide framework expanding access to safe, supported relationships for autistic adults and adults with intellectual and developmental disabilities in Massachusetts—to combat loneliness and isolation.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <a
-              href="#connection-journey"
-              className="brand-button px-6 py-3.5 rounded-xl font-semibold flex items-center gap-2"
-            >
-              <Heart className="w-4 h-4" />
-              <span>See How Togetha Works</span>
-            </a>
-
-            <a
-              href={CALENDLY_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="brand-button-connect px-6 py-3.5 rounded-xl font-semibold flex items-center gap-2"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Book a Private Briefing</span>
-            </a>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5"><Heart className="h-3.5 w-3.5 text-togetha-purpleLight" />Members &amp; families: start with the journey</span>
-            <Link href="/founding-partners" className="inline-flex items-center gap-1.5 font-semibold text-brand-tealLight transition-colors hover:text-white">
-              Founding partners: see the evidence &amp; opportunity <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </div>
-
-          <div className="pt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-slate-400 font-mono">
-            <span className="flex items-center gap-1.5">
-              <Shield className="w-3.5 h-3.5 text-brand-teal" />
-              SSAI Technology & Operations
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Heart className="w-3.5 h-3.5 text-togetha-purpleLight" />
-              Hopeful Hearts Statewide Governance
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Award className="w-3.5 h-3.5 text-brand-orange" />
-              Eunice Kennedy Shriver Center Research
-            </span>
-          </div>
-
-          <div className="pt-10 max-w-5xl mx-auto"><ConceptVideo /></div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <ConceptVideo />
       </section>
 
       {/* 2. VERIFIED EVIDENCE RIBBON */}
