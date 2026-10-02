@@ -81,7 +81,7 @@ export const Footer: React.FC = () => {
           {/* Column 3: Stakeholders */}
           <div className="space-y-3">
             <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-200">
-              Stakeholders
+              Stakeholders &amp; Resources
             </h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/founding-partners" className="hover:text-white transition-colors">Founding Partners</Link></li>
@@ -89,6 +89,8 @@ export const Footer: React.FC = () => {
               <li><Link href="/partners/coaches" className="hover:text-white transition-colors">Dating Coaches & WORK Inc</Link></li>
               <li><Link href="/coalition" className="hover:text-white transition-colors">Coalition Model</Link></li>
               <li><Link href="/field-notes" className="hover:text-white transition-colors">Founder’s Field Notes</Link></li>
+              <li><a href="/resources/" className="hover:text-white transition-colors text-brand-tealLight">Resources Hub</a></li>
+              <li><a href="/resources/muse/" className="hover:text-white transition-colors">Everyday Muse Guide</a></li>
               <li><Link href="/about" className="hover:text-white transition-colors">Founder Credentials</Link></li>
               <li><Link href="/connect" className="hover:text-white transition-colors">Schedule Briefing</Link></li>
             </ul>

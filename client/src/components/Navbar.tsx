@@ -133,30 +133,60 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div id="site-navigation-menu" className="site-nav-menu 2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${
-                location === link.href
-                  ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45'
-                  : 'text-slate-300 hover:bg-white/5 hover:text-white'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <a
-            href="/resources/"
-            onClick={() => setIsOpen(false)}
-            className="block px-3 py-2 text-base font-medium rounded-lg text-brand-tealLight hover:bg-brand-teal/10 hover:text-white transition-colors"
-          >
-            Resources
-          </a>
+          {/* Mobile Menu Dropdown */}
+          {isOpen && (
+            <div id="site-navigation-menu" className="site-nav-menu 2xl:hidden border-t border-white/10 bg-[#0A0E1A] px-4 pt-3 pb-6 space-y-1 shadow-2xl">
+          <div className="pt-1 pb-2">
+            <p className="px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-slate-400">Explore Togetha</p>
+            <div className="space-y-1 mt-1">
+              <Link href="/togetha" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/togetha' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>The Platform</Link>
+              <Link href="/togetha/member-experience" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/togetha/member-experience' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Members</Link>
+              <Link href="/togetha/supporters" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/togetha/supporters' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Supporters</Link>
+              <Link href="/providers" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/providers' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Providers</Link>
+              <Link href="/partners/coaches" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/partners/coaches' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Dating Coaches</Link>
+              <Link href="/founding-partners" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/founding-partners' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Founding Partners</Link>
+              <Link href="/safety-and-trust" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/safety-and-trust' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Safety &amp; Trust</Link>
+            </div>
+          </div>
+
+          <div className="pt-2 pb-2 border-t border-white/10">
+            <p className="px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-brand-tealLight">Knowledge &amp; Tools</p>
+            <div className="space-y-1 mt-1">
+              <a
+                href="/resources/"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-between px-3 py-2 text-base font-medium rounded-lg text-brand-tealLight hover:bg-brand-teal/10 hover:text-white transition-colors"
+              >
+                <span>Resources Hub</span>
+                <span className="text-xs font-mono uppercase px-2 py-0.5 rounded bg-brand-teal/20 text-brand-tealLight border border-brand-teal/30">Free</span>
+              </a>
+              <a
+                href="/resources/muse/"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 text-sm font-medium rounded-lg text-slate-300 hover:bg-white/5 hover:text-white transition-colors"
+              >
+                Everyday Muse Starter Guide
+              </a>
+              <Link href="/field-notes" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-sm font-medium rounded-lg transition-colors ${location === '/field-notes' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Founder’s Field Notes</Link>
+            </div>
+          </div>
+
+          <div className="pt-2 pb-2 border-t border-white/10">
+            <p className="px-3 py-1 text-[11px] font-mono uppercase tracking-wider text-slate-400">About &amp; Credentials</p>
+            <div className="space-y-1 mt-1">
+              <Link href="/about" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-base font-medium rounded-lg transition-colors ${location === '/about' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>About SSAI</Link>
+              <Link href="/coalition" onClick={() => setIsOpen(false)} className={`block px-3 py-2 text-sm font-medium rounded-lg transition-colors ${location === '/coalition' ? 'text-white bg-togetha-purple border border-togetha-purpleLight/45' : 'text-slate-300 hover:bg-white/5 hover:text-white'}`}>Coalition Model</Link>
+              <Link
+                href="/connect"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg text-slate-200 hover:bg-white/5 hover:text-white transition-colors"
+              >
+                <span>Profile, Projects &amp; Résumé</span>
+                <span className="text-xs text-slate-400">Founder profile →</span>
+              </Link>
+            </div>
+          </div>
+
           <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-2">
             <Link
               href="/views"

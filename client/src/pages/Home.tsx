@@ -12,7 +12,7 @@ import { ScreenshotShowcase } from '@/components/ScreenshotShowcase';
 import { VoicesSection } from '@/components/VoicesSection';
 import {
   Calendar, Shield, Heart, Award,
-  ArrowRight, HeartHandshake, Layers, CheckCircle2
+  ArrowRight, HeartHandshake, Layers, CheckCircle2, BookOpenText, Sparkles
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
@@ -212,6 +212,60 @@ export const Home: React.FC = () => {
         </div>
 
         <ScreenshotShowcase />
+      </section>
+
+      {/* 9B. FEATURED RESOURCE: EVERYDAY MUSE STARTER GUIDE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-brand-teal/30 bg-gradient-to-r from-[#0C172B] via-[#091528] to-[#121B35] p-6 sm:p-10 shadow-2xl">
+          <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-teal/15 blur-[100px]" />
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center relative z-10">
+            <div className="space-y-4">
+              <div className="inline-flex items-center gap-2 rounded-full border border-brand-teal/40 bg-brand-teal/10 px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider text-brand-tealLight">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Practical SSAI Resource</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                Muse, make room. The Everyday Starter Guide.
+              </h2>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-serif max-w-2xl">
+                A colorful, no-jargon field guide for letting a personal AI assistant carry research, weekly planning, reminders, and first drafts—with simple review-before-action boundaries so you always stay in control.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <a
+                  href="/resources/muse/"
+                  className="brand-button px-5 py-3 rounded-xl text-sm font-bold flex items-center gap-2"
+                >
+                  <BookOpenText className="w-4 h-4" />
+                  <span>Explore the Muse Guide</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="/resources/"
+                  className="brand-button-secondary px-5 py-3 rounded-xl text-sm font-semibold"
+                >
+                  All Resources
+                </a>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 space-y-3">
+              <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">Inside the starter kit</span>
+              <ul className="text-xs sm:text-sm text-slate-300 space-y-2">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
+                  <span>5 human-sized scenarios (Sunday reset, errands, travel, solo work)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
+                  <span>7 copy-and-paste prompts you can use right away</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-teal shrink-0 mt-0.5" />
+                  <span>Free downloadable companion guide PDF</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* 10. CALL TO ACTION / CONVERSION */}
