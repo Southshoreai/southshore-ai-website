@@ -29,6 +29,14 @@ export const Home: React.FC = () => {
             <span>Togetha Connection Framework</span>
           </div>
 
+          <div className="-mt-2 mb-2 flex justify-center sm:-mt-3 sm:mb-3">
+            <img
+              src="/assets/togetha-hero-mark.webp"
+              alt="Togetha"
+              className="h-auto w-[96px] rounded-[1.35rem] border border-white/10 shadow-[0_14px_28px_rgba(58,37,115,0.35)] sm:w-[116px] lg:w-[128px]"
+            />
+          </div>
+
           <h1 className="home-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto">
             Meet people. <br className="hidden sm:inline" />
             <span className="brand-heading-spectrum">
