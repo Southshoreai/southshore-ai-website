@@ -28,6 +28,14 @@ async function startServer() {
 
   app.use(express.static(staticPath, { index: false }));
 
+  app.get(["/resources", "/resources/"], (_req, res) => {
+    res.sendFile(path.join(staticPath, "resources", "index.html"));
+  });
+
+  app.get(["/resources/muse", "/resources/muse/"], (_req, res) => {
+    res.sendFile(path.join(staticPath, "resources", "muse", "index.html"));
+  });
+
   // Handle client-side routing with route-specific metadata and a crawler-visible summary.
   app.get("*", (req, res) => {
     const indexPath = path.join(staticPath, "index.html");
