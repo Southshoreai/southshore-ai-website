@@ -114,7 +114,10 @@ export function CircleOfCare() {
                 <p className="mt-1 text-xs font-semibold leading-snug text-white">Founder, coalition &amp; scholarships</p>
               </div>
               <div className="absolute right-4 top-5 max-w-[9rem] rounded-xl border border-brand-tealLight/30 bg-[#131e38]/90 px-3 py-2.5 text-right backdrop-blur-md sm:right-7 sm:top-8 sm:max-w-[11rem]">
-                <p className="text-[10px] font-mono uppercase tracking-wider text-brand-tealLight">South Shore AI</p>
+                <p className="inline-flex items-center justify-end gap-1.5 text-[10px] font-mono uppercase tracking-wider text-brand-tealLight">
+                  <img src="/resources/assets/ssai-mark.svg" alt="" className="h-3.5 w-3.5" aria-hidden="true" />
+                  South Shore AI
+                </p>
                 <p className="mt-1 text-xs font-semibold leading-snug text-white">Technology, safety &amp; coaching</p>
               </div>
               <div className="absolute bottom-5 left-1/2 max-w-[13rem] -translate-x-1/2 rounded-xl border border-brand-orange/35 bg-[#131e38]/90 px-3 py-2.5 text-center backdrop-blur-md sm:bottom-8 sm:max-w-[16rem]">
@@ -133,7 +136,11 @@ export function CircleOfCare() {
               <div className="space-y-5 p-6 sm:p-8">
                 <div className="flex items-start gap-3">
                   <span className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${selectedRole.accent}`}>
-                    <SelectedIcon className="h-5 w-5" aria-hidden="true" />
+                    {selectedRole.id === "ssai" ? (
+                      <img src="/resources/assets/ssai-mark.svg" alt="" className="h-6 w-6" aria-hidden="true" />
+                    ) : (
+                      <SelectedIcon className="h-5 w-5" aria-hidden="true" />
+                    )}
                   </span>
                   <div>
                     <p className="text-xs font-mono uppercase tracking-wider text-slate-400">{selectedRole.eyebrow}</p>
@@ -166,7 +173,11 @@ export function CircleOfCare() {
                   }`}
                 >
                   <span className={`inline-flex h-9 w-9 items-center justify-center rounded-xl border ${role.accent}`}>
-                    <Icon className="h-4 w-4" aria-hidden="true" />
+                    {role.id === "ssai" ? (
+                      <img src="/resources/assets/ssai-mark.svg" alt="" className="h-5 w-5" aria-hidden="true" />
+                    ) : (
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                    )}
                   </span>
                   <p className="mt-3 text-sm font-bold text-white">{role.organization}</p>
                   <p className="mt-1 text-xs leading-relaxed text-slate-400">{role.eyebrow}</p>

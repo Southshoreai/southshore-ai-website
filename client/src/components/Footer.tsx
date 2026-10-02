@@ -45,7 +45,11 @@ export const Footer: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-teal to-togetha-purple flex items-center justify-center p-1">
                 <img src="/assets/togetha_symbol_only_light.png" alt="Togetha" className="w-full h-full object-contain" />
               </div>
-              <span className="text-lg font-bold text-white">South Shore AI</span>
+              <img
+                src="/resources/assets/ssai-lockup-inverted.svg"
+                alt="South Shore AI"
+                className="h-6 w-auto max-w-[180px] object-contain"
+              />
             </div>
             <p className="text-sm leading-relaxed text-slate-300">
               A commercial technology venture building serious, human-centered systems. Togetha is our flagship platform: a statewide framework expanding access to safe, supported relationships for autistic adults and adults with intellectual and developmental disabilities in Massachusetts.

@@ -51,7 +51,11 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="min-w-0 flex flex-col">
                 <span className="whitespace-nowrap text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
-                  <span>South Shore AI</span>
+                  <img
+                    src="/resources/assets/ssai-lockup-inverted.svg"
+                    alt="South Shore AI"
+                    className="h-5 w-auto max-w-[142px] object-contain sm:h-6 sm:max-w-[168px]"
+                  />
                   <span className="hidden md:inline-flex text-[10px] uppercase font-mono tracking-wider px-1.5 py-0.5 rounded bg-brand-slate text-brand-tealLight border border-brand-teal/30">
                     Flagship
                   </span>
