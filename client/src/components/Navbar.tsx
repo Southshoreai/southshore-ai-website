@@ -81,6 +81,12 @@ export const Navbar: React.FC = () => {
                 </Link>
               );
             })}
+            <a
+              href="/resources/"
+              className="px-3 py-1.5 text-sm font-medium rounded-lg text-brand-tealLight hover:text-white hover:bg-brand-teal/10 transition-colors"
+            >
+              Resources
+            </a>
           </nav>
 
           {/* Primary CTA */}
@@ -144,6 +150,13 @@ export const Navbar: React.FC = () => {
               {link.label}
             </Link>
           ))}
+          <a
+            href="/resources/"
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2 text-base font-medium rounded-lg text-brand-tealLight hover:bg-brand-teal/10 hover:text-white transition-colors"
+          >
+            Resources
+          </a>
           <div className="pt-4 mt-2 border-t border-white/10 flex flex-col gap-2">
             <Link
               href="/views"

@@ -131,6 +131,22 @@ export const siteSeo: Record<string, SiteSeo> = {
     summary: "Request a private briefing, find the appropriate contact route, or learn how to discuss the Togetha working build with the team.",
     highlights: ["Private walkthrough requests", "Contact routes for stakeholder conversations", "Working version preparing for supervised testing"],
   },
+  "/resources": {
+    path: "/resources",
+    title: "SSAI Resources | Free Everyday Muse Starter Guide",
+    description: "Get South Shore AI’s free Everyday Muse Starter Guide: five real-life examples, seven prompts to copy, and a review-before-action rule.",
+    heading: "Muse, make room.",
+    summary: "A colorful, practical guide for using Muse to carry the research, planning, reminders, and first drafts forward.",
+    highlights: ["Five everyday life and work examples", "Seven copy-ready prompts", "A clear human-control rule"],
+  },
+  "/resources/muse": {
+    path: "/resources/muse",
+    title: "Muse, Make Room | Everyday Starter Guide by SSAI",
+    description: "A practical, no-jargon South Shore AI field guide to starting with Muse: five real-life examples, seven prompts, and a review-before-action rule.",
+    heading: "Muse, make room.",
+    summary: "Start with one real task, clear boundaries, and review-before-action guidance.",
+    highlights: ["A ten-minute setup", "Five human-sized scenarios", "A seven-day experiment"],
+  },
 };
 
 export const getSiteSeo = (path: string): SiteSeo | undefined => {
