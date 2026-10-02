@@ -9,17 +9,22 @@ import { ProofAtlas } from '@/components/ProofAtlas';
 import { ProofRibbon } from '@/components/ProofRibbon';
 import { ScreenshotShowcase } from '@/components/ScreenshotShowcase';
 import { VoicesSection } from '@/components/VoicesSection';
+import { useCalmView } from '@/contexts/CalmViewContext';
 import {
   Calendar, Shield, Heart, Award,
   ArrowRight, HeartHandshake, Layers, CheckCircle2
 } from 'lucide-react';
 
 export const Home: React.FC = () => {
+  const { isCalmView } = useCalmView();
+  const calmHeadingStyle = isCalmView ? { color: '#28365A', backgroundImage: 'none', WebkitTextFillColor: '#28365A' } : undefined;
+  const calmBodyStyle = isCalmView ? { color: '#4B5973' } : undefined;
+
   return (
     <div className="space-y-16 sm:space-y-24 pb-16 sm:pb-20 overflow-hidden">
       {/* 1. HERO SECTION */}
       <section className="relative pt-8 sm:pt-20 lg:pt-24 px-4 sm:px-6 lg:px-8">
-        <div className="hero-aura absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-togetha-purple/30 via-brand-teal/25 to-brand-orange/15 rounded-full blur-[120px] pointer-events-none" />
+        {!isCalmView && <div className="hero-aura absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-togetha-purple/30 via-brand-teal/25 to-brand-orange/15 rounded-full blur-[120px] pointer-events-none" />}
 
         <div className="max-w-6xl mx-auto text-center space-y-8 relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy/80 border border-togetha-purple/40 text-xs sm:text-sm text-slate-200 backdrop-blur-md shadow-lg">
@@ -29,14 +34,14 @@ export const Home: React.FC = () => {
             <span>Togetha Connection Framework</span>
           </div>
 
-          <h1 className="home-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto">
+          <h1 className="home-hero-title text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.08] max-w-5xl mx-auto" style={calmHeadingStyle}>
             Meet people. <br className="hidden sm:inline" />
-            <span className="brand-heading-spectrum">
+            <span className="brand-heading-spectrum" style={calmHeadingStyle}>
               Your pace. Your way.
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-serif">
+          <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-serif" style={calmBodyStyle}>
             A statewide framework expanding access to safe, supported relationships for autistic adults and adults with intellectual and developmental disabilities in Massachusetts—to combat loneliness and isolation.
           </p>
 
@@ -82,9 +87,7 @@ export const Home: React.FC = () => {
             </span>
           </div>
 
-          <div className="calm-hide-motion pt-10 max-w-5xl mx-auto">
-            <ConceptVideo />
-          </div>
+          {!isCalmView && <div className="calm-hide-motion pt-10 max-w-5xl mx-auto"><ConceptVideo /></div>}
         </div>
       </section>
 

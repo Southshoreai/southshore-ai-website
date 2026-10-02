@@ -7,7 +7,7 @@ import { CalmViewNotice } from "@/components/CalmViewNotice";
 import { PageMetadata } from "@/components/PageMetadata";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { CalmViewProvider } from "./contexts/CalmViewContext";
+import { CalmViewProvider, useCalmView } from "./contexts/CalmViewContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
 const Home = lazy(() => import("./pages/Home").then((module) => ({ default: module.Home })));
@@ -39,14 +39,17 @@ function RouteTransition() {
 }
 
 function Router() {
+  const { isCalmView } = useCalmView();
+  const calmSurfaceStyle = isCalmView ? { backgroundColor: "#F2F5F6", color: "#28365A" } : undefined;
+
   return (
-    <div className="app-shell min-h-screen flex flex-col bg-[#0A0E1A] text-slate-100">
+    <div className="app-shell min-h-screen flex flex-col bg-[#0A0E1A] text-slate-100" style={calmSurfaceStyle}>
       <RouteTransition />
       <PageMetadata />
       <a href="#main-content" className="skip-link">Skip to main content</a>
       <Navbar />
       <CalmViewNotice />
-      <main id="main-content" tabIndex={-1} className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1" style={calmSurfaceStyle}>
         <Suspense fallback={<div role="status" className="mx-auto flex min-h-[45vh] max-w-7xl items-center px-4 text-sm text-slate-300">Preparing your view…</div>}>
           <Switch>
             <Route path={"/"} component={Home} />
