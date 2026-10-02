@@ -4,6 +4,7 @@ import { CALENDLY_LINK } from '@/data/siteData';
 import { ConceptVideo } from '@/components/ConceptVideo';
 import { ConnectionJourney } from '@/components/ConnectionJourney';
 import { ConnectionConstellation } from '@/components/ConnectionConstellation';
+import { CircleOfCare } from '@/components/CircleOfCare';
 import { PerspectiveDial } from '@/components/PerspectiveDial';
 import { ProofAtlas } from '@/components/ProofAtlas';
 import { ProofRibbon } from '@/components/ProofRibbon';
@@ -97,19 +98,22 @@ export const Home: React.FC = () => {
       {/* 2. VERIFIED EVIDENCE RIBBON */}
       <ProofRibbon />
 
-      {/* 3. CONNECTION JOURNEY */}
+      {/* 3. CIRCLE OF CARE */}
+      <CircleOfCare />
+
+      {/* 4. CONNECTION JOURNEY */}
       <ConnectionJourney />
 
-      {/* 4. CONNECTION CONSTELLATION */}
+      {/* 5. CONNECTION CONSTELLATION */}
       <ConnectionConstellation />
 
-      {/* 5. PROOF ATLAS */}
+      {/* 6. PROOF ATLAS */}
       <ProofAtlas />
 
-      {/* 6. APPROVED VOICES */}
+      {/* 7. APPROVED VOICES */}
       <VoicesSection />
 
-      {/* 7. PERSPECTIVE SWITCHER */}
+      {/* 8. PERSPECTIVE SWITCHER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-mono uppercase tracking-wider text-brand-tealLight">

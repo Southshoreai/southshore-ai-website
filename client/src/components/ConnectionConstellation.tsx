@@ -60,10 +60,10 @@ const constellationPoints: ConstellationPoint[] = [
   },
   {
     title: "Connection grows in the real world, too.",
-    kicker: "Human programme",
+    kicker: "Human program",
     description:
       "The platform supports connection between relationship-skills learning, trained dating coaches, and in-person matching events.",
-    detail: "The app does not deliver coaching or staff events; the human programme does.",
+    detail: "The app does not deliver coaching or staff events; the human program does.",
     href: "/partners/coaches",
     linkLabel: "Meet the coach model",
     icon: Sparkles,

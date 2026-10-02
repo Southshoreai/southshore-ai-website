@@ -17,7 +17,7 @@ const priorities: Priority[] = [
   {
     title: "The supervised volunteer test",
     label: "Readiness & learning",
-    description: "Support the next disciplined step: a supervised test of the working build with volunteers, coaches, and the programme partners.",
+    description: "Support the next disciplined step: a supervised test of the working build with volunteers, coaches, and the program partners.",
     whyNow: "The platform, safety, accessibility, and supporter tools are built. The next question is how the framework works with people in a carefully supported setting.",
     evidence: "35 adults volunteered to help test the working build when surveyed.",
     source: "Hopeful Hearts survey · August 2026",
@@ -26,7 +26,7 @@ const priorities: Priority[] = [
   },
   {
     title: "Dating coach training",
-    label: "Human programme",
+    label: "Human program",
     description: "Expand the trained, paid dating-coach capacity that joins relationship support to the digital platform.",
     whyNow: "The model is designed around technology and human support working together, not an app alone.",
     evidence: "Three pilots, eight dating coaches trained, and a 70-page manual co-developed with autistic adults.",
@@ -37,7 +37,7 @@ const priorities: Priority[] = [
   {
     title: "Supported matching events",
     label: "Belonging in person",
-    description: "Underwrite calm, accessible opportunities for members to meet in person through the programme partners.",
+    description: "Underwrite calm, accessible opportunities for members to meet in person through the program partners.",
     whyNow: "Survey responses and pilot experience both point beyond online interaction toward real-world connection.",
     evidence: "90% of pilot attendees made at least one friendship match; four couples were dating.",
     source: "DDS presentation · small event context",

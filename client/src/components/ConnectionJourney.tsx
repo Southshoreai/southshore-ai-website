@@ -73,13 +73,13 @@ const steps: JourneyStep[] = [
     label: "Build belonging",
     eyebrow: "Step 05 · Connection continues beyond the screen",
     title: "Technology and human connection work together.",
-    body: "The Togetha platform is joined to a human programme of trained, paid dating coaches, skills training, and in-person matching events run with the Shriver Center and WORK Inc.",
+    body: "The Togetha platform is joined to a human program of trained, paid dating coaches, skills training, and in-person matching events run with the Shriver Center and WORK Inc.",
     memberMeaning: "A screen can be a beginning. Connection can grow through real shared experiences.",
     stakeholderMeaning: "The model joins an accessible platform to real-world support rather than treating technology as the whole answer.",
     image: "14-event.png",
     imageAlt: "Togetha event screen showing a supported community gathering.",
     ctaHref: "/partners/coaches",
-    ctaLabel: "Explore the human programme",
+    ctaLabel: "Explore the human program",
     icon: UsersRound,
   },
 ];
@@ -106,7 +106,7 @@ export function ConnectionJourney() {
               What a better way in can feel like.
             </h2>
             <p className="max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
-              Explore how choice, pacing, support, safety, and real-world connection fit together. Each scene comes from the verified working build and the approved programme model.
+              Explore how choice, pacing, support, safety, and real-world connection fit together. Each scene comes from the verified working build and the approved program model.
             </p>
           </div>
 

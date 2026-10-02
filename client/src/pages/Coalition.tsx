@@ -34,7 +34,7 @@ const roles: CoalitionRole[] = [
   {
     name: "Eunice Kennedy Shriver Center",
     label: "Research & training partner",
-    responsibility: "Supports research and training within the programme model.",
+    responsibility: "Supports research and training within the program model.",
     contribution: "Brings evidence-minded practice and training collaboration to the work.",
     boundary: "The site does not imply that the Shriver Center currently holds a DDS contract.",
     icon: BookOpenCheck,
@@ -43,7 +43,7 @@ const roles: CoalitionRole[] = [
   {
     name: "WORK Inc",
     label: "Programme partner",
-    responsibility: "Partners on in-person coaching and community programme activity.",
+    responsibility: "Partners on in-person coaching and community program activity.",
     contribution: "Helps make supported, real-world connection opportunities possible.",
     boundary: "WORK Inc is not presented as the operator of the Togetha platform.",
     icon: Building2,
@@ -52,7 +52,7 @@ const roles: CoalitionRole[] = [
   {
     name: "Dating coaches",
     label: "Human support",
-    responsibility: "Guide relationship skills work and in-person matching events within the human programme.",
+    responsibility: "Guide relationship skills work and in-person matching events within the human program.",
     contribution: "Offer practical, human support where an app alone is not enough.",
     boundary: "The platform does not claim to replace coach-led support or run events itself.",
     icon: Landmark,
@@ -130,7 +130,7 @@ export const Coalition: React.FC = () => {
       </section>
 
       <section className="grid gap-5 md:grid-cols-2">
-        <div className="glass-panel rounded-3xl border border-white/10 p-7 space-y-3"><h2 className="text-2xl font-bold text-white">The human programme</h2><p className="text-sm leading-relaxed text-slate-300">Coaches, training, and community opportunities support connection in the real world. They complement the platform; they are not features hidden inside it.</p><Link href="/partners/coaches" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-tealLight hover:text-white">Explore the coach model <ArrowRight className="h-4 w-4" /></Link></div>
+        <div className="glass-panel rounded-3xl border border-white/10 p-7 space-y-3"><h2 className="text-2xl font-bold text-white">The human program</h2><p className="text-sm leading-relaxed text-slate-300">Coaches, training, and community opportunities support connection in the real world. They complement the platform; they are not features hidden inside it.</p><Link href="/partners/coaches" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-tealLight hover:text-white">Explore the coach model <ArrowRight className="h-4 w-4" /></Link></div>
         <div className="glass-panel rounded-3xl border border-white/10 p-7 space-y-3"><h2 className="text-2xl font-bold text-white">The technology platform</h2><p className="text-sm leading-relaxed text-slate-300">South Shore AI provides the working platform and operations. Hopeful Hearts holds the public mission role. Together, the coalition can be both disciplined and human.</p><Link href="/togetha" className="inline-flex items-center gap-2 text-sm font-semibold text-brand-tealLight hover:text-white">Explore the platform <ArrowRight className="h-4 w-4" /></Link></div>
       </section>
     </div>

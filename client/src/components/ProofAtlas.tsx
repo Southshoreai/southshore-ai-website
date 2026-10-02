@@ -53,7 +53,7 @@ const evidence: EvidencePoint[] = [
     label: "Made a friendship match",
     summary: "90% of pilot attendees made at least one friendship match; four couples were dating.",
     memberMeaning: "A supported event can make it easier to meet someone new.",
-    partnerMeaning: "The human programme has encouraging pilot evidence that should be understood in its small-event context.",
+    partnerMeaning: "The human program has encouraging pilot evidence that should be understood in its small-event context.",
     source: "DDS presentation · pilot event evaluation",
     caveat: "Small events. The figure is not a platform-wide outcome or a prediction.",
     icon: Heart,

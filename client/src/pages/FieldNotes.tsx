@@ -25,9 +25,9 @@ const notes = [
   },
   {
     title: "Why an app and a trained coach need each other",
-    deck: "The platform is a beginning, not the whole programme.",
+    deck: "The platform is a beginning, not the whole program.",
     summary: "Technology can make connection more approachable between events, but it does not replace the human practice of coaching, learning, and meeting people in person.",
-    body: ["The human programme includes trained, paid dating coaches, relationship skills workshops, and in-person matching events. The working platform gives members a calmer way to meet people between those opportunities.", "Pilot evidence is encouraging but must be understood in context: 90% of pilot attendees made at least one friendship match and four couples were dating. Those were small events, not a claim about platform-wide outcomes."],
+    body: ["The human program includes trained, paid dating coaches, relationship skills workshops, and in-person matching events. The working platform gives members a calmer way to meet people between those opportunities.", "Pilot evidence is encouraging but must be understood in context: 90% of pilot attendees made at least one friendship match and four couples were dating. Those were small events, not a claim about platform-wide outcomes."],
     sources: ["DDS presentation · September 2026", "Pilot event context: small events"],
   },
   {
