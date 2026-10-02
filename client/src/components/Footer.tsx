@@ -29,9 +29,9 @@ export const Footer: React.FC = () => {
             </a>
             <Link
               href="/connect"
-              className="brand-button-secondary px-5 py-3 rounded-xl font-medium"
+              className="brand-button-secondary px-5 py-3 rounded-xl text-center font-medium"
             >
-              Contact Directory
+              Profile, Projects &amp; Résumé
             </Link>
           </div>
         </div>

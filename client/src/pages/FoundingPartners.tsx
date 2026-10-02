@@ -94,6 +94,13 @@ export const FoundingPartners: React.FC = () => {
               <FileText className="h-4 w-4" />
               Read the one-page briefing
             </a>
+            <Link
+              href="/connect"
+              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-togetha-purpleLight/40 bg-togetha-purple/15 px-4 py-3 text-sm font-semibold text-togetha-purpleLight transition-colors hover:border-togetha-purpleLight hover:bg-togetha-purple/25 hover:text-white"
+            >
+              Profile, Projects &amp; Résumé
+              <ArrowRight className="h-4 w-4" />
+            </Link>
             <p className="mt-2 text-center text-[11px] leading-relaxed text-slate-400">Uses the approved evidence, public-status language, and metric caveats from this site.</p>
           </div>
         </div>

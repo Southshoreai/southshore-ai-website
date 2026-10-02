@@ -226,9 +226,9 @@ export const Home: React.FC = () => {
             </a>
             <Link
               href="/connect"
-              className="brand-button-secondary px-6 py-4 rounded-xl font-medium text-base"
+              className="brand-button-secondary px-6 py-4 rounded-xl text-center font-medium text-base"
             >
-              Direct Contact Directory
+              Profile, Projects &amp; Résumé
             </Link>
           </div>
         </div>
