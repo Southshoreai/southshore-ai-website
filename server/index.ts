@@ -1,9 +1,7 @@
 import express from "express";
 import { createServer } from "http";
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { hasSeoRoute, renderRobots, renderSeoHtml, renderSitemap } from "./seo";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,22 +9,9 @@ const __dirname = path.dirname(__filename);
 async function startServer() {
   const app = express();
   const server = createServer(app);
+  const staticPath = path.resolve(__dirname, "public");
 
-  // Serve static files from dist/public in production
-  const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
-
-  app.get("/robots.txt", (_req, res) => {
-    res.type("text/plain").send(renderRobots());
-  });
-
-  app.get("/sitemap.xml", (_req, res) => {
-    res.type("application/xml").send(renderSitemap());
-  });
-
-  app.use(express.static(staticPath, { index: false }));
+  app.use(express.static(staticPath));
 
   app.get(["/resources", "/resources/"], (_req, res) => {
     res.sendFile(path.join(staticPath, "resources", "index.html"));
@@ -36,17 +21,11 @@ async function startServer() {
     res.sendFile(path.join(staticPath, "resources", "muse", "index.html"));
   });
 
-  // Handle client-side routing with route-specific metadata and a crawler-visible summary.
-  app.get("*", (req, res) => {
-    const indexPath = path.join(staticPath, "index.html");
-    const template = fs.readFileSync(indexPath, "utf-8");
-    const normalizedPath = req.path === "/" ? "/" : req.path.replace(/\/+$/, "");
-    const statusCode = hasSeoRoute(normalizedPath) ? 200 : 404;
-    res.status(statusCode).type("html").send(renderSeoHtml(template, normalizedPath));
+  app.get("*", (_req, res) => {
+    res.sendFile(path.join(staticPath, "index.html"));
   });
 
   const port = process.env.PORT || 3000;
-
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
   });

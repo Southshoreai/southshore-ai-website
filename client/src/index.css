@@ -1,393 +1,119 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-/* Togetha semantic color system from Togetha We Build/togetha/CLAUDE.md § Brand. */
-@theme {
-  --color-brand-teal: #4276B4;
-  --color-brand-tealLight: #8FADD4;
-  --color-brand-navy: #28365A;
-  --color-brand-card: #1E2A4B;
-  --color-brand-slate: #34436A;
-  --color-brand-orange: #C43F34;
-  --color-brand-orangeHover: #A8322A;
-  --color-togetha-purple: #6F47C6;
-  --color-togetha-purpleLight: #A58AE2;
-  --color-togetha-green: #357F5F;
-  --color-togetha-greenLight: #79B493;
-  --color-togetha-warning: #B3261E;
-  --color-togetha-coral: #C43F34;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
-    --font-brand: "Figtree", ui-sans-serif, system-ui, sans-serif;
-    --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
-    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    color: #272d2e;
+    background: #f2f5f6;
+    font-family: 'Figtree', system-ui, sans-serif;
+    font-synthesis: none;
+  }
 
-    /* SSAI Brand semantic values */
-    --color-ssai-teal-900: #043239;
-    --color-ssai-teal-800: #0b4c56;
-    --color-ssai-teal-700: #136975;
-    --color-ssai-teal-600: #158292;
-    --color-ssai-teal-500: #3c9eae;
-    --color-ssai-teal-400: #5fb5c5;
-    --color-ssai-teal-300: #87cdda;
-    --color-ssai-teal-200: #b0e1ea;
-    --color-ssai-teal-100: #d6f1f7;
-    --color-ssai-teal-50:  #eaf9fc;
-
-    --color-ssai-orange-600: #b95500;
-    --color-ssai-orange-500: #de6700;
-    --color-ssai-orange-400: #ef7723;
-    --color-ssai-orange-300: #fea877;
-    --color-ssai-orange-50:  #fff3ed;
-
-    --color-ssai-green-600: #018e43;
-    --color-ssai-green-500: #1ba653;
-    --color-ssai-lime-300:  #a6cd3a;
-    --color-ssai-red-600:   #ca2229;
-
-    --color-ssai-ink-950: #0e1112;
-    --color-ssai-ink-900: #161a1b;
-    --color-ssai-ink-850: #1b1f21;
-    --color-ssai-ink-800: #232829;
-    --color-ssai-ink-700: #2b3133;
-    --color-ssai-ink-600: #3e4547;
-    --color-ssai-ink-500: #565f61;
-    --color-ssai-ink-400: #6f787b;
-    --color-ssai-ink-300: #879193;
-    --color-ssai-ink-200: #b8c1c4;
-    --color-ssai-ink-100: #d0d8db;
-    --color-ssai-ink-50:  #f1f7f9;
-    --color-ssai-page-light: #f2f5f6;
-
-    --radius: 5px;
-    --radius-card: 8px;
-    --radius-sm: 3px;
+  html {
+    scroll-behavior: smooth;
+    background: #f2f5f6;
   }
 
   body {
-    font-family: var(--font-brand);
-    background:
-      radial-gradient(circle at 12% -8%, rgba(111, 71, 198, 0.26), transparent 30rem),
-      radial-gradient(circle at 88% 10%, rgba(66, 118, 180, 0.18), transparent 28rem),
-      radial-gradient(circle at 52% 110%, rgba(196, 63, 52, 0.10), transparent 34rem),
-      #0A0E1A;
-    color: var(--color-ssai-ink-50);
     min-width: 320px;
+    margin: 0;
+    background: #f2f5f6;
+    color: #272d2e;
+    font-family: 'Figtree', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-brand);
-    letter-spacing: -0.015em;
+    color: #272d2e;
+    font-family: 'Figtree', system-ui, sans-serif;
+    letter-spacing: -0.035em;
   }
 
-  .font-brand {
-    font-family: var(--font-brand);
-  }
+  p { text-wrap: pretty; }
+  a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 
-  .font-serif {
-    font-family: var(--font-serif);
-  }
-
-  .font-mono {
-    font-family: var(--font-mono);
-  }
-
-  ::selection {
-    color: #FFFFFF;
-    background: #6F47C6;
-  }
-
-  :where(a, button, input, select, textarea):focus-visible {
-    outline: 3px solid #A58AE2;
+  :focus-visible {
+    outline: 2px solid #136975;
     outline-offset: 3px;
   }
-
-  #main-content:focus {
-    outline: none;
-  }
 }
 
-.skip-link {
+@layer components {
+  .ssai-page { @apply bg-[#f2f5f6] text-[#272d2e]; }
+  .ssai-section { @apply px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24; }
+  .ssai-container { @apply mx-auto w-full max-w-7xl; }
+
+  .ssai-eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#136975];
+  }
+
+  .ssai-eyebrow::before { content: ''; @apply h-px w-7 bg-[#3c9eae]; }
+
+  .ssai-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-[#b95500] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(185,85,0,0.19)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#934200] hover:shadow-[0_12px_25px_rgba(185,85,0,0.24)];
+  }
+
+  .ssai-button--dark { @apply bg-[#272d2e] shadow-[0_8px_20px_rgba(39,45,46,0.16)] hover:bg-[#161a1b]; }
+
+  .ssai-button--secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-[#b8c1c4] bg-white px-5 py-3 text-sm font-bold text-[#136975] transition duration-200 hover:-translate-y-0.5 hover:border-[#136975] hover:bg-[#eaf9fc];
+  }
+
+  .togetha-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-[#6541b5] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(101,65,181,0.2)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#52329a];
+  }
+
+  .ssai-card { @apply rounded-lg border border-[#d0d8db] bg-white shadow-[0_12px_32px_rgba(39,45,46,0.06)]; }
+  .ssai-card--subtle { @apply rounded-lg border border-[#d0d8db] bg-[#f8fafa]; }
+  .ssai-link { @apply inline-flex items-center gap-1.5 font-bold text-[#136975] underline-offset-4 transition hover:text-[#0b4c56] hover:underline; }
+
+  .project-status { @apply rounded-md border border-[#d8c9f4] bg-[#f6f0ff] px-4 py-3 text-sm leading-relaxed text-[#4a3379]; }
+  .project-detail-shell { @apply bg-[#101c24] text-slate-100; }
+  .project-subnav { @apply border-y border-[#d0d8db] bg-white; }
+  .project-subnav a { @apply whitespace-nowrap rounded-md px-3 py-1.5 text-xs font-bold text-[#485a57] transition hover:bg-[#f1ecfa] hover:text-[#60409f]; }
+  .project-subnav a[aria-current='page'] { @apply bg-[#f0e8ff] text-[#57388f]; }
+  .screenshot-card { @apply overflow-hidden rounded-lg border border-[#dedfe5] bg-white text-left shadow-[0_12px_28px_rgba(38,30,58,0.07)] transition duration-200 hover:-translate-y-1 hover:border-[#bca8e4] hover:shadow-[0_18px_36px_rgba(61,42,110,0.13)]; }
+}
+
+.ssai-logo-intro {
+  align-items: center;
+  animation: ssai-intro-exit 2200ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  background: #0e1112;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  pointer-events: none;
   position: fixed;
   z-index: 100;
-  top: 0.75rem;
-  left: 50%;
-  transform: translate(-50%, -160%);
-  border: 1px solid rgba(214, 199, 247, 0.75);
-  border-radius: 0.75rem;
-  background: #6F47C6;
-  color: #FFFFFF;
-  padding: 0.7rem 1rem;
-  font-weight: 700;
-  box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.95);
-  transition: transform 180ms ease;
 }
 
-.skip-link:focus {
-  transform: translate(-50%, 0);
+.ssai-logo-intro__lockup {
+  animation: ssai-intro-mark 780ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: center;
+  width: min(72vw, 520px);
 }
 
-.seo-snapshot {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: 5rem 1.5rem;
-  color: #F1EEFF;
+.ssai-logo-intro__lockup img { height: auto; width: 100%; }
+.ssai-logo-intro__lockup span { color: #b0e1ea; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+
+@keyframes ssai-intro-mark {
+  0% { opacity: 0; transform: translateY(12px) scale(0.97); }
+  55%, 100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.seo-snapshot h1 {
-  max-width: 54rem;
-  font-size: clamp(2.25rem, 7vw, 4.5rem);
-  line-height: 1.05;
-}
-
-.seo-snapshot p {
-  max-width: 48rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #D4D9E8;
-}
-
-.seo-snapshot ul {
-  max-width: 48rem;
-  display: grid;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  padding-left: 1.25rem;
-  color: #C9B9F2;
-}
-
-.seo-snapshot__eyebrow,
-.seo-snapshot__status {
-  font-family: var(--font-mono);
-  font-size: 0.75rem !important;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* Eyebrow styling matching SSAI brand guidelines */
-.ssai-eyebrow {
-  font-family: var(--font-brand);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-/* Container constraints matching brand */
-.ssai-container {
-  width: 100%;
-  max-width: 1160px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .ssai-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-/* Smooth anchor scrolling */
-html {
-  scroll-behavior: smooth;
-}
-/* SSAI & Togetha utility classes */
-.glass-panel {
-  background: linear-gradient(135deg, rgba(42, 54, 90, 0.82) 0%, rgba(24, 32, 57, 0.88) 55%, rgba(32, 35, 68, 0.88) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(165, 138, 226, 0.22);
-  box-shadow: 0 18px 48px -32px rgba(0, 0, 0, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-.glass-panel-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.glass-panel-hover:hover {
-  background: linear-gradient(135deg, rgba(62, 72, 119, 0.92) 0%, rgba(32, 40, 75, 0.95) 100%);
-  border-color: rgba(165, 138, 226, 0.65);
-  transform: translateY(-2px);
-}
-.glow-teal {
-  box-shadow: 0 0 40px -10px rgba(66, 118, 180, 0.62);
-}
-.glow-purple {
-  box-shadow: 0 0 42px -10px rgba(111, 71, 198, 0.58);
-}
-.glow-orange {
-  box-shadow: 0 0 38px -10px rgba(196, 63, 52, 0.58);
-}
-
-/* Shared marketing hierarchy and interaction states */
-.brand-page-title,
-.brand-heading-spectrum {
-  background-image: linear-gradient(105deg, #C9B9F2 0%, #A58AE2 24%, #6F47C6 45%, #8FADD4 70%, #E58A80 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: none;
-}
-.brand-page-title {
-  display: inline-block;
-}
-main h1:not(.home-hero-title) {
-  display: inline-block;
-  background-image: linear-gradient(105deg, #C9B9F2 0%, #A58AE2 24%, #6F47C6 45%, #8FADD4 70%, #E58A80 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.brand-button,
-.brand-button-connect,
-.brand-button-secondary,
-.brand-control,
-.brand-icon-button {
-  min-height: 44px;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease;
-}
-.brand-button {
-  color: #FFFFFF;
-  border: 1px solid rgba(214, 199, 247, 0.52);
-  background: linear-gradient(115deg, #6F47C6 0%, #5940A4 54%, #4276B4 120%);
-  box-shadow: 0 12px 26px -15px rgba(111, 71, 198, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-.brand-button:hover {
-  color: #FFFFFF;
-  background: linear-gradient(115deg, #805BD2 0%, #6F47C6 50%, #4C86CA 120%);
-  box-shadow: 0 16px 30px -14px rgba(111, 71, 198, 0.95);
-  transform: translateY(-1px);
-}
-.brand-button-connect {
-  color: #FFFFFF;
-  border: 1px solid rgba(255, 205, 199, 0.46);
-  background: linear-gradient(115deg, #C43F34 0%, #A8322A 72%, #7E2830 130%);
-  box-shadow: 0 12px 26px -15px rgba(196, 63, 52, 0.88), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-.brand-button-connect:hover {
-  color: #FFFFFF;
-  background: linear-gradient(115deg, #D45649 0%, #B23830 72%, #8C2D34 130%);
-  box-shadow: 0 16px 30px -14px rgba(196, 63, 52, 0.9);
-  transform: translateY(-1px);
-}
-.brand-button-secondary,
-.brand-control {
-  color: #F5F4FF;
-  border: 1px solid rgba(143, 173, 212, 0.55);
-  background: rgba(40, 54, 90, 0.74);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-.brand-button-secondary:hover,
-.brand-control:hover {
-  color: #FFFFFF;
-  border-color: rgba(165, 138, 226, 0.88);
-  background: rgba(62, 72, 119, 0.9);
-  transform: translateY(-1px);
-}
-.brand-icon-button {
-  color: #E6E9FF;
-  border: 1px solid rgba(143, 173, 212, 0.35);
-  background: rgba(40, 54, 90, 0.82);
-}
-.brand-icon-button:hover {
-  color: #FFFFFF;
-  border-color: rgba(165, 138, 226, 0.82);
-  background: rgba(62, 72, 119, 0.98);
-}
-.brand-control-group {
-  background: linear-gradient(135deg, rgba(30, 42, 75, 0.92), rgba(24, 32, 57, 0.96));
-  border: 1px solid rgba(143, 173, 212, 0.36);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 36px -28px rgba(0, 0, 0, 0.95);
-}
-.brand-control-active {
-  color: #FFFFFF;
-  border: 1px solid rgba(220, 210, 250, 0.65);
-  background: linear-gradient(115deg, #6F47C6 0%, #5D45B0 58%, #4276B4 135%);
-  box-shadow: 0 9px 24px -14px rgba(111, 71, 198, 0.94), inset 0 1px 0 rgba(255, 255, 255, 0.24);
-}
-.brand-control-active:hover {
-  color: #FFFFFF;
-  background: linear-gradient(115deg, #805BD2 0%, #6F47C6 58%, #4D86C8 135%);
-}
-.brand-control-safe {
-  color: #FFFFFF;
-  border: 1px solid rgba(180, 222, 197, 0.54);
-  background: linear-gradient(115deg, #357F5F 0%, #2F6B54 100%);
-  box-shadow: 0 9px 24px -14px rgba(53, 127, 95, 0.92), inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-@media (prefers-reduced-motion: reduce) {
-  .glass-panel-hover,
-  .brand-button,
-  .brand-button-connect,
-  .brand-button-secondary,
-  .brand-control,
-  .brand-icon-button {
-    transition: none;
-  }
-  .glass-panel-hover:hover,
-  .brand-button:hover,
-  .brand-button-connect:hover,
-  .brand-button-secondary:hover,
-  .brand-control:hover {
-    transform: none;
-  }
-}
-
-/* Connection Constellation: a quiet, member-centred interactive art moment. */
-.constellation-shell {
-  background:
-    radial-gradient(circle at 85% 24%, rgba(111, 71, 198, 0.42), transparent 24rem),
-    radial-gradient(circle at 18% 92%, rgba(66, 118, 180, 0.26), transparent 26rem),
-    linear-gradient(125deg, rgba(14, 21, 44, 0.98), rgba(20, 24, 54, 0.94) 54%, rgba(33, 28, 66, 0.92));
-  box-shadow: 0 28px 70px -44px rgba(0, 0, 0, 0.96), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.constellation-haze {
-  background: linear-gradient(90deg, rgba(10, 14, 26, 0.96) 0%, rgba(10, 14, 26, 0.84) 44%, rgba(10, 14, 26, 0.34) 100%);
-}
-
-.constellation-wide-art {
-  mix-blend-mode: screen;
-  animation: constellation-drift 18s ease-in-out infinite alternate;
-}
-
-.constellation-control-group {
-  background: linear-gradient(145deg, rgba(14, 23, 49, 0.78), rgba(10, 14, 31, 0.82));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 40px -30px rgba(0, 0, 0, 0.96);
-}
-
-.constellation-active-panel {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 34px -28px rgba(0, 0, 0, 0.92);
-}
-
-.constellation-portal::after {
-  content: "";
-  position: absolute;
-  inset: 10%;
-  border: 1px solid rgba(201, 185, 242, 0.25);
-  border-radius: 999px;
-  box-shadow: 0 0 30px rgba(111, 71, 198, 0.2);
-  animation: constellation-pulse 4.8s ease-in-out infinite;
-}
-
-@keyframes constellation-drift {
-  from { transform: scale(1.02) translate3d(-0.5%, -0.25%, 0); }
-  to { transform: scale(1.07) translate3d(0.75%, 0.5%, 0); }
-}
-
-@keyframes constellation-pulse {
-  0%, 100% { transform: scale(0.92); opacity: 0.48; }
-  50% { transform: scale(1.05); opacity: 0.9; }
+@keyframes ssai-intro-exit {
+  0%, 72% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .constellation-wide-art,
-  .constellation-portal::after {
-    animation: none;
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

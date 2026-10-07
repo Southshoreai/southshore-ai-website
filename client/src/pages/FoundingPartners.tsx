@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'wouter';
 import { CALENDLY_LINK } from '@/data/siteData';
-import { FoundingPartnerDecisionRoom } from '@/components/FoundingPartnerDecisionRoom';
 import { ProofRibbon } from '@/components/ProofRibbon';
 import { Briefcase, Heart, Award, Shield, CheckCircle2, Calendar, FileText, ArrowRight } from 'lucide-react';
 
@@ -85,28 +84,9 @@ export const FoundingPartners: React.FC = () => {
             >
               Book Private Founding Briefing
             </a>
-            <a
-              href="/briefings/togetha-founding-partner-briefing.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-brand-tealLight/40 bg-brand-teal/10 px-4 py-3 text-sm font-semibold text-brand-tealLight transition-colors hover:border-brand-tealLight hover:bg-brand-teal/20 hover:text-white"
-            >
-              <FileText className="h-4 w-4" />
-              Read the one-page briefing
-            </a>
-            <Link
-              href="/connect"
-              className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-togetha-purpleLight/40 bg-togetha-purple/15 px-4 py-3 text-sm font-semibold text-togetha-purpleLight transition-colors hover:border-togetha-purpleLight hover:bg-togetha-purple/25 hover:text-white"
-            >
-              Profile, Projects &amp; Résumé
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <p className="mt-2 text-center text-[11px] leading-relaxed text-slate-400">Uses the approved evidence, public-status language, and metric caveats from this site.</p>
           </div>
         </div>
       </div>
-
-      <FoundingPartnerDecisionRoom />
 
       {/* Choose What You Fund Grid */}
       <div className="space-y-8">

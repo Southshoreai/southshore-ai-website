@@ -1,0 +1,19 @@
+{
+  "routes": [
+    { "path": "/", "title": "South Shore AI | Practical AI Services" },
+    { "path": "/services", "title": "AI Services" },
+    { "path": "/work", "title": "Our Work" },
+    { "path": "/togetha", "title": "Togetha Featured Project" },
+    { "path": "/togetha/member-experience", "title": "Togetha Member Experience" },
+    { "path": "/togetha/supporters", "title": "Togetha Supporters & Families" },
+    { "path": "/providers", "title": "Togetha for Provider Agencies & DDS" },
+    { "path": "/partners/coaches", "title": "Togetha Dating Coaches & Human Program" },
+    { "path": "/founding-partners", "title": "Togetha Founding Partners" },
+    { "path": "/safety-and-trust", "title": "Togetha Safety, Privacy & Governance" },
+    { "path": "/views", "title": "Togetha System Views" },
+    { "path": "/about", "title": "About South Shore AI" },
+    { "path": "/connect", "title": "Talk to Scott" },
+    { "path": "/resources", "title": "SSAI Resources · Everyday Muse Starter Guide" },
+    { "path": "/resources/muse", "title": "Muse, Make Room · Everyday Starter Guide" }
+  ]
+}

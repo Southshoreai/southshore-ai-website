@@ -1,94 +1,52 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { CALENDLY_LINK, SSAI_EMAIL, PHONE_NUMBER } from '@/data/siteData';
-import { Shield, Award, Terminal, Briefcase, GraduationCap, Calendar, ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Lightbulb, Mic2, Wrench } from 'lucide-react';
 
-export const About: React.FC = () => {
-  return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
-      <div className="max-w-3xl space-y-4">
-        <span className="text-xs font-mono uppercase tracking-wider text-brand-tealLight font-bold">
-          Executive Leadership & Engineering
-        </span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-          South Shore AI: Building Serious, Human Systems.
-        </h1>
-        <p className="text-lg text-slate-300 font-serif leading-relaxed">
-          South Shore AI is a commercial technology venture dedicated to solving high-stakes workflow and social connectivity problems. We design and operate software with rigorous safety, scalable multi-tenant architecture, and human dignity at the center.
-        </p>
-      </div>
-
-      {/* Founder Credentials Card */}
-      <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 space-y-8">
-        <div className="space-y-2">
-          <span className="text-xs font-mono text-brand-orange uppercase font-bold">Founder & CEO</span>
-          <h2 className="text-3xl font-bold text-white">Scott Pralinsky</h2>
-          <p className="text-sm text-slate-300 font-mono">
-            Executive Leadership · Computer Systems Architecture · Operational Discipline
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="p-5 rounded-2xl bg-brand-navy border border-white/10 space-y-2.5">
-            <div className="w-9 h-9 rounded-xl bg-brand-teal/20 text-brand-tealLight flex items-center justify-center">
-              <Briefcase className="w-5 h-5" />
-            </div>
-            <h4 className="text-base font-bold text-white">20 Years Executive Leadership</h4>
-            <p className="text-xs text-slate-300 leading-relaxed font-serif">
-              Decades of experience as a chief executive guiding complex organizations, community programs, and technology initiatives.
-            </p>
+export const About: React.FC = () => (
+  <div className="ssai-page overflow-hidden">
+    <section className="bg-[#f2f5f6] px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-12">
+      <div className="ssai-container overflow-hidden border border-[#d0d8db] bg-[#0e1112] shadow-[0_28px_60px_rgba(14,17,18,0.18)]">
+        <div className="grid lg:grid-cols-[0.92fr_1.08fr]">
+          <div className="relative flex min-h-[440px] overflow-hidden lg:order-2 lg:min-h-[610px]">
+            <img src="/assets/ssai-brand/scott-red-tie-podium.jpg" alt="Scott Pralinsky speaking at a podium" className="h-full w-full object-cover object-[52%_center]" />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(14,17,18,0.18),transparent_58%),linear-gradient(0deg,rgba(14,17,18,0.48),transparent_46%)]" aria-hidden="true" />
+            <p className="absolute bottom-6 left-6 right-6 inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.14em] text-white"><Mic2 className="h-4 w-4" />Leadership, strategy, and practical action</p>
           </div>
-
-          <div className="p-5 rounded-2xl bg-brand-navy border border-white/10 space-y-2.5">
-            <div className="w-9 h-9 rounded-xl bg-togetha-purple/20 text-togetha-purpleLight flex items-center justify-center">
-              <Terminal className="w-5 h-5" />
+          <div className="relative flex flex-col justify-center p-7 text-white sm:p-12 lg:order-1 lg:p-16">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_10%,rgba(21,130,146,0.52),transparent_40%),linear-gradient(145deg,#0e1112,#043239)]" aria-hidden="true" />
+            <div className="relative">
+              <p className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-[0.16em] text-[#b0e1ea]"><span className="h-px w-7 bg-[#b0e1ea]" />About South Shore AI</p>
+              <h1 className="mt-6 max-w-xl text-5xl font-extrabold leading-[0.94] tracking-[-0.055em] text-white sm:text-6xl">Leadership that stays <span className="text-[#fea877]">close to the work.</span></h1>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#d0d8db] sm:text-xl">South Shore AI helps business owners and organizational leaders make sense of AI, choose useful tools, and turn good ideas into working solutions.</p>
+              <Link href="/connect" className="ssai-button mt-8">Talk to Scott <ArrowRight className="h-4 w-4" /></Link>
             </div>
-            <h4 className="text-base font-bold text-white">Wall Street Systems Programming</h4>
-            <p className="text-xs text-slate-300 leading-relaxed font-serif">
-              Rigorous technical roots in financial computing, high-reliability data structures, and secure multi-tier systems.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-brand-navy border border-white/10 space-y-2.5">
-            <div className="w-9 h-9 rounded-xl bg-brand-orange/20 text-brand-orange flex items-center justify-center">
-              <Shield className="w-5 h-5" />
-            </div>
-            <h4 className="text-base font-bold text-white">Air Force Military Science & Technology</h4>
-            <p className="text-xs text-slate-300 leading-relaxed font-serif">
-              Served for many years as an Instructor of Military Science and Technology, instilling mission precision, training rigor, and operational security.
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-brand-navy border border-white/10 space-y-2.5">
-            <div className="w-9 h-9 rounded-xl bg-togetha-green/20 text-togetha-greenLight flex items-center justify-center">
-              <GraduationCap className="w-5 h-5" />
-            </div>
-            <h4 className="text-base font-bold text-white">MIT Artificial Intelligence</h4>
-            <p className="text-xs text-slate-300 leading-relaxed font-serif">
-              Completed advanced studies in Artificial Intelligence at the Massachusetts Institute of Technology, grounding our pattern-safeguard implementations.
-            </p>
           </div>
         </div>
       </div>
+    </section>
 
-      {/* Advisory Practice */}
-      <div className="glass-panel p-8 rounded-3xl border border-white/10 space-y-4">
-        <h3 className="text-2xl font-bold text-white">Keynotes & Advisory Practice</h3>
-        <p className="text-sm text-slate-300 leading-relaxed font-serif">
-          In addition to our venture engineering on Togetha, Scott Pralinsky delivers executive keynotes and strategic advisory for organizations navigating practical AI adoption, workflow modernization, and mission-aligned technical execution.
-        </p>
-        <div className="pt-2">
-          <a
-            href={CALENDLY_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-orange hover:underline"
-          >
-            <span>Inquire About Keynotes or Advisory</span>
-            <ArrowRight className="w-4 h-4" />
-          </a>
+    <section className="ssai-section bg-white">
+      <div className="ssai-container grid gap-9 lg:grid-cols-[1.14fr_0.86fr] lg:items-start">
+        <div>
+          <p className="ssai-eyebrow">Scott Pralinsky</p>
+          <h2 className="mt-4 text-4xl font-extrabold leading-[1.02] sm:text-5xl">Leadership experience and hands-on building in the same conversation.</h2>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#565f61]">Scott Pralinsky helps leaders understand AI, choose useful tools, and turn ideas into working solutions. The goal is not to make technology sound complicated. It is to identify the practical next step and help people put it to use.</p>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#565f61]">The conversation can start with a frustrating task, a reporting problem, a knowledge base, a process that needs a better handoff, or a public audience that needs AI explained clearly.</p>
         </div>
+        <aside className="border border-[#d0d8db] bg-[#f2f5f6] p-7 sm:p-8">
+          <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#136975]">A practical point of view</p>
+          <p className="mt-4 text-2xl font-extrabold leading-tight text-[#272d2e]">“Start with the work people need to get done.”</p>
+          <p className="mt-4 text-base leading-relaxed text-[#565f61]">Technology has to earn its place in a real organization. The best next move is the one people can understand, trust, and use.</p>
+        </aside>
       </div>
-    </div>
-  );
-};
+    </section>
+
+    <section className="bg-[#eaf9fc] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+      <div className="ssai-container grid gap-4 md:grid-cols-2">
+        <article className="border border-[#b0e1ea] bg-white p-7 sm:p-9"><Lightbulb className="h-7 w-7 text-[#136975]" /><h2 className="mt-5 text-2xl font-extrabold">Clear decisions</h2><p className="mt-3 text-lg leading-relaxed text-[#565f61]">Make AI understandable enough to decide what is worth doing next.</p></article>
+        <article className="border border-[#ffcaad] bg-[#fffaf7] p-7 sm:p-9"><Wrench className="h-7 w-7 text-[#b95500]" /><h2 className="mt-5 text-2xl font-extrabold">Working solutions</h2><p className="mt-3 text-lg leading-relaxed text-[#565f61]">Move from an idea to a tool, workflow, training session, or briefing that people can use.</p></article>
+      </div>
+      <div className="ssai-container mt-4 border border-[#d0d8db] bg-white p-6 text-base leading-relaxed text-[#565f61]"><p className="flex gap-3"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#136975]" />Togetha is a current example of the human-centered applications South Shore AI is building.</p></div>
+    </section>
+  </div>
+);

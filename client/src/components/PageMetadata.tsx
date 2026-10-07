@@ -1,52 +1,78 @@
-import { useEffect } from "react";
-import { useLocation } from "wouter";
-import { DEFAULT_OG_IMAGE, SITE_ORIGIN, getSiteSeo } from "@shared/siteSeo";
+import { useEffect } from 'react';
 
-function upsertMeta(attribute: "name" | "property", key: string, content: string) {
-  let element = document.head.querySelector<HTMLMetaElement>(`meta[${attribute}="${key}"]`);
+type Metadata = {
+  title: string;
+  description: string;
+};
+
+const ORIGIN = 'https://www.southshore.ai';
+
+const PAGE_METADATA: Record<string, Metadata> = {
+  '/': {
+    title: 'South Shore AI | Custom Apps, Automation & AI Training',
+    description: 'Practical AI for businesses and organizations. South Shore AI builds custom apps, automates workflows, and helps teams choose and use the right tools.',
+  },
+  '/services': {
+    title: 'AI Services | South Shore AI',
+    description: 'Explore practical AI services: workflow automation, custom applications, tool selection, team training, and executive briefings.',
+  },
+  '/work': {
+    title: 'Our Work | South Shore AI',
+    description: 'See how South Shore AI turns complex needs into working, human-centered applications, including the Togetha project.',
+  },
+  '/togetha': {
+    title: 'Togetha | A Featured South Shore AI Project',
+    description: 'Explore Togetha, a platform for friendship and dating for autistic adults and adults with intellectual and developmental disabilities.',
+  },
+  '/about': {
+    title: 'About South Shore AI',
+    description: 'Learn how South Shore AI helps leaders understand AI, choose useful tools, and turn ideas into working solutions.',
+  },
+  '/connect': {
+    title: 'Talk to Scott | South Shore AI',
+    description: 'Start a practical conversation about an AI challenge, workflow, custom app idea, training session, or briefing.',
+  },
+};
+
+const projectMetadata: Metadata = {
+  title: 'Togetha | South Shore AI',
+  description: 'Learn about Togetha’s member choice, accessibility, supporter permissions, and safety tools for supervised volunteer testing.',
+};
+
+const setMeta = (attribute: 'name' | 'property', key: string, value: string) => {
+  const selector = `meta[${attribute}="${key}"]`;
+  let element = document.head.querySelector<HTMLMetaElement>(selector);
   if (!element) {
-    element = document.createElement("meta");
-    element.setAttribute(attribute, key);
+    element = document.createElement('meta');
     document.head.appendChild(element);
   }
-  element.content = content;
-}
+  element.setAttribute(attribute, key);
+  element.content = value;
+};
 
-export function PageMetadata() {
-  const [location] = useLocation();
-
+export const PageMetadata = ({ location }: { location: string }) => {
   useEffect(() => {
-    const seo = getSiteSeo(location);
-    if (!seo) {
-      document.title = "Page not found | South Shore AI";
-      upsertMeta("name", "robots", "noindex");
-      return;
-    }
+    const metadata = PAGE_METADATA[location] ?? (location.startsWith('/togetha') || ['/providers', '/partners/coaches', '/founding-partners', '/safety-and-trust', '/views'].includes(location)
+      ? projectMetadata
+      : PAGE_METADATA['/']);
+    const url = `${ORIGIN}${location === '/' ? '/' : location}`;
 
-    const canonical = `${SITE_ORIGIN}${seo.path}`;
-    document.title = seo.title;
-    upsertMeta("name", "description", seo.description);
-    upsertMeta("name", "robots", "index,follow");
-    upsertMeta("property", "og:type", "website");
-    upsertMeta("property", "og:site_name", "South Shore AI · Togetha");
-    upsertMeta("property", "og:title", seo.title);
-    upsertMeta("property", "og:description", seo.description);
-    upsertMeta("property", "og:url", canonical);
-    upsertMeta("property", "og:image", DEFAULT_OG_IMAGE);
-    upsertMeta("property", "og:image:alt", "Togetha working version welcome screen");
-    upsertMeta("name", "twitter:card", "summary_large_image");
-    upsertMeta("name", "twitter:title", seo.title);
-    upsertMeta("name", "twitter:description", seo.description);
-    upsertMeta("name", "twitter:image", DEFAULT_OG_IMAGE);
+    document.title = metadata.title;
+    setMeta('name', 'description', metadata.description);
+    setMeta('property', 'og:title', metadata.title);
+    setMeta('property', 'og:description', metadata.description);
+    setMeta('property', 'og:url', url);
+    setMeta('name', 'twitter:title', metadata.title);
+    setMeta('name', 'twitter:description', metadata.description);
 
-    let canonicalLink = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement("link");
-      canonicalLink.rel = "canonical";
-      document.head.appendChild(canonicalLink);
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
     }
-    canonicalLink.href = canonical;
+    canonical.href = url;
   }, [location]);
 
   return null;
-}
+};

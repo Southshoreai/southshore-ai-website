@@ -56,7 +56,7 @@ export const DEMO_SCREENSHOTS: DemoScreenshot[] = [
     title: "In-Chat Safety Intervention",
     subtitle: "Warn, don't block",
     audience: "Safety & Families",
-    highlight: "Pattern-based safety guidance",
+    highlight: "Real-time pattern guidance",
     description: "Surfaces coaching tips when sharing phone numbers or addresses: offers 'Edit message' or 'Send anyway' without paternalistic lockouts."
   },
   {
@@ -65,7 +65,7 @@ export const DEMO_SCREENSHOTS: DemoScreenshot[] = [
     title: "Financial Scam Interception",
     subtitle: "Held for human moderator review",
     audience: "Providers & Regulators",
-    highlight: "Held for trained human review",
+    highlight: "Immediate risk suppression",
     description: "Catches money or gift-card solicitations and holds them for human moderation before the member ever sees the message."
   },
   {

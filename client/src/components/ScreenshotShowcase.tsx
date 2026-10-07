@@ -1,187 +1,74 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { Eye, X } from 'lucide-react';
 import { DEMO_SCREENSHOTS, DemoScreenshot } from '@/data/siteData';
-import { Eye, X, ChevronRight, Sparkles, Shield, Users, Layers } from 'lucide-react';
+
+const filters = [
+  { id: 'all', label: 'All screens' },
+  { id: 'members', label: 'Member experience' },
+  { id: 'safety', label: 'Safety tools' },
+  { id: 'supporters', label: 'Supporters' },
+  { id: 'providers', label: 'Providers' },
+];
+
+const screenIdsByFilter: Record<string, string[]> = {
+  members: ['01-welcome', '03-guided-home', '04-discover-guided', '05-discover-standard', '11-display-settings'],
+  safety: ['08-safety-tip', '09-money-held', '10-help', '20-moderator-queue'],
+  supporters: ['12-my-supporters', '16-copilot-dash'],
+  providers: ['14-event', '18-agency-overview'],
+};
 
 export const ScreenshotShowcase: React.FC = () => {
-  const [selectedFilter, setSelectedFilter] = useState<string>('all');
-  const [activeModalScreen, setActiveModalScreen] = useState<DemoScreenshot | null>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!activeModalScreen) return;
-
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    closeButtonRef.current?.focus();
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setActiveModalScreen(null);
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      previouslyFocused?.focus();
-    };
-  }, [activeModalScreen]);
-
-  const filterTabs = [
-    { id: 'all', label: 'All Screens (13)' },
-    { id: 'members', label: 'Member Experience' },
-    { id: 'safety', label: 'Safety & Safeguards' },
-    { id: 'supporters', label: 'Supporters & Co-Pilot' },
-    { id: 'providers', label: 'Provider Operations' },
-  ];
-
-  const filteredScreens = DEMO_SCREENSHOTS.filter((screen) => {
-    if (selectedFilter === 'all') return true;
-    if (selectedFilter === 'members') {
-      return ['01-welcome', '03-guided-home', '04-discover-guided', '05-discover-standard', '11-display-settings'].includes(screen.id);
-    }
-    if (selectedFilter === 'safety') {
-      return ['08-safety-tip', '09-money-held', '10-help', '20-moderator-queue'].includes(screen.id);
-    }
-    if (selectedFilter === 'supporters') {
-      return ['12-my-supporters', '16-copilot-dash'].includes(screen.id);
-    }
-    if (selectedFilter === 'providers') {
-      return ['14-event', '18-agency-overview'].includes(screen.id);
-    }
-    return true;
-  });
+  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [activeScreen, setActiveScreen] = useState<DemoScreenshot | null>(null);
+  const screens = selectedFilter === 'all' ? DEMO_SCREENSHOTS : DEMO_SCREENSHOTS.filter((screen) => screenIdsByFilter[selectedFilter]?.includes(screen.id));
 
   return (
-    <div className="space-y-8">
-      {/* Category Tabs */}
-      <div className="brand-control-group flex flex-wrap gap-2 justify-center p-1.5 rounded-2xl">
-        {filterTabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setSelectedFilter(tab.id)}
-            aria-pressed={selectedFilter === tab.id}
-            className={`brand-control px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold ${
-              selectedFilter === tab.id
-                ? tab.id === 'safety' ? 'brand-control-safe' : 'brand-control-active'
-                : ''
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
+    <div>
+      <div className="rounded-2xl border border-[#d8caee] bg-[#f8f4ff] px-4 py-3 text-sm leading-relaxed text-[#573b86]">
+        <strong>Demo-data notice:</strong> These are captured from the Togetha working build in preparation for supervised testing. All participant names and interactions are simulated.
       </div>
 
-      {/* Grid of Screenshots */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredScreens.map((screen) => (
-          <button
-            type="button"
-            key={screen.id}
-            onClick={() => setActiveModalScreen(screen)}
-            className="group cursor-pointer text-left glass-panel rounded-2xl border border-white/10 overflow-hidden glass-panel-hover flex flex-col justify-between"
-          >
-            <div className="relative aspect-[9/13] bg-black/60 p-2 overflow-hidden flex items-center justify-center">
-              <img
-                src={`/screenshots/${screen.filename}`}
-                alt={screen.title}
-                className="max-h-full w-auto object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span className="text-xs text-brand-tealLight font-mono flex items-center gap-1 font-semibold">
-                  <Eye className="w-3.5 h-3.5" />
-                  <span>Click to inspect interface & callouts</span>
-                </span>
-              </div>
-              <div className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/80 backdrop-blur-md text-[10px] font-mono text-slate-300 border border-white/10">
-                {screen.audience}
-              </div>
-            </div>
-
-            <div className="p-4 space-y-1.5 bg-[#0D1322]">
-              <div className="text-[11px] font-mono text-togetha-purpleLight font-medium">
-                {screen.highlight}
-              </div>
-              <h4 className="text-base font-bold text-white group-hover:text-brand-tealLight transition-colors">
-                {screen.title}
-              </h4>
-              <p className="text-xs text-slate-400 line-clamp-2">
-                {screen.description}
-              </p>
-            </div>
-          </button>
-        ))}
-      </div>
-
-      {/* Detail Inspection Modal */}
-      {activeModalScreen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
-          onClick={() => setActiveModalScreen(null)}
-        >
-          <div
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="screenshot-modal-title"
-            className="relative max-w-4xl w-full max-h-[90vh] bg-[#0E1524] border border-white/20 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              ref={closeButtonRef}
-              onClick={() => setActiveModalScreen(null)}
-              className="brand-icon-button absolute top-4 right-4 z-20 p-2 rounded-full"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5" />
+      <div className="mt-6 flex flex-wrap gap-2" aria-label="Filter screenshots">
+        {filters.map((filter) => {
+          const active = filter.id === selectedFilter;
+          return (
+            <button key={filter.id} type="button" onClick={() => setSelectedFilter(filter.id)} className={`rounded-full px-4 py-2 text-sm font-bold transition ${active ? 'bg-[#6541b5] text-white shadow-sm' : 'border border-[#d9dde0] bg-white text-[#465955] hover:border-[#a88bdc] hover:text-[#60409f]'}`} aria-pressed={active}>
+              {filter.label}{filter.id === 'all' ? ` (${DEMO_SCREENSHOTS.length})` : ''}
             </button>
+          );
+        })}
+      </div>
 
-            {/* Left: Image */}
-            <div className="w-full md:w-1/2 p-4 bg-black/90 flex items-center justify-center overflow-auto max-h-[50vh] md:max-h-full">
-              <img
-                src={`/screenshots/${activeModalScreen.filename}`}
-                alt={activeModalScreen.title}
-                className="max-h-[600px] w-auto object-contain rounded-xl shadow-2xl"
-              />
-            </div>
+      <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {screens.map((screen) => (
+          <button key={screen.id} type="button" onClick={() => setActiveScreen(screen)} className="screenshot-card group">
+            <span className="block bg-[#f6f5f8] p-3">
+              <span className="flex min-h-[330px] items-center justify-center overflow-hidden rounded-xl bg-white">
+                <img src={`/screenshots/${screen.filename}`} alt={screen.title} className="max-h-[390px] w-auto object-contain transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+              </span>
+            </span>
+            <span className="block p-5">
+              <span className="block text-xs font-extrabold uppercase tracking-[0.1em] text-[#6541a0]">{screen.highlight}</span>
+              <span className="mt-2 block text-lg font-extrabold text-[#24222a]">{screen.title}</span>
+              <span className="mt-2 block text-sm leading-relaxed text-[#5d6267]">{screen.description}</span>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#6541a0]"><Eye className="h-4 w-4" />Open full screen</span>
+            </span>
+          </button>
+        ))}
+      </div>
 
-            {/* Right: Detailed Context & Callouts */}
-            <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto space-y-6">
-              <div className="space-y-4">
-                <div className="space-y-1">
-                  <span className="text-xs font-mono text-brand-tealLight uppercase tracking-wider block">
-                    {activeModalScreen.audience}
-                  </span>
-                  <h3 id="screenshot-modal-title" className="text-2xl font-bold text-white tracking-tight">
-                    {activeModalScreen.title}
-                  </h3>
-                  <p className="text-sm text-slate-300">
-                    {activeModalScreen.subtitle}
-                  </p>
-                </div>
-
-                <div className="p-3.5 rounded-xl bg-brand-navy border border-white/10 text-xs font-mono text-togetha-purpleLight">
-                  <span className="text-slate-400 block mb-1">KEY PRODUCT BEHAVIOR:</span>
-                  {activeModalScreen.highlight}
-                </div>
-
-                <div className="space-y-2 text-sm text-slate-300 leading-relaxed font-serif">
-                  <p>{activeModalScreen.description}</p>
-                </div>
-
-                <div className="p-3 rounded-lg bg-black/40 border border-white/5 text-[11px] font-mono text-slate-400">
-                  <span className="text-brand-orange font-semibold block">DEMO DATA NOTICE:</span>
-                  Captured from the verified working build in preparation for supervised testing in Massachusetts. All participant names and interactions are synthetic.
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                <span className="text-xs text-slate-400">
-                  Image file: <code className="text-slate-200">{activeModalScreen.filename}</code>
-                </span>
-                <button
-                  onClick={() => setActiveModalScreen(null)}
-                  className="brand-button-secondary px-4 py-2 rounded-lg text-xs font-semibold"
-                >
-                  Close Screen
-                </button>
-              </div>
+      {activeScreen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#18201f]/80 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="screenshot-title" onClick={() => setActiveScreen(null)}>
+          <div className="relative grid max-h-[90vh] w-full max-w-5xl overflow-auto rounded-[1.5rem] bg-white shadow-2xl md:grid-cols-[0.95fr_1.05fr]" onClick={(event) => event.stopPropagation()}>
+            <button type="button" className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full border border-[#dadde0] bg-white text-[#303e3c] shadow-sm" onClick={() => setActiveScreen(null)} aria-label="Close screenshot detail"><X className="h-5 w-5" /></button>
+            <div className="flex min-h-[360px] items-center justify-center bg-[#f7f5fa] p-6"><img src={`/screenshots/${activeScreen.filename}`} alt={activeScreen.title} className="max-h-[72vh] w-auto rounded-xl object-contain shadow-md" /></div>
+            <div className="p-7 sm:p-10">
+              <p className="text-xs font-extrabold uppercase tracking-[0.13em] text-[#6541a0]">{activeScreen.audience}</p>
+              <h3 id="screenshot-title" className="mt-3 text-3xl font-extrabold">{activeScreen.title}</h3>
+              <p className="mt-3 text-lg leading-relaxed text-[#5a5e64]">{activeScreen.subtitle}</p>
+              <div className="mt-6 rounded-xl bg-[#f3effb] p-4"><p className="text-xs font-extrabold uppercase tracking-[0.11em] text-[#6541a0]">Key product behavior</p><p className="mt-2 font-bold leading-relaxed text-[#49346f]">{activeScreen.highlight}</p></div>
+              <p className="mt-6 text-base leading-relaxed text-[#4f5d5a]">{activeScreen.description}</p>
+              <p className="mt-6 border-t border-[#e3e1e9] pt-5 text-xs leading-relaxed text-[#706a7b]"><strong>Demo-data notice:</strong> Participant names and interactions shown in this screen are simulated for the Togetha working build.</p>
             </div>
           </div>
         </div>

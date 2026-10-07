@@ -1,164 +1,63 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { CALENDLY_LINK, SSAI_EMAIL, TOGETHA_EMAIL, PHONE_NUMBER } from '@/data/siteData';
-import { Shield, Mail, Phone, Calendar, ArrowUpRight, Heart, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone } from 'lucide-react';
+import { PHONE_NUMBER, SSAI_EMAIL } from '@/data/siteData';
 
-export const Footer: React.FC = () => {
-  return (
-    <footer className="site-footer border-t border-white/10 bg-[#060911] text-slate-400">
-      {/* Top CTA Banner */}
-      <div className="site-footer-cta border-b border-brand-teal/25 py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-togetha-purple/20 via-brand-teal/15 to-brand-orange/10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-center md:text-left">
-            <h3 className="brand-heading-spectrum text-2xl font-bold tracking-tight">
-              See Togetha Working in Real Time
-            </h3>
-            <p className="text-sm text-slate-300 max-w-xl">
-              Book a 30-minute private walkthrough of the working build with founder Scott Pralinsky. Available for prospective Founding Partners, provider leaders, and coalition stakeholders.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={CALENDLY_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="brand-button-connect px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Book 30-Min Walkthrough</span>
-            </a>
-            <Link
-              href="/connect"
-              className="brand-button-secondary px-5 py-3 rounded-xl text-center font-medium"
-            >
-              Profile, Projects &amp; Résumé
-            </Link>
-          </div>
+export const Footer: React.FC = () => (
+  <footer className="border-t border-[#d0d8db] bg-white text-[#3e4547]">
+    <div className="border-b border-[#d0d8db] bg-[#eaf9fc] px-5 py-12 sm:px-8 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="max-w-2xl">
+          <p className="ssai-eyebrow">Start with one problem</p>
+          <h2 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl">What would you like to make easier?</h2>
+          <p className="mt-3 text-lg leading-relaxed text-[#565f61]">Bring a frustrating task, a business challenge, or an app idea. We’ll help you find a practical next step.</p>
+        </div>
+        <Link href="/connect" className="ssai-button self-start md:self-auto">
+          Talk to Scott
+          <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+    </div>
+
+    <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-4 lg:px-10">
+      <div className="space-y-4 lg:col-span-2">
+        <Link href="/" className="inline-flex max-w-[230px]">
+          <img src="/assets/ssai-brand/ssai-lockup-full.svg" alt="South Shore AI — Navigating Tomorrow with AI Today" className="h-auto w-full" />
+        </Link>
+        <p className="max-w-md text-sm leading-relaxed">Practical AI for businesses and organizations. We build useful tools, automate work, and help teams use AI with confidence.</p>
+        <div className="space-y-2 text-sm">
+          <a href={`mailto:${SSAI_EMAIL}`} className="flex w-fit items-center gap-2 font-semibold text-[#136975] hover:underline"><Mail className="h-4 w-4 text-[#136975]" />{SSAI_EMAIL}</a>
+          <a href={`tel:${PHONE_NUMBER.replace(/[^+\d]/g, '')}`} className="flex w-fit items-center gap-2 font-semibold text-[#136975] hover:underline"><Phone className="h-4 w-4 text-[#136975]" />{PHONE_NUMBER}</a>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Column 1: Organization & Mission */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-teal to-togetha-purple flex items-center justify-center p-1">
-                <img src="/assets/togetha_symbol_only_light.png" alt="Togetha" className="w-full h-full object-contain" />
-              </div>
-              <img
-                src="/resources/assets/ssai-lockup-inverted.svg"
-                alt="South Shore AI"
-                className="h-6 w-auto max-w-[180px] object-contain"
-              />
-            </div>
-            <p className="text-sm leading-relaxed text-slate-300">
-              A commercial technology venture building serious, human-centered systems. Togetha is our flagship platform: a statewide framework expanding access to safe, supported relationships for autistic adults and adults with intellectual and developmental disabilities in Massachusetts.
-            </p>
-            <div className="pt-2 text-xs text-slate-400 space-y-1.5 font-mono">
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-brand-tealLight" />
-                <a href={`mailto:${SSAI_EMAIL}`} className="hover:text-white transition-colors">{SSAI_EMAIL}</a>
-                <span className="text-slate-600">·</span>
-                <a href={`mailto:${TOGETHA_EMAIL}`} className="hover:text-white transition-colors">{TOGETHA_EMAIL}</a>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-brand-tealLight" />
-                <span>{PHONE_NUMBER}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 2: Togetha Product */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-200">
-              The Platform
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/togetha" className="hover:text-white transition-colors">Platform Architecture</Link></li>
-              <li><Link href="/togetha/member-experience" className="hover:text-white transition-colors">Member Experience</Link></li>
-              <li><Link href="/togetha/supporters" className="hover:text-white transition-colors">Supporter Permissions</Link></li>
-              <li><Link href="/safety-and-trust" className="hover:text-white transition-colors">Safety & Trust Model</Link></li>
-              <li><Link href="/views" className="hover:text-white transition-colors">5 System Views</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Stakeholders */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-200">
-              Stakeholders &amp; Resources
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/founding-partners" className="hover:text-white transition-colors">Founding Partners</Link></li>
-              <li><Link href="/providers" className="hover:text-white transition-colors">Provider Agencies & DDS</Link></li>
-              <li><Link href="/partners/coaches" className="hover:text-white transition-colors">Dating Coaches & WORK Inc</Link></li>
-              <li><Link href="/coalition" className="hover:text-white transition-colors">Coalition Model</Link></li>
-              <li><Link href="/field-notes" className="hover:text-white transition-colors">Founder’s Field Notes</Link></li>
-              <li><a href="/resources/" className="hover:text-white transition-colors text-brand-tealLight">Resources Hub</a></li>
-              <li><a href="/resources/muse/" className="hover:text-white transition-colors">Everyday Muse Guide</a></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">Founder Credentials</Link></li>
-              <li><Link href="/connect" className="hover:text-white transition-colors">Schedule Briefing</Link></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Institutional Partners */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-200">
-              Partners & Governance
-            </h4>
-            <div className="text-xs space-y-2.5 text-slate-400">
-              <div>
-                <strong className="text-slate-200 block">Hopeful Hearts Initiative</strong>
-                <span>Statewide governance partner & public mission face</span>
-              </div>
-              <div>
-                <strong className="text-slate-200 block">Eunice Kennedy Shriver Center</strong>
-                <span>UMass Chan Medical School research & training partner</span>
-              </div>
-              <div>
-                <strong className="text-slate-200 block">WORK Inc</strong>
-                <span>In-person coaching & community program partner</span>
-              </div>
-              <div><Link href="/readiness" className="font-semibold text-slate-200 hover:text-white transition-colors">Public readiness status</Link></div>
-            </div>
-          </div>
-        </div>
-
-        {/* Public Notice & Boundaries */}
-        <div className="mt-12 pt-8 border-t border-white/10 text-xs leading-relaxed text-slate-400 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <div className="flex items-center gap-1.5 text-slate-300 font-semibold">
-              <Shield className="w-4 h-4 text-brand-teal" />
-              <span>Public Status & Transparency Notice</span>
-            </div>
-            <p>
-              Togetha is currently a working version being prepared for supervised volunteer testing with 35 survey participants in Massachusetts. The platform is password-protected with synthetic demo data and is not yet open for public account creation. All screenshots shown represent simulated testing accounts.
-            </p>
-          </div>
-          <div className="space-y-2">
-            <div className="flex items-center gap-1.5 text-slate-300 font-semibold">
-              <Heart className="w-4 h-4 text-togetha-purpleLight" />
-              <span>Privacy & Autonomy Guarantee</span>
-            </div>
-            <p>
-              Provider agencies never read private chat messages or inspect match lists. Only a member's own designated supporters can view activity, and only to the specific level authorized by the member. Access can be revoked instantly at any time.
-            </p>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="mt-8 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} South Shore AI, LLC. All IP and software rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <Link href="/safety-and-trust" className="hover:text-slate-300">Privacy & Governance</Link>
-            <Link href="/accessibility" className="hover:text-slate-300">Accessibility</Link>
-            <Link href="/about" className="hover:text-slate-300">Executive Leadership</Link>
-            <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 flex items-center gap-1">
-              <span>Book Walkthrough</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
-          </div>
-        </div>
+      <div>
+        <h3 className="text-xs font-extrabold uppercase tracking-[0.15em] text-[#6f787b]">South Shore AI</h3>
+        <ul className="mt-4 space-y-2.5 text-sm font-semibold">
+          <li><Link href="/services" className="hover:text-[#b95500] hover:underline">Services</Link></li>
+          <li><Link href="/work" className="hover:text-[#b95500] hover:underline">Our Work</Link></li>
+          <li><Link href="/about" className="hover:text-[#b95500] hover:underline">About</Link></li>
+          <li><a href="/resources/" className="hover:text-[#b95500] hover:underline">Resources</a></li>
+          <li><Link href="/connect" className="hover:text-[#b95500] hover:underline">Contact</Link></li>
+        </ul>
       </div>
-    </footer>
-  );
-};
+
+      <div>
+        <h3 className="text-xs font-extrabold uppercase tracking-[0.15em] text-[#6f787b]">Togetha</h3>
+        <ul className="mt-4 space-y-2.5 text-sm font-semibold">
+          <li><Link href="/togetha" className="hover:text-[#6541a0] hover:underline">Project overview</Link></li>
+          <li><Link href="/togetha/member-experience" className="hover:text-[#6541a0] hover:underline">For members</Link></li>
+          <li><Link href="/togetha/supporters" className="hover:text-[#6541a0] hover:underline">For supporters</Link></li>
+          <li><Link href="/safety-and-trust" className="hover:text-[#6541a0] hover:underline">Safety & privacy</Link></li>
+        </ul>
+      </div>
+    </div>
+
+    <div className="border-t border-[#d0d8db] px-5 py-5 text-xs text-[#6f787b] sm:px-8 lg:px-10">
+      <div className="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} South Shore AI, LLC.</p>
+        <p>Togetha is preparing for supervised volunteer testing in Massachusetts and is not open for public account creation.</p>
+      </div>
+    </div>
+  </footer>
+);
