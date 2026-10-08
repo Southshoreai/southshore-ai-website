@@ -181,6 +181,17 @@
   transform: translateX(2px);
 }
 
+.workflow-proof__mobile-cue {
+  align-items: center;
+  color: #136975;
+  display: none;
+  font-size: 0.72rem;
+  font-weight: 800;
+  gap: 0.35rem;
+  letter-spacing: 0.02em;
+  margin-top: 0.7rem;
+}
+
 .workflow-proof__detail {
   background: #ffffff;
   border: 1px solid #bcd3cd;
@@ -235,6 +246,11 @@
 @media (min-width: 640px) {
   .workflow-proof__detail { padding: 2rem; }
   .workflow-proof__selector-button { padding: 1.125rem 1.25rem; }
+}
+
+@media (max-width: 1023px) {
+  .workflow-proof__mobile-cue { display: inline-flex; }
+  .workflow-proof__detail { scroll-margin-top: 5.5rem; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

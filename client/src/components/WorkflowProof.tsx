@@ -1,5 +1,5 @@
-import { useState, type FC } from 'react';
-import { ArrowRight, CheckCircle2, ClipboardCheck, FileText, MessageCircleQuestion } from 'lucide-react';
+import { useRef, useState, type FC } from 'react';
+import { ArrowDown, ArrowRight, CheckCircle2, ClipboardCheck, FileText, MessageCircleQuestion } from 'lucide-react';
 import { Link } from 'wouter';
 
 type Workflow = {
@@ -86,8 +86,21 @@ const workflows: Workflow[] = [
 
 export const WorkflowProof: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const detailRef = useRef<HTMLElement>(null);
   const activeWorkflow = workflows[activeIndex];
   const ActiveIcon = activeWorkflow.icon;
+
+  const selectWorkflow = (index: number, shouldScrollToDetail: boolean) => {
+    setActiveIndex(index);
+
+    const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+    if (!shouldScrollToDetail || !isMobile) return;
+
+    window.requestAnimationFrame(() => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      detailRef.current?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  };
 
   return (
     <section className="workflow-proof bg-[#f2f5ef] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24" aria-labelledby="workflow-proof-heading">
@@ -108,7 +121,7 @@ export const WorkflowProof: FC = () => {
                 <button
                   key={workflow.id}
                   type="button"
-                  onClick={() => setActiveIndex(index)}
+                  onClick={(event) => selectWorkflow(index, event.detail > 0)}
                   aria-pressed={isActive}
                   aria-controls="workflow-proof-detail"
                   className={`workflow-proof__selector-button ${isActive ? 'is-active' : ''}`}
@@ -118,6 +131,7 @@ export const WorkflowProof: FC = () => {
                   <span className="min-w-0 text-left">
                     <span className="block text-lg font-extrabold leading-tight text-[#272d2e]">{workflow.title}</span>
                     <span className="mt-2 block text-sm leading-relaxed text-[#596a65]">{workflow.friction}</span>
+                    {isActive && <span className="workflow-proof__mobile-cue"><ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />Showing steps below</span>}
                   </span>
                   <ArrowRight className="workflow-proof__selector-arrow h-5 w-5 shrink-0" aria-hidden="true" />
                 </button>
@@ -125,7 +139,7 @@ export const WorkflowProof: FC = () => {
             })}
           </div>
 
-          <article id="workflow-proof-detail" className="workflow-proof__detail" aria-labelledby="workflow-proof-detail-title" key={activeWorkflow.id}>
+          <article ref={detailRef} id="workflow-proof-detail" className="workflow-proof__detail" aria-labelledby="workflow-proof-detail-title" key={activeWorkflow.id}>
             <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[#d3dfd9] pb-6">
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[#136975]">Illustrative workflow {activeWorkflow.number}</p>
