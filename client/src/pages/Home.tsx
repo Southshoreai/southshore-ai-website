@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import {
-  AppWindow,
   BookOpen,
   ArrowRight,
-  CheckCircle2,
   ChevronRight,
-  Compass,
-  FileText,
-  Landmark,
-  MessageCircle,
-  Repeat2,
-  Shield,
-  Sparkles,
-  Users,
 } from 'lucide-react';
+import { WorkflowProof } from '../components/WorkflowProof';
 
 type Audience = {
   label: string;
@@ -94,15 +85,6 @@ const proofCards = [
     text: 'Built a local online directory as a practical way for a small organization to get found and turn local visibility into leads.',
     tone: 'blue',
   },
-];
-
-const practicalOutcomes = [
-  { icon: MessageCircle, title: 'Every inquiry gets a reply the same day.', text: 'Create a practical follow-up path so interest does not disappear into a crowded inbox.' },
-  { icon: Landmark, title: 'Reporting your funders and board actually read.', text: 'Bring updates, accomplishments, and the context behind the numbers into a clearer story.' },
-  { icon: Sparkles, title: 'Answers to the same 20 questions, without you.', text: 'Organize internal knowledge so people can find reliable answers when they need them.' },
-  { icon: Repeat2, title: 'From inquiry to onboarded, nobody dropped.', text: 'Connect intake, next steps, and follow-through so handoffs are easier to see and manage.' },
-  { icon: AppWindow, title: 'A tool built around how you work, not the other way around.', text: 'Turn a recurring workaround into a useful app, portal, or workflow tailored to your actual process.' },
-  { icon: FileText, title: 'Policies and procedures people can put to work.', text: 'Review, organize, and move important documents into a training or knowledge system that stays useful.' },
 ];
 
 export const Home: React.FC = () => {
@@ -221,27 +203,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-[#f2f5ef] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24" aria-labelledby="outcomes-heading">
-        <div className="ssai-container">
-          <div className="max-w-3xl">
-            <p className="ssai-eyebrow">Common things we make easier</p>
-            <h2 id="outcomes-heading" className="mt-4 text-4xl font-extrabold leading-[1.04] sm:text-5xl">Bring the work that keeps getting in the way.</h2>
-            <p className="mt-5 text-lg leading-relaxed text-[#52645f]">These are practical problems SSAI can help you solve. They are not generic software categories; they are the moments that take time, lose context, or leave people waiting.</p>
-          </div>
-          <div className="mt-10 grid gap-x-10 gap-y-0 lg:grid-cols-2">
-            {practicalOutcomes.map((outcome) => {
-              const Icon = outcome.icon;
-              return (
-                <article key={outcome.title} className="grid gap-4 border-t border-[#d4ded8] py-6 sm:grid-cols-[3.25rem_1fr]">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-white text-[#087f79] shadow-sm"><Icon className="h-5 w-5" /></span>
-                  <div><h3 className="text-xl font-extrabold leading-snug">{outcome.title}</h3><p className="mt-2 text-base leading-relaxed text-[#596a65]">{outcome.text}</p></div>
-                </article>
-              );
-            })}
-          </div>
-          <Link href="/services" className="ssai-link mt-8">Explore services and practical next steps <ArrowRight className="h-4 w-4" /></Link>
-        </div>
-      </section>
+      <WorkflowProof />
 
       <section className="bg-white px-5 py-12 sm:px-8 sm:py-16 lg:px-10">
         <a href="/resources/" className="ssai-container group grid gap-7 border border-[#ffcaad] bg-[#fff3ed] p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_36px_rgba(185,85,0,0.14)] sm:p-10 lg:grid-cols-[auto_1fr_auto] lg:items-center">
