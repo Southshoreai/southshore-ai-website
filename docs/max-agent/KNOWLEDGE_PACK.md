@@ -1,9 +1,9 @@
 # Max Knowledge Pack
 
-> **Owner:** South Shore AI  
-> **Status:** Draft — review before production use  
-> **Last reviewed:** _[YYYY-MM-DD]_  
-> **Approved by:** _[Name]_  
+> **Owner:** South Shore AI
+> **Status:** Draft — review before production use
+> **Last reviewed:** _[YYYY-MM-DD]_
+> **Approved by:** _[Name]_
 > **Version:** `0.1`
 
 ## 1. How Max uses this pack

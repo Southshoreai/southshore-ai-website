@@ -1,6 +1,6 @@
 # South Shore AI Discovery Report Template
 
-> **Prepared with Max, the South Shore AI Agent**  
+> **Prepared with Max, the South Shore AI Agent**
 > _This is an indicative planning resource, not a binding quote. Final scope and pricing are confirmed by South Shore AI._
 
 ## Cover
