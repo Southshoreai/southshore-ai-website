@@ -131,6 +131,14 @@ export const siteSeo: Record<string, SiteSeo> = {
     summary: "Request a private briefing, find the appropriate contact route, or learn how to discuss the Togetha working build with the team.",
     highlights: ["Private walkthrough requests", "Contact routes for stakeholder conversations", "Working version preparing for supervised testing"],
   },
+  "/max": {
+    path: "/max",
+    title: "Talk with Max | South Shore AI",
+    description: "Explore a stuck process, a new idea, or a practical AI next step with Max, South Shore AI’s AI guide.",
+    heading: "Bring the unfinished version of your idea.",
+    summary: "Max helps visitors think through practical directions, human judgment, and a useful first move without requiring technical language.",
+    highlights: ["Explore an idea without pressure", "Practical directions and human review", "A clear route to talk with Scott"],
+  },
   "/resources": {
     path: "/resources",
     title: "SSAI Resources | Free Everyday Muse Starter Guide",

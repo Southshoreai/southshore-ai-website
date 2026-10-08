@@ -18,6 +18,8 @@ import { SafetyAndTrust } from '@/pages/SafetyAndTrust';
 import { SystemViews } from '@/pages/SystemViews';
 import { About } from '@/pages/About';
 import { Connect } from '@/pages/Connect';
+import { Max } from '@/pages/Max';
+import { MaxLauncher } from '@/components/MaxLauncher';
 
 const projectRoutes = new Set([
   '/togetha/member-experience',
@@ -70,10 +72,12 @@ export function App() {
           <Route path="/views" component={SystemViews} />
           <Route path="/about" component={About} />
           <Route path="/connect" component={Connect} />
+          <Route path="/max" component={Max} />
           <Route><Home /></Route>
         </Switch>
       </main>
       <Footer />
+      <MaxLauncher />
     </div>
   );
 }
