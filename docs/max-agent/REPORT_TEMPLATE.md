@@ -1,82 +1,62 @@
-# South Shore AI Discovery Report Template
+# Your idea, clarified — Brief Template
 
-> **Prepared with Max, the South Shore AI Agent**
-> _This is an indicative planning resource, not a binding quote. Final scope and pricing are confirmed by South Shore AI._
+> **Prepared with Max, South Shore AI’s AI guide**
+> _This is a provisional planning resource, not a binding quote or a recommendation personally approved by Scott. Scott confirms final scope and pricing._
 
 ## Cover
 
 - Visitor name and organization, when provided
-- Report date
-- Clear title based on the visitor’s stated challenge
+- Brief date
+- A clear title based on the visitor’s stated challenge
 - South Shore AI lockup and practical-AI positioning
+- A small note: **“A concise starting point for a conversation—not a finished specification.”**
 
-## 1. What we heard
+## 1. Your goal
 
-A concise, neutral summary of:
+A concise, neutral summary of the outcome the visitor wants, the people/process/audience involved, and any relevant constraints already identified.
 
-- the current friction or opportunity;
-- the outcome the visitor wants;
-- the people, process, or audience involved; and
-- the useful constraints already identified.
+## 2. What is getting in the way
 
-## 2. The opportunity
+Describe the current friction without blame or invented impact. Focus on the repeated work, unclear handoff, hard-to-find information, limited visibility, inconsistent experience, or other visitor-stated obstacle.
 
-Describe the practical improvement a better system could support. Focus on clarity, follow-through, time, decision quality, experience, access, or visibility—not unverified ROI claims.
+## 3. Possible directions
 
-## 3. Possible solution directions
+Present one or two directions in a compact ledger.
 
-Present two or three directions in a simple ledger.
-
-| Direction | What it could make easier | Confidence | What needs discovery |
+| Direction | What it could make easier | Confidence | What still needs discovery |
 |---|---|---|---|
 | _[direction]_ | _[outcome]_ | proven / likely / exploratory | _[assumption]_ |
 
-## 4. What should stay human
+Use provisional language for anything not marked `proven` in the active knowledge pack.
 
-Name the approval points and relationships that need people involved. Examples may include:
+## 4. A useful starting point
 
-- deciding what is sent, shared, or changed;
-- reviewing advice, summaries, or exceptions;
-- maintaining client, member, or community relationships;
-- validating source information; and
-- making policy, budget, or governance decisions.
+Recommend a manageable next action: a scoped discovery conversation, workflow map, short prototype, knowledge/source review, reporting/data inventory, or focused enablement session. State what the visitor can bring without transmitting confidential data through Max.
 
-## 5. A useful first step
+## 5. What should stay human
 
-Recommend the next practical action, such as:
+Name the approval points and relationships that still need people involved, such as deciding what is sent or changed, reviewing summaries/exceptions, maintaining client or community relationships, validating source information, and making policy, budget, or governance decisions.
 
-- a scoped discovery conversation;
-- a workflow map;
-- a short prototype;
-- a knowledge/source review;
-- a reporting/data inventory; or
-- a focused enablement session.
+## 6. Questions to resolve with Scott
 
-Include what the visitor can bring to that conversation without asking them to transmit confidential data through Max.
+List only the unanswered points that materially affect fit, design, cost, timeline, data access, or governance. Do not manufacture questions to lengthen the brief.
 
-## 6. Indicative planning range
+## 7. Indicative planning range
 
 Show this section only when an approved pricing card applies.
 
 - Label: **Indicative, non-binding planning range**
-- Range and unit
-- Assumptions
-- Factors that could move the range
-- Required notice: **Final scope and pricing are confirmed by South Shore AI.**
+- Scope covered and key assumptions
+- Material exclusions and recurring costs, where known
+- Factors that may move the range
+- Required notice: **Scott confirms final scope and pricing.**
 
-## 7. Open questions
+## 8. Continue thoughtfully
 
-List the unanswered items that would affect a design, range, or next step.
-
-## 8. Continue the conversation
-
-- Secure magic link: **Continue with Max**
 - Direct contact: `info@southshore.ai`
-- Brief note that a South Shore AI person can review the ideas, refine the scope, and confirm whether a project is a fit.
+- A scoped **Continue with Max** link, separate from brief-view access
+- A statement that a conversation with Scott can test the directions, refine the scope, and determine whether the work is a fit
 
-## PDF presentation notes
+## Web and PDF presentation notes
 
-- Use the existing South Shore AI color system: warm off-white, deep teal, teal, and restrained orange.
-- Use the site’s established typography and a readable one-column print hierarchy.
-- Avoid raw chat transcripts. The report should feel like a considered executive discovery brief.
-- Include page numbers, report date, and a visible non-binding estimate notice where pricing appears.
+Use the existing South Shore AI color system: warm off-white, deep teal, teal, and restrained orange. Preserve the site’s Figtree-led typography and a readable one-column hierarchy. Avoid raw chat transcripts and unsupported metrics. The web version and branded PDF are two controlled renderings of the same approved structured brief. Include page numbers, the brief date, and the non-binding notice wherever a pricing range appears.

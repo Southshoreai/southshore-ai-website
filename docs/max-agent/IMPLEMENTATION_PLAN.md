@@ -287,9 +287,9 @@ The app does not claim email delivery merely because a job was queued. It offers
 
 A dedicated Max privacy notice is required; the existing Togetha Safety & Privacy page is not a substitute. It explains what is stored, who at South Shore AI can access it, relevant service providers, retention, deletion requests, and that anonymous exploration may still be stored temporarily for service operation. It must not make unsupported security, compliance, or model-training claims.
 
-Proposed retention baseline for approval before launch:
+Approved retention baseline (Scott confirmation, October 8, 2026):
 
-| Record | Proposed retention |
+| Record | Retention |
 |---|---|
 | Anonymous sessions and messages | Delete after 30 days of inactivity. |
 | Identified conversations, approved briefs, and delivery records | Retain for 180 days, then delete or anonymize unless an active business relationship requires otherwise. |
