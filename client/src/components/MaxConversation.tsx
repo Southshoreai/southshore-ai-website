@@ -17,6 +17,7 @@ type MaxConversationProps = {
 };
 
 const STORAGE_KEY = 'ssai-max-preview-session-v1';
+const PREVIEW_STORAGE_KEY = 'ssai-max-preview-brief-v1';
 
 const initialMessages: MaxMessage[] = [{
   id: 'max-welcome',
@@ -41,6 +42,32 @@ const readStoredMessages = (): MaxMessage[] => {
   } catch {
     return initialMessages;
   }
+};
+
+const readStoredPreview = () => {
+  if (typeof window === 'undefined') return '';
+
+  try {
+    return window.sessionStorage.getItem(PREVIEW_STORAGE_KEY) ?? '';
+  } catch {
+    return '';
+  }
+};
+
+const previewSafetyResponse = (message: string) => {
+  const normalized = message.toLowerCase();
+  const sensitiveInformation = /\b(password|social security|ssn|account number|medical record|medical details|client record)\b/;
+  const unsafeRequest = /\b(fraud|harass|surveil|surveillance|bypass security|deceive)\b/;
+
+  if (sensitiveInformation.test(normalized)) {
+    return 'Please leave out private or sensitive details here. You can describe the type of work, the challenge, and the outcome you want without names, account information, or client records.';
+  }
+
+  if (unsafeRequest.test(normalized)) {
+    return 'I can’t help plan something deceptive, harmful, or invasive. If there is a legitimate workflow or communication challenge underneath it, describe that in a non-sensitive way and I can help think through a responsible direction.';
+  }
+
+  return null;
 };
 
 const previewReply = (message: string, visitorTurn: number) => {
@@ -74,13 +101,14 @@ export const MaxConversation: React.FC<MaxConversationProps> = ({ variant, onClo
   const [draft, setDraft] = useState('');
   const [isThinking, setIsThinking] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const [previewText, setPreviewText] = useState('');
+  const [previewText, setPreviewText] = useState(readStoredPreview);
   const inputRef = useRef<HTMLInputElement>(null);
   const isPanel = variant === 'panel';
 
   const visitorMessages = useMemo(() => messages.filter((message) => message.speaker === 'visitor'), [messages]);
   const latestVisitorMessage = visitorMessages.at(-1)?.content ?? '';
-  const previewReady = visitorMessages.length >= 2;
+  const meaningfulInputLength = visitorMessages.reduce((total, message) => total + message.content.replace(/\s/g, '').length, 0);
+  const previewReady = visitorMessages.length >= 2 && meaningfulInputLength >= 48;
 
   const thinkingLedger = useMemo(() => {
     const firstMessage = visitorMessages[0]?.content;
@@ -97,6 +125,11 @@ export const MaxConversation: React.FC<MaxConversationProps> = ({ variant, onClo
   }, [messages]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (previewText) window.sessionStorage.setItem(PREVIEW_STORAGE_KEY, previewText);
+  }, [previewText]);
+
+  useEffect(() => {
     if (!previewReady || previewText) return;
     setPreviewText(`Goal: ${thinkingLedger.goal}\n\nWhat may be getting in the way: ${thinkingLedger.friction}\n\nPossible first move: Clarify the current workflow with the people who do the work, then decide whether a lighter process, a focused tool, or a small automation is the best fit.\n\nWhat should stay human: ${thinkingLedger.humanJudgment}`);
   }, [previewReady, previewText, thinkingLedger]);
@@ -104,6 +137,13 @@ export const MaxConversation: React.FC<MaxConversationProps> = ({ variant, onClo
   const submitMessage = (rawMessage: string) => {
     const message = rawMessage.trim();
     if (!message || isThinking) return;
+
+    const safetyMessage = previewSafetyResponse(message);
+    if (safetyMessage) {
+      setMessages((current) => [...current, createMessage('max', safetyMessage)]);
+      setDraft('');
+      return;
+    }
 
     const nextVisitorTurn = visitorMessages.length + 1;
     setMessages((current) => [...current, createMessage('visitor', message)]);
@@ -126,7 +166,10 @@ export const MaxConversation: React.FC<MaxConversationProps> = ({ variant, onClo
     setDraft('');
     setIsPreviewOpen(false);
     setPreviewText('');
-    if (typeof window !== 'undefined') window.sessionStorage.removeItem(STORAGE_KEY);
+    if (typeof window !== 'undefined') {
+      window.sessionStorage.removeItem(STORAGE_KEY);
+      window.sessionStorage.removeItem(PREVIEW_STORAGE_KEY);
+    }
     window.setTimeout(() => inputRef.current?.focus(), 0);
   };
 
@@ -213,12 +256,18 @@ export const MaxConversation: React.FC<MaxConversationProps> = ({ variant, onClo
 
       <form className="max-message-form" onSubmit={handleSubmit}>
         <label className="sr-only" htmlFor={`max-message-${variant}`}>Describe what you are working through</label>
-        <input id={`max-message-${variant}`} ref={inputRef} value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="You can start with the messy version." maxLength={900} disabled={isThinking} />
+        <input id={`max-message-${variant}`} ref={inputRef} autoFocus={isPanel} value={draft} onChange={(event) => setDraft(event.target.value)} placeholder="You can start with the messy version." maxLength={900} disabled={isThinking} />
         <button type="submit" disabled={isThinking || !draft.trim()} aria-label="Send message to Max"><Send className="h-4 w-4" aria-hidden="true" /></button>
       </form>
+      <p className="max-preview-storage-note">For this working preview, messages stay only in this browser. Start over clears them.</p>
 
       <div className="max-conversation__footer">
-        {isPanel ? <Link href="/max" className="max-footer-link" onClick={onClose}>Open the full Max workspace <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link> : <Link href="/connect" className="max-footer-link">Talk to Scott instead <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>}
+        {isPanel ? (
+          <div className="max-footer-actions">
+            <Link href="/connect" className="max-footer-link" onClick={onClose}>Talk to Scott <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>
+            <Link href="/max" className="max-footer-link" onClick={onClose}>Full workspace <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>
+          </div>
+        ) : <Link href="/connect" className="max-footer-link">Talk to Scott instead <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" /></Link>}
         <button type="button" onClick={clearPreviewSession} className="max-reset-button">Start over</button>
       </div>
     </section>
