@@ -150,7 +150,7 @@ The opening copy is exactly:
 >
 > “An everyday frustration or a new idea is enough. Not sure where to start? We can work it out together.”
 
-It offers only these optional starters: **I don’t know where to start**, **I have an idea**, and **A task takes too much time**. The input sits directly below with the placeholder **“Tell me a little about it…”** and a visible **Send** button. Small readable privacy text says **“Please leave out private or sensitive information.”** and links to a dedicated `/max/privacy` page. A quiet line says **“Explore first. When you’re ready to save your idea brief, we’ll ask for your name and email.”**
+It offers only these optional starters in a compact vertical stack: **I don’t know where to start**, **I have an idea**, and **A task takes too much time**. The input sits directly below with the placeholder **“Tell me a little about it…”** and a visible **Send** button. Small readable privacy text says **“Please leave out private or sensitive information.”** and links to a dedicated `/max/privacy` page. A quiet line says **“Explore first. When you’re ready to save your idea brief, we’ll ask for your name and email.”**
 
 After the first message, the opening copy and starter buttons leave the conversation. Once application milestone rules permit it, the visitor can choose **“See your idea summary.”** The summary uses ordinary labels: **Your goal**, **A possible approach**, and **Where to start**, and remains visitor-correctable. The preview includes no non-functional save button and does not place development-status messages in the visitor interface.
 

@@ -362,7 +362,7 @@
 .max-opening h1 { color: #17322f; font-size: clamp(2rem, 4.6vw, 3.1rem); font-weight: 850; letter-spacing: -0.045em; line-height: 1.04; margin: 0; max-width: 13ch; }
 .max-opening-copy { color: #4d625d; font-size: 1rem; line-height: 1.55; margin: 1rem 0 0; max-width: 40rem; }
 
-.max-starters { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1.35rem; }
+.max-starters { align-items: flex-start; display: flex; flex-direction: column; gap: 0.55rem; margin-top: 1.35rem; }
 .max-starter-button {
   align-items: center;
   background: #fff;
