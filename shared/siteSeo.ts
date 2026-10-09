@@ -135,9 +135,17 @@ export const siteSeo: Record<string, SiteSeo> = {
     path: "/max",
     title: "Talk with Max | South Shore AI",
     description: "Explore a stuck process, a new idea, or a practical AI next step with Max, South Shore AI’s AI guide.",
-    heading: "Bring the unfinished version of your idea.",
-    summary: "Max helps visitors think through practical directions, human judgment, and a useful first move without requiring technical language.",
-    highlights: ["Explore an idea without pressure", "Practical directions and human review", "A clear route to talk with Scott"],
+    heading: "What would you like to make easier?",
+    summary: "Max helps visitors explore an everyday frustration or new idea in plain language, then identify one useful first move.",
+    highlights: ["Start without technical language", "Explore one practical direction", "Talk to Scott when it helps"],
+  },
+  "/max/privacy": {
+    path: "/max/privacy",
+    title: "Max Privacy | South Shore AI",
+    description: "Read how the Max preview handles conversation information and how to keep sensitive information out of an idea exploration.",
+    heading: "Privacy for Max",
+    summary: "A concise explanation of the working preview and the care expected before the Max service accepts personal information.",
+    highlights: ["Leave out sensitive details", "Preview messages stay in the browser", "Contact South Shore AI with questions"],
   },
   "/resources": {
     path: "/resources",
@@ -162,4 +170,4 @@ export const getSiteSeo = (path: string): SiteSeo | undefined => {
   return siteSeo[normalized];
 };
 
-export const indexableRoutes = Object.keys(siteSeo).filter((path) => path !== "/connect");
+export const indexableRoutes = Object.keys(siteSeo).filter((path) => !["/connect", "/max/privacy"].includes(path));

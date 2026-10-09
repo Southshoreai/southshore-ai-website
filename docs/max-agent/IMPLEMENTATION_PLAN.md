@@ -1,7 +1,7 @@
 # Max — South Shore AI Agent
 
 > **Status:** Revised design and implementation plan
-> **Revision:** 0.2 — incorporates the Codex briefing of October 8, 2026
+> **Revision:** 0.3 — incorporates the Codex briefing and focused presentation revision of October 9, 2026
 > **Launch posture:** Design and draft integration work only. Max, its Tally form, and report delivery remain unpublished until Scott reviews a working preview and explicitly approves launch.
 
 ## 1. Purpose and success outcome
@@ -29,27 +29,11 @@ Max does not auto-open a large panel, repeatedly prompt after dismissal, or infe
 
 ### Welcoming first moment
 
-The initial view uses a predefined greeting and starter buttons; merely opening Max must not trigger a paid model call.
+Merely opening Max must not trigger a paid model call. The focused page uses a concise identity, opening question, three optional starters, and an immediately reachable text input rather than a preloaded chat greeting. Its exact opening copy and presentation are defined in Section 4.
 
-> **Hi, I’m Max, South Shore AI’s AI guide. You don’t need to know anything about AI—or even know where to start. Tell me a little about your work, something that feels harder than it should, or an idea you’ve been wondering about. Together, we can explore a few possibilities.**
+For **“I don’t know where to start,”** Max begins with the low-pressure question: **“What kind of work do you do, and which part feels harder than it should?”**
 
-The experience also presents this calm boundary before the first message:
-
-> **Please describe the situation without sharing private client details, passwords, account numbers, or other sensitive information.**
-
-Starter buttons:
-
-- **I don’t know where to start**
-- **I spend too much time on repetitive work**
-- **I have an idea—is it possible?**
-- **I want to help my team use AI**
-- **I’m just exploring**
-
-For “I don’t know where to start,” Max begins with the low-pressure question: **“What kind of work do you do?”**
-
-Near the opening, Max transparently explains the eventual contact step:
-
-> **You can explore a little first. When you’re ready, I’ll ask for your name and email to send you a personalized idea brief and save your progress.**
+The privacy boundary is concise and linked: **“Please leave out private or sensitive information.”** The dedicated Max Privacy page states current preview handling accurately and will expand into the complete privacy notice before public launch.
 
 ### Conversation rhythm
 
@@ -144,31 +128,35 @@ If no approved card applies, Max explains the main effort drivers and offers a c
 
 ### Design movement and brand essence
 
-The experience follows a **quiet editorial studio** aesthetic: warm, orderly, human, and more like a considered discovery notebook than a chat product. Its brand essence is **“A calm, practical first conversation for people who want to make work easier without pretending to be technical.”** Personality: **warm, capable, unhurried**.
+The focused Max page follows a **quiet editorial conversation** aesthetic: light, direct, and intentionally sparse. Its brand essence is **“A calm, practical first conversation for people who want to make work easier without pretending to be technical.”** Personality: **warm, capable, unhurried**.
 
 ### Core principles
 
-1. **Reduce self-consciousness:** plain language and starter choices make uncertainty welcome.
-2. **Make thinking visible:** show a concise evolving “What we’ve figured out” summary when helpful, not artificial progress scores.
-3. **Preserve human judgment:** visual language distinguishes possibilities, assumptions, and human decision points.
-4. **Invite without pressure:** calls to action describe a useful next step rather than forcing completion.
+1. **Make beginning effortless:** on a typical laptop or phone, visitors see Max’s role, the starting question, and the input without scrolling through explanatory material.
+2. **Keep the page singular:** the primary action is starting or continuing a conversation; no dashboard, side rail, marketing footer, decorative labels, or promotional sections compete with it.
+3. **Explain only when needed:** Max responds in a few short sentences and one useful question. Planning-only boundaries are stated briefly when relevant, not as a permanent disclaimer.
+4. **Keep a respectful exit visible:** the compact header retains one understated **Talk to Scott** link; the compact footer contains essential links only.
 
-### Color, layout, typography, and signature elements
+### Focused Max page
 
-Use the existing South Shore AI palette: warm off-white and cool pale surfaces for steadiness; deep teal as the owned, trustworthy action color; restrained orange only for warmth, attention, and small milestones. Preserve the site’s existing Figtree-led typography, with a strong compact heading hierarchy and generous readable body copy.
+`/max` uses a compact SSAI header, a centered single conversation column with generous whitespace, a light background, dark readable text, and restrained teal accents. The global site header, global marketing footer, Togetha navigation, large hero, side rail, permanent thinking ledger, and repeated contact sections are absent from this route. The header does not repeat a “Talk with Max” navigation action while the visitor is already on the page.
 
-The widget is a compact, high-contrast conversation panel with a clearly labeled close control. The `/max` page uses a calm asymmetric composition: a primary conversation column and a quieter side rail that can show **“What we’ve figured out,” “What you’ll receive,”** and direct contact. On mobile, this becomes a single, natural conversation flow with a persistent input and no forced scrolling surprise.
+The opening copy is exactly:
 
-Signature elements are: a small **thinking ledger** that summarizes visitor-approved points, a **direction card** that visually separates proven/likely/exploratory ideas, and a **human judgment marker** that makes review and decision ownership explicit.
+> **Max**
+> South Shore AI’s AI guide
+>
+> **What would you like to make easier?**
+>
+> “An everyday frustration or a new idea is enough. Not sure where to start? We can work it out together.”
+
+It offers only these optional starters: **I don’t know where to start**, **I have an idea**, and **A task takes too much time**. The input sits directly below with the placeholder **“Tell me a little about it…”** and a visible **Send** button. Small readable privacy text says **“Please leave out private or sensitive information.”** and links to a dedicated `/max/privacy` page. A quiet line says **“Explore first. When you’re ready to save your idea brief, we’ll ask for your name and email.”**
+
+After the first message, the opening copy and starter buttons leave the conversation. Once application milestone rules permit it, the visitor can choose **“See your idea summary.”** The summary uses ordinary labels: **Your goal**, **A possible approach**, and **Where to start**, and remains visitor-correctable. The preview includes no non-functional save button and does not place development-status messages in the visitor interface.
 
 ### Interaction and animation
 
-Interactions feel responsive but never theatrical. New message, summary, and direction-card transitions use short opacity/position changes; loading is explicit; retry preserves the visitor’s message; and `prefers-reduced-motion` removes nonessential movement. The widget never monopolizes focus, supports Escape to close, has full keyboard navigation, and maintains clear focus states and readable contrast.
-
-Example microcopy:
-
-- **“You can start with the messy version.”**
-- **“We can look for one useful first move—not a perfect answer all at once.”**
+Interactions feel responsive but never theatrical. New messages and the requested summary use short opacity/position changes; loading is explicit; retry preserves the visitor’s message; and `prefers-reduced-motion` removes nonessential movement. On small screens and with enlarged text, content scrolls naturally rather than shrinking or clipping. The page keeps the input easy to reach; the widget retains a clear close control, Escape support, keyboard navigation, and readable focus states.
 
 ## 5. Technical architecture
 

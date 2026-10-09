@@ -21,7 +21,7 @@ export const MaxLauncher: React.FC = () => {
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [isOpen]);
 
-  if (location === '/max') return null;
+  if (location.startsWith('/max')) return null;
 
   return (
     <div className="max-launcher">
