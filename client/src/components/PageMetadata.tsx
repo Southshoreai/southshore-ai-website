@@ -32,6 +32,14 @@ const PAGE_METADATA: Record<string, Metadata> = {
     title: 'Talk to Scott | South Shore AI',
     description: 'Start a practical conversation about an AI challenge, workflow, custom app idea, training session, or briefing.',
   },
+  '/max': {
+    title: 'Talk with Max | South Shore AI',
+    description: 'Explore a stuck process, an idea, or a practical AI next step with Max, South Shore AI’s AI guide.',
+  },
+  '/max/privacy': {
+    title: 'Max Privacy | South Shore AI',
+    description: 'Read how the Max preview handles conversation information and how to keep sensitive information out of an idea exploration.',
+  },
 };
 
 const projectMetadata: Metadata = {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'wouter';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, MessageCircle, Menu, X } from 'lucide-react';
 
 const navLinks = [
   { href: '/services', label: 'Services' },
@@ -53,10 +53,15 @@ export const Navbar: React.FC = () => {
         </nav>
 
         <div className="hidden sm:block">
-          <Link href="/connect" className="ssai-button px-4 py-2.5 text-sm">
-            <span>Talk to Scott</span>
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link href="/max" className="inline-flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-extrabold text-[#136975] transition hover:bg-[#eaf9fc]">
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />Talk with Max
+            </Link>
+            <Link href="/connect" className="ssai-button px-4 py-2.5 text-sm">
+              <span>Talk to Scott</span>
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
         <button
@@ -81,6 +86,9 @@ export const Navbar: React.FC = () => {
                 <Link key={link.href} href={link.href} className={`${linkClass(link.href)} px-4 py-3 text-base`} onClick={() => setIsOpen(false)}>{link.label}</Link>
               )
             ))}
+            <Link href="/max" className="mt-2 flex items-center gap-2 rounded-md px-4 py-3 text-base font-extrabold text-[#136975] transition hover:bg-[#eaf9fc]" onClick={() => setIsOpen(false)}>
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />Talk with Max
+            </Link>
             <Link href="/connect" className="ssai-button mt-3" onClick={() => setIsOpen(false)}>
               Talk to Scott
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

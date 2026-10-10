@@ -18,6 +18,9 @@ import { SafetyAndTrust } from '@/pages/SafetyAndTrust';
 import { SystemViews } from '@/pages/SystemViews';
 import { About } from '@/pages/About';
 import { Connect } from '@/pages/Connect';
+import { Max } from '@/pages/Max';
+import { MaxPrivacy } from '@/pages/MaxPrivacy';
+import { MaxLauncher } from '@/components/MaxLauncher';
 
 const projectRoutes = new Set([
   '/togetha/member-experience',
@@ -47,13 +50,15 @@ export function App() {
   const [location] = useLocation();
   const inTogethaContext = location.startsWith('/togetha') || projectRoutes.has(location);
   const isLegacyProjectDetail = projectRoutes.has(location);
+  const normalizedLocation = location === '/' ? '/' : location.replace(/\/+$/, '');
+  const isMaxExperience = normalizedLocation === '/max' || normalizedLocation === '/max/privacy';
 
   return (
     <div className="min-h-screen bg-[#f2f5f6] text-[#272d2e]">
-      <PageMetadata location={location} />
+      <PageMetadata location={normalizedLocation} />
       <ScrollToPageStart location={location} />
-      <LogoIntro />
-      <Navbar />
+      {!isMaxExperience && <LogoIntro />}
+      {!isMaxExperience && <Navbar />}
       {inTogethaContext && <TogethaSubnav />}
       <main className={isLegacyProjectDetail ? 'project-detail-shell' : undefined}>
         <Switch>
@@ -70,10 +75,13 @@ export function App() {
           <Route path="/views" component={SystemViews} />
           <Route path="/about" component={About} />
           <Route path="/connect" component={Connect} />
+          <Route path="/max/privacy" component={MaxPrivacy} />
+          <Route path="/max" component={Max} />
           <Route><Home /></Route>
         </Switch>
       </main>
-      <Footer />
+      {!isMaxExperience && <Footer />}
+      <MaxLauncher />
     </div>
   );
 }

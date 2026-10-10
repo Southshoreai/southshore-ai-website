@@ -123,8 +123,10 @@ export const Home: React.FC = () => {
                 <p className="mt-7 max-w-xl text-lg leading-relaxed text-[#d5e7e2] sm:text-xl">We build practical apps and automations, help you choose the right tools, and show your team how to use AI with confidence—especially {audience.description}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Link href="/connect" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f3bd72] px-5 py-3 text-sm font-extrabold text-[#1d2e2b] transition hover:-translate-y-0.5 hover:bg-[#ffd18b]">Talk to Scott <ArrowRight className="h-4 w-4" /></Link>
+                  <Link href="/max" className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a8e3db]/60 bg-[#143c38] px-5 py-3 text-sm font-extrabold text-[#d7f4ee] transition hover:-translate-y-0.5 hover:border-[#d7f4ee] hover:bg-[#1a4943]">Explore an idea with Max <ArrowRight className="h-4 w-4" /></Link>
                   <Link href="/work" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:bg-white/18">See what we build</Link>
                 </div>
+                <p className="mt-3 text-sm font-semibold text-[#b5d6d0]">Not sure where to start? That’s welcome here.</p>
                 <div className="mt-10 flex flex-wrap gap-2" aria-label="Who South Shore AI helps">
                   {audiences.map((item, index) => (
                     <button key={item.label} type="button" onClick={() => setAudienceIndex(index)} aria-pressed={audienceIndex === index} className={`group inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-bold transition ${audienceIndex === index ? 'border-[#f4c682] bg-white/15 text-white' : 'border-white/15 text-[#c4d9d3] hover:border-white/35 hover:text-white'}`}>
